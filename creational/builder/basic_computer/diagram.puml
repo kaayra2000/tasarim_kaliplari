@@ -1,17 +1,17 @@
 @startuml builder-without-director
 /'
  * @file builder-without-director.puml
- * @brief Builder Pattern - Director olmadan basit yaklaşım
+ * @brief Builder Pattern - Yönlendirici olmadan basit yaklaşım
  * @author AI Assistant
  * @date 15.10.2025
  * @version 1.0
  * 
- * @description Bu diyagram Builder pattern'in Director sınıfı olmadan
+ * @description Bu diyagram Builder pattern'in Yönlendirici sınıfı olmadan
  *              nasıl kullanılabileceğini gösterir. Builder'ın kendisi
- *              construction sürecini yönetir.
+ *              oluşturma sürecini yönetir.
  '/
 
-title Builder Pattern - Director Olmadan (Basit Yaklaşım)
+title Builder Pattern - Yönlendirici Olmadan (Basit Yaklaşım)
 
 skinparam classAttributeIconSize 0
 skinparam backgroundColor #FFFFFF
@@ -83,9 +83,9 @@ note bottom of GamingComputerBuilder
   pc->show();
 end note
 
-note "**Avantajlar:**\n• Daha basit kod\n• Daha az sınıf\n• Client için kolay kullanım\n• Modern C++ yaklaşımı" as N1
+note "**Faydaları:**\n• Daha basit kod\n• Daha az sınıf\n• Client için kolay kullanım\n• Çağdaş C++ yaklaşımı" as N1
 
-footer Oluşturulma: 15.10.2025 | Versiyon: 1.0 | Pattern: Builder (Simplified)
+footer Oluşturulma: 15.10.2025 | Sürüm: 1.0.1 | Pattern: Builder (Basitleştirilmiş)
 
 @enduml
 

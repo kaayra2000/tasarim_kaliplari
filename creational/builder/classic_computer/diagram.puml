@@ -102,7 +102,7 @@ end note
 
 note "**Ne Zaman Kullanılır:**\n• Karmaşık oluşturma adımları\n• Farklı oluşturma vakaları\n• Oluşturma mantığını\n  yeniden kullanma\n\n**Zarar:**\n• Fazladan karmaşıklık\n• Çoğu durumda gereksiz" as N1
 
-footer Oluşturulma: 15.10.2025 | Versiyon: 1.0.01 | Pattern: Builder (Classic GoF)
+footer Oluşturulma: 15.10.2025 | Sürüm: 1.0.1 | Pattern: Builder (Classic GoF)
 
 @enduml
 
