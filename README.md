@@ -1,10 +1,10 @@
 # Tasarım Kalıpları (Design Patterns)
 
-Bu depo, yazılım tasarım kalıplarına (design patterns) dair örnekleri ve kısa açıklamaları içerir. Tasarım kalıpları, sık karşılaşılan yazılım tasarım problemlerine tekrar kullanılabilir, test edilebilir ve iyi tanımlanmış çözümler sunar.
+Bu depo, yazılım tasarım kalıplarına (design patterns) dair örnekleri ve kısa açıklamaları içerir. Tasarım kalıpları, sık karşılaşılan yazılım tasarım sorunlarını tekrar kullanılabilir, sınanabilir ve iyi tanımlanmış çözümler sunar.
 
 ## Tasarım kalıpları nedir?
 
-Tasarım kalıpları, tecrübeye dayanan, tekrar eden tasarım problemlerine uygulanabilecek sınıflandırılmış çözümlerdir. Bir problemi nasıl çözeceğinizi adım adım anlatmak yerine; objektif, yeniden kullanılabilir yapı taşları sunar. Kalıplar, uygulama mantığını değil, yapısal ve davranışsal yaklaşımları soyutlar.
+Tasarım kalıpları, tecrübeye dayanan, tekrar eden tasarım sorunlarına uygulanabilecek sınıflandırılmış çözümlerdir. Bir sorunu nasıl çözeceğinizi adım adım anlatmak yerine; objektif, yeniden kullanılabilir yapı taşları sunar. Kalıplar, uygulama mantığını değil, yapısal ve davranışsal yaklaşımları soyutlar.
 
 ## Ne işe yarar?
 
@@ -14,31 +14,32 @@ Tasarım kalıpları, tecrübeye dayanan, tekrar eden tasarım problemlerine uyg
 
 ## Kısa vadeli faydaları
 
-- Hızlı prototipleme ve karar verme.
+- Hızlı çözüm ve karar verme.
 - Kodun belli görevler için daha net ayrılması (sorumlulukların bölünmesi).
 - Yeni geliştiricilerin mevcut mimariyi anlamasını kolaylaştırır.
 
 ## Uzun vadeli faydaları
 
-- Bakım kolaylığı: Kod yeniden yapılandırılırken hata riski azalır.
+- Bakım kolaylığı: Kod yeniden yapılandırılırken hata tehlikesi azalır.
 - Genişleyebilirlik: Yeni özellikler eklenirken mevcut katmanlara zarar verme olasılığı düşer.
-- Yeniden kullanım: Benzer problemler için tekrar kullanılabilecek güvenli soyutlamalar sağlar.
+- Yeniden kullanım: Benzer sorunlar için tekrar kullanılabilecek güvenli soyutlamalar sağlar.
 
 ## Kod okunaklılığı ve genişleyebilirlik
 
-Tasarım kalıpları doğru uygulandığında kodun okunaklığı artar çünkü belirli rollere sahip sınıf/nesne yapıları standartlaşır. Bu, kodu okuyan kişinin hangi sorumluluğun nerede olduğunu hızlıca anlamasını sağlar. Ayrıca kalıplar genellikle açık arabirimler (interfaces) ve gevşek bağlılık (loose coupling) önerdiği için yeni davranışlar eklemek veya mevcutları değiştirmek kolaylaşır.
+Tasarım kalıpları doğru uygulandığında kodun okunaklığı artar çünkü belirli rollere sahip sınıf/nesne yapıları standartlaşır. Bu, kodu okuyan kişinin hangi sorumluluğun nerede olduğunu hızlıca anlamasına vesile olur. Ayrıca kalıplar genellikle açık arabirimler (interfaces) ve gevşek bağlılık (loose coupling) önerdiği için yeni davranışlar eklemek veya mevcutları değiştirmek kolaylaşır.
 
 Önemli noktalar:
-- Aşırı kullanımdan kaçının (over-engineering).
+- Aşırı kullanımdan kaçının (over-engineering):
+Bu hataya birçok mühendis düşmektedir. Tam olarak hata sayılmasa da, gereksiz yere karmaşık yapılar oluşturulması işlemidir.
 - Önce basit yazın, ihtiyaç doğarsa kalıp uygulayın.
 
 ## Tasarım kalıplarının türleri
 
-Genel olarak üç ana kategori vardır:
+Genel olarak üç ana başlık vardır:
 
 - Oluşum Kalıpları (Creational Patterns):
 	- Nesne oluşturma süreçlerini soyutlar. Nesne oluşturmayı merkezi hale getirerek esneklik sağlar.
-	- Örnekler: Singleton, Factory Method, Abstract Factory, Builder, Prototype.
+	- Örnekler: Singleton, Factory Method, Abstract Factory, [Builder](./creational/builder/README.md), Prototype.
 
 - Yapı Kalıpları (Structural Patterns):
 	- Sınıfların ve nesnelerin bileşimini düzenler; daha büyük yapıların oluşturulmasını kolaylaştırır.
@@ -48,4 +49,4 @@ Genel olarak üç ana kategori vardır:
 	- Nesneler arası iletişim ve sorumlulukların dağılımına odaklanır.
 	- Örnekler: Observer, Strategy, Command, Iterator, State, Chain of Responsibility.
 
-Bu depoda dizinler bu kategorileri yansıtır: `creational/`, `structural/`, `behavioral/`.
+Daha ayrıntılı örnekler ve açıklamalar için ilgili kalıbın ismninin üzerine tıklayabilirsiniz. Bunun yanında dizinlerde gezinerek örnek kodları ve diyagramları inceleyebilirsiniz.
