@@ -1,17 +1,17 @@
 @startuml builder-with-director
 /'
  * @file builder-with-director.puml
- * @brief Builder Pattern - Director ile klasik yaklaşım
+ * @brief Builder Pattern - Yönlendirici ile klasik yaklaşım
  * @author AI Assistant
  * @date 15.10.2025
  * @version 1.0
- * 
- * @description Bu diyagram Builder pattern'in Director sınıfı ile
- *              klasik GoF implementasyonunu gösterir. Director
+ *
+ * @description Bu diyagram Builder pattern'in Yönlendirici sınıfı ile
+ *              klasik GoF implementasyonunu gösterir. Yönlendirici
  *              farklı construction stratejilerini yönetir.
  '/
 
-title Builder Pattern - Director İle (Klasik Yaklaşım)
+title Builder Pattern - Yönlendirici İle (Klasik Yaklaşım)
 
 skinparam classAttributeIconSize 0
 skinparam backgroundColor #FFFFFF
@@ -77,8 +77,8 @@ ComputerBuilder <|-- OfficeComputerBuilder
 ComputerDirector o--> ComputerBuilder : uses
 
 note right of ComputerDirector
-  **Director farklı construction**
-  **stratejilerini yönetir:**
+  **Director farklı oluşturma**
+  **yöntemlerini yönetir:**
   
   • buildFullComputer()
     → Tüm bileşenler
@@ -100,9 +100,9 @@ note bottom of ComputerDirector
   pc->show();
 end note
 
-note "**Ne Zaman Kullanılır:**\n• Karmaşık construction adımları\n• Farklı construction senaryoları\n• Construction mantığını\n  yeniden kullanma\n\n**Dezavantaj:**\n• Ekstra karmaşıklık\n• Çoğu durumda gereksiz" as N1
+note "**Ne Zaman Kullanılır:**\n• Karmaşık oluşturma adımları\n• Farklı oluşturma vakaları\n• Oluşturma mantığını\n  yeniden kullanma\n\n**Zarar:**\n• Fazladan karmaşıklık\n• Çoğu durumda gereksiz" as N1
 
-footer Oluşturulma: 15.10.2025 | Versiyon: 1.0 | Pattern: Builder (Classic GoF)
+footer Oluşturulma: 15.10.2025 | Versiyon: 1.0.01 | Pattern: Builder (Classic GoF)
 
 @enduml
 
