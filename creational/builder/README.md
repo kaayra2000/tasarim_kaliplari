@@ -33,7 +33,7 @@ auto pc = director.buildFullComputer();
 ```
 **%10 durumda gerekli** - Farklı sınıf oluşturma durumları için `Director` sınıfı eklenmiş.
 
-### 3. **basic_classic_diff/** - İki Yaklaşımın Karşılaştırması
+### 3. İki Yaklaşımın Karşılaştırması
 
 ![Builder Pattern Karşılaştırma](./basic_classic_diff/diagram.png)
 
