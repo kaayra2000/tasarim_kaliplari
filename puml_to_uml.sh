@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-set -u
-
 # Kullanım:
 #   ./puml_to_images.sh         # Bulunduğun dizinden itibaren
 #   ./puml_to_images.sh /yol    # Verilen kök dizinden itibaren
@@ -37,6 +35,7 @@ process_file() {
 
   # PNG üret
   if plantuml -tpng "$tmp" >/dev/null 2>&1; then
+    echo "PNG üretildi: $tmp"
     # Tekli ya da çoklu çıktı (…_001 vb.) durumunu kapsayacak şekilde yeniden adlandır
     for out in "$dir/$tmpbase.png" "$dir/${tmpbase}"_*.png; do
       [ -e "$out" ] || continue
@@ -48,6 +47,8 @@ process_file() {
 
   # SVG üret
   if plantuml -tsvg "$tmp" >/dev/null 2>&1; then
+    # Tekli ya da çoklu çıktı (…_001 vb.) durumunu kapsayacak şekilde yeniden adlandır
+    echo "SVG üretildi: $tmp"
     for out in "$dir/$tmpbase.svg" "$dir/${tmpbase}"_*.svg; do
       [ -e "$out" ] || continue
       mv -f "$out" "${out/$tmpbase/$base}"
@@ -59,10 +60,17 @@ process_file() {
   rm -f "$tmp"
 }
 
-export -f process_file
+# Tüm .puml dosyalarını say
+echo "🔍 .puml dosyaları aranıyor..."
+total=$(find "$ROOT" -type f -name "*.puml" | wc -l)
+echo "✅ Toplam $total adet .puml dosyası bulundu."
+echo ""
 
-# Tüm .puml dosyalarını bul ve işle
+# Dosyaları işle ve ilerlemeyi göster
+count=0
 find "$ROOT" -type f -name "*.puml" -print0 \
   | while IFS= read -r -d '' file; do
+      ((count++))
+      echo "[$count/$total] İşleniyor: $file"
       process_file "$file"
     done
