@@ -1,0 +1,83 @@
+@startuml builder-comparison
+/'
+ * @file builder-comparison.puml
+ * @brief Builder Pattern yaklaşımlarının karşılaştırması
+ * @author AI Assistant
+ * @date 15.10.2025
+ * @version 1.0
+ '/
+
+title Builder Pattern - İki Yaklaşımın Karşılaştırması
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+
+package "Basit Yaklaşım (Director Yok)" #E8F4F8 {
+    class "ComputerBuilder" as CB1 {
+        +build(): Computer
+    }
+    
+    class "GamingBuilder" as GB1 {
+    }
+    
+    class "OfficeBuilder" as OB1 {
+    }
+    
+    CB1 <|-- GB1
+    CB1 <|-- OB1
+    
+    note bottom of CB1
+      ✅ **Avantajlar:**
+      • Basit ve anlaşılır
+      • Az kod
+      • Modern yaklaşım
+      • Client için kolay
+      
+      ❌ **Dezavantajlar:**
+      • Construction mantığı
+        builder'da sabit
+    end note
+}
+
+package "Klasik Yaklaşım (Director Var)" #FFE8CC {
+    class "ComputerBuilder" as CB2 {
+        +getComputer(): Computer
+    }
+    
+    class "GamingBuilder" as GB2 {
+    }
+    
+    class "OfficeBuilder" as OB2 {
+    }
+    
+    class "Director" as DIR {
+        +buildFullComputer()
+        +buildMinimalComputer()
+        +buildStorageOptimized()
+    }
+    
+    CB2 <|-- GB2
+    CB2 <|-- OB2
+    DIR o--> CB2
+    
+    note bottom of DIR
+      ✅ **Avantajlar:**
+      • Farklı construction
+        stratejileri
+      • Construction mantığı
+        yeniden kullanılabilir
+      • GoF standardı
+      
+      ❌ **Dezavantajlar:**
+      • Ekstra karmaşıklık
+      • Çoğu zaman gereksiz
+      • Daha fazla kod
+    end note
+}
+
+note "**Sonuç:**\n\n**%90 durumda** → Basit yaklaşım yeterli\n**%10 durumda** → Director gerekli\n\n**Director gerekli olduğunda:**\n• Çok karmaşık construction\n• Birden fazla construction stratejisi\n• Construction mantığını paylaşma" as CONCLUSION
+
+footer Oluşturulma: 15.10.2025 | Versiyon: 1.0 | Karşılaştırma
+
+@enduml
+
