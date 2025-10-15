@@ -1,0 +1,77 @@
+@startuml simple-shape-factory-class
+/'
+ * @file simple-shape-factory-class.puml
+ * @brief basit factory pattern implementasyonu - shape örneği
+ * @author AI Assistant
+ * @date 15.10.2025
+ * @version 1.0.0
+ * 
+ * @description bu diyagram temel factory pattern yapısını gösterir.
+ *              string tabanlı nesne oluşturma ve ham pointer kullanımı içerir
+ '/
+
+title Basit Shape Factory - Class Diyagramı
+
+skinparam classAttributeIconSize 0
+skinparam class {
+    BackgroundColor #E8F4F8
+    BorderColor #2C5F7C
+    ArrowColor #2C5F7C
+}
+
+' Soyut ürün sınıfı
+abstract class Shape <<interface>> {
+    + {abstract} draw(): void
+    + ~Shape()
+}
+
+' Somut ürünler
+class Circle {
+    + draw(): void
+}
+
+class Rectangle {
+    + draw(): void
+}
+
+class Triangle {
+    + draw(): void
+}
+
+' Factory sınıfı
+class ShapeFactory <<Factory>> {
+    + {static} createShape(type: string): Shape*
+}
+
+' İlişkiler
+Shape <|-- Circle : implements
+Shape <|-- Rectangle : implements
+Shape <|-- Triangle : implements
+
+ShapeFactory ..> Shape : creates
+ShapeFactory ..> Circle : creates
+ShapeFactory ..> Rectangle : creates
+ShapeFactory ..> Triangle : creates
+
+note right of ShapeFactory
+  * **Basit Factory Pattern**
+  * String tabanlı tür belirleme
+  * Ham pointer döndürür
+  * if-else zinciri kullanır
+end note
+
+note left of Shape
+  * Soyut ürün arayüzü
+  * Tüm şekiller bu arayüzü
+    implement eder
+end note
+
+note bottom of Circle
+  **Kullanım:**
+  Shape* s = ShapeFactory::createShape("circle");
+  s->draw();
+end note
+
+footer Oluşturulma: 15.10.2025 | Sürüm: 1.0.0 | Pattern: Simple Factory
+
+@enduml

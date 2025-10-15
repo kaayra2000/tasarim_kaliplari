@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="836px" preserveAspectRatio="none" style="width:1173px;height:836px;" version="1.1" viewBox="0 0 1173 836" width="1173px" zoomAndPan="magnify"><defs><filter height="300%" id="f1vge5xmgzcdpw" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="358" x="410.5" y="19.2419">Gelişmiş Vehicle Factory - Class Diyagramı</text><!--MD5=[9e8cdc57c56bad5cdfc47653c9df3022]
+class VehicleType--><rect fill="#FFE8CC" filter="url(#f1vge5xmgzcdpw)" height="92.9457" id="VehicleType" style="stroke: #2C5F7C; stroke-width: 1.5;" width="99" x="1007" y="305.5158"/><ellipse cx="1022" cy="321.5158" fill="#EB937F" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M1026.1094,327.5158 L1018.3906,327.5158 L1018.3906,315.1252 L1026.1094,315.1252 L1026.1094,317.2815 L1020.8438,317.2815 L1020.8438,319.9533 L1025.6094,319.9533 L1025.6094,322.1096 L1020.8438,322.1096 L1020.8438,325.3596 L1026.1094,325.3596 L1026.1094,327.5158 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="67" x="1036" y="326.1719">VehicleType</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="1008" x2="1105" y1="337.5158" y2="337.5158"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="21" x="1013" y="353.2748">CAR</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="73" x="1013" y="368.2566">MOTORCYCLE</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="35" x="1013" y="383.2385">TRUCK</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="1008" x2="1105" y1="390.4615" y2="390.4615"/><!--MD5=[3aa0d89c6bfdcbf7f32042cedac57549]
+class Vehicle--><rect fill="#E8F4F8" filter="url(#f1vge5xmgzcdpw)" height="212.8008" id="Vehicle" style="stroke: #2C5F7C; stroke-width: 1.5;" width="193" x="593" y="245.5158"/><ellipse cx="666.75" cy="261.5158" fill="#A9DCDF" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M666.8594,256.8596 L665.7031,261.9377 L668.0313,261.9377 L666.8594,256.8596 Z M665.375,254.6252 L668.3594,254.6252 L671.7188,267.0158 L669.2656,267.0158 L668.5,263.9533 L665.2188,263.9533 L664.4688,267.0158 L662.0313,267.0158 L665.375,254.6252 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="37" x="687.25" y="266.1719">Vehicle</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="594" x2="785" y1="277.5158" y2="277.5158"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="76" x="599" y="293.2748">#brand: string</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="50" x="599" y="308.2566">#year: int</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="76" x="599" y="323.2385">#price: double</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="594" x2="785" y1="330.4615" y2="330.4615"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="181" x="599" y="346.2204">+Vehicle(b: string, y: int, p: double)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="55" x="599" y="361.2023">+~Vehicle()</text><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="92" x="599" y="376.1842">+displayInfo(): void</text><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="61" x="599" y="391.1661">+start(): void</text><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="110" x="599" y="406.148">+calculateTax(): double</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="98" x="599" y="421.1299">+getBrand(): string</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="72" x="599" y="436.1117">+getYear(): int</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="98" x="599" y="451.0936">+getPrice(): double</text><!--MD5=[3f0ef310aaa84a542276992c5216544d]
+class Car--><rect fill="#E8F4F8" filter="url(#f1vge5xmgzcdpw)" height="122.9094" id="Car" style="stroke: #2C5F7C; stroke-width: 1.5;" width="292" x="378.5" y="537.5158"/><ellipse cx="510.25" cy="553.5158" fill="#ADD1B2" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M513.2188,559.1565 Q512.6406,559.4533 512,559.594 Q511.3594,559.7502 510.6563,559.7502 Q508.1563,559.7502 506.8281,558.1096 Q505.5156,556.4533 505.5156,553.3283 Q505.5156,550.2033 506.8281,548.5471 Q508.1563,546.8908 510.6563,546.8908 Q511.3594,546.8908 512,547.0471 Q512.6563,547.2033 513.2188,547.5002 L513.2188,550.219 Q512.5938,549.6408 512,549.3752 Q511.4063,549.094 510.7813,549.094 Q509.4375,549.094 508.75,550.1721 Q508.0625,551.2346 508.0625,553.3283 Q508.0625,555.4221 508.75,556.5002 Q509.4375,557.5627 510.7813,557.5627 Q511.4063,557.5627 512,557.2971 Q512.5938,557.0158 513.2188,556.4377 L513.2188,559.1565 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="20" x="530.75" y="558.1719">Car</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="379.5" x2="669.5" y1="569.5158" y2="569.5158"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="82" x="384.5" y="585.2748">-doorCount: int</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="379.5" x2="669.5" y1="592.4977" y2="592.4977"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="280" x="384.5" y="608.2566">+Car(brand: string, year: int, price: double, doors: int)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="100" x="384.5" y="623.2385">+displayInfo(): void</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="65" x="384.5" y="638.2204">+start(): void</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="118" x="384.5" y="653.2023">+calculateTax(): double</text><!--MD5=[810373fc1a93f4d2097b8385b2d2d749]
+class Motorcycle--><rect fill="#E8F4F8" filter="url(#f1vge5xmgzcdpw)" height="122.9094" id="Motorcycle" style="stroke: #2C5F7C; stroke-width: 1.5;" width="311" x="706" y="537.5158"/><ellipse cx="826.25" cy="553.5158" fill="#ADD1B2" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M829.2188,559.1565 Q828.6406,559.4533 828,559.594 Q827.3594,559.7502 826.6563,559.7502 Q824.1563,559.7502 822.8281,558.1096 Q821.5156,556.4533 821.5156,553.3283 Q821.5156,550.2033 822.8281,548.5471 Q824.1563,546.8908 826.6563,546.8908 Q827.3594,546.8908 828,547.0471 Q828.6563,547.2033 829.2188,547.5002 L829.2188,550.219 Q828.5938,549.6408 828,549.3752 Q827.4063,549.094 826.7813,549.094 Q825.4375,549.094 824.75,550.1721 Q824.0625,551.2346 824.0625,553.3283 Q824.0625,555.4221 824.75,556.5002 Q825.4375,557.5627 826.7813,557.5627 Q827.4063,557.5627 828,557.2971 Q828.5938,557.0158 829.2188,556.4377 L829.2188,559.1565 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="62" x="846.75" y="558.1719">Motorcycle</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="707" x2="1016" y1="569.5158" y2="569.5158"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="74" x="712" y="585.2748">-engineCC: int</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="707" x2="1016" y1="592.4977" y2="592.4977"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="299" x="712" y="608.2566">+Motorcycle(brand: string, year: int, price: double, cc: int)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="100" x="712" y="623.2385">+displayInfo(): void</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="65" x="712" y="638.2204">+start(): void</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="118" x="712" y="653.2023">+calculateTax(): double</text><!--MD5=[f2ba7f6ab60af8dd0d3e354f91729b14]
+class Truck--><rect fill="#E8F4F8" filter="url(#f1vge5xmgzcdpw)" height="122.9094" id="Truck" style="stroke: #2C5F7C; stroke-width: 1.5;" width="337" x="6" y="537.5158"/><ellipse cx="154.75" cy="553.5158" fill="#ADD1B2" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M157.7188,559.1565 Q157.1406,559.4533 156.5,559.594 Q155.8594,559.7502 155.1563,559.7502 Q152.6563,559.7502 151.3281,558.1096 Q150.0156,556.4533 150.0156,553.3283 Q150.0156,550.2033 151.3281,548.5471 Q152.6563,546.8908 155.1563,546.8908 Q155.8594,546.8908 156.5,547.0471 Q157.1563,547.2033 157.7188,547.5002 L157.7188,550.219 Q157.0938,549.6408 156.5,549.3752 Q155.9063,549.094 155.2813,549.094 Q153.9375,549.094 153.25,550.1721 Q152.5625,551.2346 152.5625,553.3283 Q152.5625,555.4221 153.25,556.5002 Q153.9375,557.5627 155.2813,557.5627 Q155.9063,557.5627 156.5,557.2971 Q157.0938,557.0158 157.7188,556.4377 L157.7188,559.1565 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="31" x="175.25" y="558.1719">Truck</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="7" x2="342" y1="569.5158" y2="569.5158"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="114" x="12" y="585.2748">-loadCapacity: double</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="7" x2="342" y1="592.4977" y2="592.4977"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="325" x="12" y="608.2566">+Truck(brand: string, year: int, price: double, capacity: double)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="100" x="12" y="623.2385">+displayInfo(): void</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="65" x="12" y="638.2204">+start(): void</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="118" x="12" y="653.2023">+calculateTax(): double</text><!--MD5=[0ddca5c7e8a4f8347a16b84b3700570e]
+class VehicleFactory--><rect fill="#E8F4F8" filter="url(#f1vge5xmgzcdpw)" height="133.5977" id="VehicleFactory" style="stroke: #2C5F7C; stroke-width: 1.5;" width="368" x="331.5" y="32.5158"/><ellipse cx="470.75" cy="53.86" fill="#ADD1B2" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M473.7188,59.5006 Q473.1406,59.7975 472.5,59.9381 Q471.8594,60.0943 471.1563,60.0943 Q468.6563,60.0943 467.3281,58.4537 Q466.0156,56.7975 466.0156,53.6725 Q466.0156,50.5475 467.3281,48.8912 Q468.6563,47.235 471.1563,47.235 Q471.8594,47.235 472.5,47.3912 Q473.1563,47.5475 473.7188,47.8443 L473.7188,50.5631 Q473.0938,49.985 472.5,49.7193 Q471.9063,49.4381 471.2813,49.4381 Q469.9375,49.4381 469.25,50.5162 Q468.5625,51.5787 468.5625,53.6725 Q468.5625,55.7662 469.25,56.8443 Q469.9375,57.9068 471.2813,57.9068 Q471.9063,57.9068 472.5,57.6412 Q473.0938,57.36 473.7188,56.7818 L473.7188,59.5006 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="52" x="505.75" y="50.3439">«Factory»</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="81" x="491.25" y="66.6881">VehicleFactory</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="332.5" x2="698.5" y1="75.2041" y2="75.2041"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="190" x="337.5" y="90.963">-typeMap: map&lt;string, VehicleType&gt;</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="332.5" x2="698.5" y1="98.186" y2="98.186"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="247" x="337.5" y="113.9449">+createVehicle(type: VehicleType, brand: string,</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="344" x="349.5" y="128.9268">year: int, price: double, extraParam: double): unique_ptr&lt;Vehicle&gt;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="289" x="337.5" y="143.9087">+createVehicleByName(typeName: string, brand: string,</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="344" x="349.5" y="158.8905">year: int, price: double, extraParam: double): unique_ptr&lt;Vehicle&gt;</text><path d="M734.5,41.5158 L734.5,95.5158 L699.65,99.5158 L734.5,103.5158 L734.5,157.7519 A0,0 0 0 0 734.5,157.7519 L978.5,157.7519 A0,0 0 0 0 978.5,157.7519 L978.5,51.5158 L968.5,41.5158 L734.5,41.5158 A0,0 0 0 0 734.5,41.5158 " fill="#FBFB77" filter="url(#f1vge5xmgzcdpw)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M968.5,41.5158 L968.5,51.5158 L978.5,51.5158 L968.5,41.5158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="152" x="740.5" y="60.4129">Çağdaş Factory Pattern</text><ellipse cx="746" cy="74.4279" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="158" x="752.5" y="78.1189">Enum tabanlı tür güvenliği</text><ellipse cx="746" cy="92.1339" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="127" x="752.5" y="95.8249">unique_ptr döndürür</text><ellipse cx="746" cy="109.8399" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="116" x="752.5" y="113.5309">Switch-case kullanır</text><ellipse cx="746" cy="127.5459" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="211" x="752.5" y="131.2369">String tabanlı muadil üye fonksiyon</text><ellipse cx="746" cy="145.2519" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="115" x="752.5" y="148.9429">Exception handling</text><path d="M381.5,302.5158 L381.5,401.0459 A0,0 0 0 0 381.5,401.0459 L557.5,401.0459 A0,0 0 0 0 557.5,401.0459 L557.5,356.0158 L592.88,352.0158 L557.5,348.0158 L557.5,312.5158 L547.5,302.5158 L381.5,302.5158 A0,0 0 0 0 381.5,302.5158 " fill="#FBFB77" filter="url(#f1vge5xmgzcdpw)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M547.5,302.5158 L547.5,312.5158 L557.5,312.5158 L547.5,302.5158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="144" x="387.5" y="321.4129">Zengin Domain Model</text><ellipse cx="393" cy="335.4279" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="131" x="399.5" y="339.1189">Protected member'lar</text><ellipse cx="393" cy="353.1339" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="143" x="399.5" y="356.8249">Getter üye fonksiyonları</text><ellipse cx="393" cy="370.8399" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="137" x="399.5" y="374.5309">Soyut üye fonksiyonlar</text><ellipse cx="393" cy="388.5459" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="105" x="399.5" y="392.2369">Virtual destructor</text><path d="M379,721.5158 L379,802.3399 A0,0 0 0 0 379,802.3399 L670,802.3399 A0,0 0 0 0 670,802.3399 L670,731.5158 L660,721.5158 L528.5,721.5158 L524.5,660.8858 L520.5,721.5158 L379,721.5158 A0,0 0 0 0 379,721.5158 " fill="#FBFB77" filter="url(#f1vge5xmgzcdpw)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M660,721.5158 L660,731.5158 L670,731.5158 L660,721.5158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="64" x="385" y="740.4129">Kullanım:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="238" x="385" y="758.1189">auto car = VehicleFactory::createVehicle(</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="258" x="397" y="775.8249">VehicleType::CAR, "BMW", 2023, 1500000, 4);</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="106" x="385" y="793.5309">car-&gt;displayInfo();</text><path d="M1014,68.0158 L1014,131.1339 A0,0 0 0 0 1014,131.1339 L1079.7,131.1339 L1062.17,305.1658 L1087.7,131.1339 L1161,131.1339 A0,0 0 0 0 1161,131.1339 L1161,78.0158 L1151,68.0158 L1014,68.0158 A0,0 0 0 0 1014,68.0158 " fill="#FBFB77" filter="url(#f1vge5xmgzcdpw)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M1151,68.0158 L1151,78.0158 L1161,78.0158 L1151,68.0158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="75" x="1020" y="86.9129">Type Safety</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="82" x="1020" y="104.6189">Enum class ile</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="126" x="1020" y="122.3249">tür güvenliği sağlanır</text><!--MD5=[22dd0d5001cffe3a5a97c942353cd104]
+reverse link Vehicle to Car--><path d="M607,475.5258 C592.49,497.0658 577.98,518.6058 565.27,537.4858 " fill="none" id="Vehicle&lt;-Car" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="none" points="601.35,471.3758,618.33,458.6958,612.96,479.1958,601.35,471.3758" style="stroke: #2C5F7C; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="48" x="598.5" y="503.4129">extends</text><!--MD5=[5437b71c4263c18bb97f8e8b4edef371]
+reverse link Vehicle to Motorcycle--><path d="M760.81,476.0058 C767.89,486.8258 775.18,497.4658 782.5,507.5158 C789.75,517.4558 797.85,527.6258 806.03,537.3858 " fill="none" id="Vehicle&lt;-Motorcycle" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="none" points="754.76,479.5358,749.86,458.9258,766.54,471.9858,754.76,479.5358" style="stroke: #2C5F7C; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="48" x="783.5" y="503.4129">extends</text><!--MD5=[cb9cad99a4306261c52d19c3b1cac949]
+reverse link Vehicle to Truck--><path d="M575.94,457.6458 C575.46,457.9358 574.98,458.2258 574.5,458.5158 C553.14,471.2858 442.51,509.5658 343.01,542.7958 " fill="none" id="Vehicle&lt;-Truck" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="none" points="572.26,451.6858,592.8,446.4758,580,463.3558,572.26,451.6858" style="stroke: #2C5F7C; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="48" x="501.5" y="503.4129">extends</text><!--MD5=[ab142e0a36d1bf57b5e12ecb93facfd7]
+link VehicleFactory to Vehicle--><path d="M561.44,166.6558 C577.24,189.4058 595.39,215.5258 612.95,240.8158 " fill="none" id="VehicleFactory-&gt;Vehicle" style="stroke: #2C5F7C; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#2C5F7C" points="616,245.1958,614.1589,235.5206,613.151,241.0869,607.5846,240.0791,616,245.1958" style="stroke: #2C5F7C; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="43" x="593.5" y="211.4129">creates</text><!--MD5=[06be5e966294a6fb0ea468cc55e0a347]
+link VehicleFactory to Car--><path d="M388.99,166.5758 C360.7,187.7558 334.4,214.0558 318.5,245.5158 C275.78,329.9958 274.13,374.8858 318.5,458.5158 C334.8,489.2458 361.24,514.4458 389.81,534.5558 " fill="none" id="VehicleFactory-&gt;Car" style="stroke: #2C5F7C; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#2C5F7C" points="394.05,537.4858,388.9332,529.0705,389.9411,534.6368,384.3748,535.6447,394.05,537.4858" style="stroke: #2C5F7C; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="43" x="319.5" y="357.4129">creates</text><!--MD5=[6a9924d911d7684c55713e42e79bbfd9]
+link VehicleFactory to Motorcycle--><path d="M699.85,161.1058 C739.39,182.0858 777.15,209.6558 803.5,245.5158 C865.37,329.7058 870.93,455.7358 867.5,532.0758 " fill="none" id="VehicleFactory-&gt;Motorcycle" style="stroke: #2C5F7C; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#2C5F7C" points="867.23,537.4858,871.638,528.6785,867.459,532.4911,863.6464,528.3121,867.23,537.4858" style="stroke: #2C5F7C; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="43" x="868.5" y="357.4129">creates</text><!--MD5=[6c1a3cec02f83df3ecb73392180cfe90]
+link VehicleFactory to Truck--><path d="M331.36,163.8458 C293.98,184.5258 258.5,211.2858 233.5,245.5158 C171.94,329.8058 165.8,455.5158 168.84,531.8258 " fill="none" id="VehicleFactory-&gt;Truck" style="stroke: #2C5F7C; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#2C5F7C" points="169.07,537.2358,172.6798,528.0724,168.8553,532.2405,164.6872,528.4159,169.07,537.2358" style="stroke: #2C5F7C; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="43" x="234.5" y="357.4129">creates</text><!--MD5=[19832f9edba2f36adb5f65411ef3974e]
+link VehicleFactory to VehicleType--><path d="M699.76,162.1358 C705.39,163.6558 710.98,165.1258 716.5,166.5158 C790.05,185.0558 816.34,163.2358 884.5,196.5158 C935.83,221.5858 983.25,266.5258 1015.23,301.4958 " fill="none" id="VehicleFactory-&gt;VehicleType" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="#2C5F7C" points="1018.67,305.2858,1015.5847,295.9327,1015.3102,301.5829,1009.66,301.3084,1018.67,305.2858" style="stroke: #2C5F7C; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="27" x="918.5" y="211.4129">uses</text><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="319" x="430" y="823.2058">Oluşturulma: 15.10.2025 | Sürüm: 1.0.0 | Pattern: Çağdaş Factory</text><!--MD5=[422cd6e4d5f8c07a3793ff24100c28a1]
+@startuml
+
+title Gelişmiş Vehicle Factory - Class Diyagramı
+
+skinparam classAttributeIconSize 0
+skinparam class {
+    BackgroundColor #E8F4F8
+    BorderColor #2C5F7C
+    ArrowColor #2C5F7C
+}
+
+skinparam enum {
+    BackgroundColor #FFE8CC
+    BorderColor #CC8800
+}
+
+enum VehicleType {
+    CAR
+    MOTORCYCLE
+    TRUCK
+}
+
+abstract class Vehicle {
+    # brand: string
+    # year: int
+    # price: double
+    __
+    + Vehicle(b: string, y: int, p: double)
+    + ~Vehicle()
+    + {abstract} displayInfo(): void
+    + {abstract} start(): void
+    + {abstract} calculateTax(): double
+    + getBrand(): string
+    + getYear(): int
+    + getPrice(): double
+}
+
+class Car {
+    - doorCount: int
+    __
+    + Car(brand: string, year: int, price: double, doors: int)
+    + displayInfo(): void
+    + start(): void
+    + calculateTax(): double
+}
+
+class Motorcycle {
+    - engineCC: int
+    __
+    + Motorcycle(brand: string, year: int, price: double, cc: int)
+    + displayInfo(): void
+    + start(): void
+    + calculateTax(): double
+}
+
+class Truck {
+    - loadCapacity: double
+    __
+    + Truck(brand: string, year: int, price: double, capacity: double)
+    + displayInfo(): void
+    + start(): void
+    + calculateTax(): double
+}
+
+class VehicleFactory <<Factory>> {
+    + {static} createVehicle(type: VehicleType, brand: string, \n    year: int, price: double, extraParam: double): unique_ptr<Vehicle>
+    + {static} createVehicleByName(typeName: string, brand: string, \n    year: int, price: double, extraParam: double): unique_ptr<Vehicle>
+    - {static} typeMap: map<string, VehicleType>
+}
+
+Vehicle <|- - Car : extends
+Vehicle <|- - Motorcycle : extends
+Vehicle <|- - Truck : extends
+
+VehicleFactory ..> Vehicle : creates
+VehicleFactory ..> Car : creates
+VehicleFactory ..> Motorcycle : creates
+VehicleFactory ..> Truck : creates
+VehicleFactory - -> VehicleType : uses
+
+note right of VehicleFactory
+  **Çağdaş Factory Pattern**
+  * Enum tabanlı tür güvenliği
+  * unique_ptr döndürür
+  * Switch-case kullanır
+  * String tabanlı muadil üye fonksiyon
+  * Exception handling
+end note
+
+note left of Vehicle
+  **Zengin Domain Model**
+  * Protected member'lar
+  * Getter üye fonksiyonları
+  * Soyut üye fonksiyonlar
+  * Virtual destructor
+end note
+
+note bottom of Car
+  **Kullanım:**
+  auto car = VehicleFactory::createVehicle(
+      VehicleType::CAR, "BMW", 2023, 1500000, 4);
+  car->displayInfo();
+end note
+
+note top of VehicleType
+  **Type Safety**
+  Enum class ile
+  tür güvenliği sağlanır
+end note
+
+footer Oluşturulma: 15.10.2025 | Sürüm: 1.0.0 | Pattern: Çağdaş Factory
+
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 13:22:07 TRT 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 21.0.8+9-Ubuntu-0ubuntu124.04.1
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

@@ -1,0 +1,129 @@
+@startuml advanced-vehicle-factory-class
+/'
+ * @file advanced-vehicle-factory-class.puml
+ * @brief gelişmiş factory pattern implementasyonu - vehicle örneği
+ * @author AI Assistant
+ * @date 15.10.2025
+ * @version 1.0.0
+ * 
+ * @description bu diyagram çağdaş C++ özellikleri ile geliştirilmiş
+ *              factory pattern yapısını gösterir. Smart pointer kullanımı,
+ *              enum tabanlı tür güvenliği ve zengin domain model içerir
+ '/
+
+title Gelişmiş Vehicle Factory - Class Diyagramı
+
+skinparam classAttributeIconSize 0
+skinparam class {
+    BackgroundColor #E8F4F8
+    BorderColor #2C5F7C
+    ArrowColor #2C5F7C
+}
+
+skinparam enum {
+    BackgroundColor #FFE8CC
+    BorderColor #CC8800
+}
+
+' Enum tanımı
+enum VehicleType {
+    CAR
+    MOTORCYCLE
+    TRUCK
+}
+
+' Soyut ürün sınıfı
+abstract class Vehicle {
+    # brand: string
+    # year: int
+    # price: double
+    __
+    + Vehicle(b: string, y: int, p: double)
+    + ~Vehicle()
+    + {abstract} displayInfo(): void
+    + {abstract} start(): void
+    + {abstract} calculateTax(): double
+    + getBrand(): string
+    + getYear(): int
+    + getPrice(): double
+}
+
+' Somut ürünler
+class Car {
+    - doorCount: int
+    __
+    + Car(brand: string, year: int, price: double, doors: int)
+    + displayInfo(): void
+    + start(): void
+    + calculateTax(): double
+}
+
+class Motorcycle {
+    - engineCC: int
+    __
+    + Motorcycle(brand: string, year: int, price: double, cc: int)
+    + displayInfo(): void
+    + start(): void
+    + calculateTax(): double
+}
+
+class Truck {
+    - loadCapacity: double
+    __
+    + Truck(brand: string, year: int, price: double, capacity: double)
+    + displayInfo(): void
+    + start(): void
+    + calculateTax(): double
+}
+
+' Factory sınıfı
+class VehicleFactory <<Factory>> {
+    + {static} createVehicle(type: VehicleType, brand: string, \n    year: int, price: double, extraParam: double): unique_ptr<Vehicle>
+    + {static} createVehicleByName(typeName: string, brand: string, \n    year: int, price: double, extraParam: double): unique_ptr<Vehicle>
+    - {static} typeMap: map<string, VehicleType>
+}
+
+' İlişkiler
+Vehicle <|-- Car : extends
+Vehicle <|-- Motorcycle : extends
+Vehicle <|-- Truck : extends
+
+VehicleFactory ..> Vehicle : creates
+VehicleFactory ..> Car : creates
+VehicleFactory ..> Motorcycle : creates
+VehicleFactory ..> Truck : creates
+VehicleFactory --> VehicleType : uses
+
+note right of VehicleFactory
+  **Çağdaş Factory Pattern**
+  * Enum tabanlı tür güvenliği
+  * unique_ptr döndürür
+  * Switch-case kullanır
+  * String tabanlı muadil üye fonksiyon
+  * Exception handling
+end note
+
+note left of Vehicle
+  **Zengin Domain Model**
+  * Protected member'lar
+  * Getter üye fonksiyonları
+  * Soyut üye fonksiyonlar
+  * Virtual destructor
+end note
+
+note bottom of Car
+  **Kullanım:**
+  auto car = VehicleFactory::createVehicle(
+      VehicleType::CAR, "BMW", 2023, 1500000, 4);
+  car->displayInfo();
+end note
+
+note top of VehicleType
+  **Type Safety**
+  Enum class ile
+  tür güvenliği sağlanır
+end note
+
+footer Oluşturulma: 15.10.2025 | Sürüm: 1.0.0 | Pattern: Çağdaş Factory
+
+@enduml
