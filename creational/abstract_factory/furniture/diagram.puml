@@ -1,0 +1,155 @@
+@startuml furniture-abstract-factory
+/'
+ * @file furniture-abstract-factory.puml
+ * @brief mobilya üretimi için abstract factory pattern implementasyonu
+ * @author AI Assistant
+ * @date 15.10.2025
+ * @version 1.0.0
+ * 
+ * @description bu diyagram modern ve klasik mobilya ailelerini üreten
+ *              abstract factory pattern yapısını gösterir. Her fabrika
+ *              kendi tarzında sandalye ve masa üretir
+ * 
+ * @pattern Abstract Factory (Creational)
+ '/
+
+title Mobilya Fabrikası - Abstract Factory Pattern
+
+skinparam classAttributeIconSize 0
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+
+skinparam class {
+    BackgroundColor #E8F4F8
+    BorderColor #2C5F7C
+    ArrowColor #2C5F7C
+}
+
+' ========== Soyut Ürün Arayüzleri ==========
+
+abstract class Chair <<interface>> {
+    + ~Chair()
+    + {abstract} sitOn(): void
+}
+
+abstract class Table <<interface>> {
+    + ~Table()
+    + {abstract} use(): void
+}
+
+' ========== Modern Mobilya Ürünleri ==========
+
+package "Modern Ürünler" #E8F5E9 {
+    class ModernChair {
+        + sitOn(): void
+    }
+    
+    class ModernTable {
+        + use(): void
+    }
+}
+
+' ========== Klasik Mobilya Ürünleri ==========
+
+package "Klasik Ürünler" #FFF3E0 {
+    class ClassicChair {
+        + sitOn(): void
+    }
+    
+    class ClassicTable {
+        + use(): void
+    }
+}
+
+' ========== Soyut Fabrika ==========
+
+abstract class FurnitureFactory <<Abstract Factory>> {
+    + ~FurnitureFactory()
+    + {abstract} createChair(): unique_ptr<Chair>
+    + {abstract} createTable(): unique_ptr<Table>
+}
+
+' ========== Somut Fabrikalar ==========
+
+class ModernFurnitureFactory <<Concrete Factory>> {
+    + createChair(): unique_ptr<Chair>
+    + createTable(): unique_ptr<Table>
+}
+
+class ClassicFurnitureFactory <<Concrete Factory>> {
+    + createChair(): unique_ptr<Chair>
+    + createTable(): unique_ptr<Table>
+}
+
+' ========== İlişkiler - Kalıtım ==========
+
+Chair <|-- ModernChair : implements
+Chair <|-- ClassicChair : implements
+
+Table <|-- ModernTable : implements
+Table <|-- ClassicTable : implements
+
+FurnitureFactory <|-- ModernFurnitureFactory : implements
+FurnitureFactory <|-- ClassicFurnitureFactory : implements
+
+' ========== İlişkiler - Oluşturma ==========
+
+FurnitureFactory ..> Chair : creates
+FurnitureFactory ..> Table : creates
+
+ModernFurnitureFactory ..> ModernChair : creates
+ModernFurnitureFactory ..> ModernTable : creates
+
+ClassicFurnitureFactory ..> ClassicChair : creates
+ClassicFurnitureFactory ..> ClassicTable : creates
+
+' ========== Notlar ==========
+
+note right of FurnitureFactory
+  **Abstract Factory**
+  * Ürün ailelerini oluşturur
+  * Her fabrika kendi tarzında
+    mobilya üretir
+  * Client somut sınıfları bilmez
+end note
+
+note bottom of ModernChair
+  **Kullanım Örneği:**
+  
+  unique_ptr<FurnitureFactory> factory;
+  factory = make_unique<ModernFurnitureFactory>();
+  
+  auto chair = factory->createChair();
+  auto table = factory->createTable();
+  
+  chair->sitOn();
+  table->use();
+end note
+
+note top of Chair
+  **Soyut Ürün Ailesi**
+  * Chair (Sandalye)
+  * Table (Masa)
+  
+  Her ürün farklı tarzlarda
+  üretilebilir
+end note
+
+note as PatternInfo
+  **Abstract Factory Pattern Faydaları:**
+  
+  ✓ Ürün ailelerini tutarlı şekilde oluşturur
+  ✓ Yeni tarz eklemek kolay (yeni fabrika)
+  ✓ Client kodu somut sınıflara bağımlı değil
+  ✓ Single Responsibility Principle
+  ✓ Open/Closed Principle
+  
+  **Ne Zaman Kullanılır:**
+  • Birbiriyle ilişkili ürün aileleri
+  • Ürünlerin birlikte çalışması gerekli
+  • Farklı varyantlar/temalar
+end note
+
+footer Oluşturulma: 15.10.2025 | Sürüm: 1.0.0 | Pattern: Abstract Factory
+
+@enduml

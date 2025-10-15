@@ -1,0 +1,261 @@
+@startuml abstract-factory-comparison-diff
+/'
+ * @file abstract-factory-comparison-diff.puml
+ * @brief mobilya ve GUI fabrikalarının karşılaştırmalı analizi
+ * @author AI Assistant
+ * @date 15.10.2025
+ * @version 1.0.0
+ * 
+ * @description bu diyagram iki farklı abstract factory implementasyonunu
+ *              yan yana karşılaştırır ve aralarındaki yapısal farkları,
+ *              benzerlikleri ve kullanım vakalarını gösterir
+ * 
+ * @pattern Abstract Factory (Creational)
+ * @comparison Furniture Factory vs GUI Factory
+ '/
+
+title Abstract Factory Pattern - Mobilya vs GUI Karşılaştırması
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+
+skinparam package {
+    BackgroundColor #E8F4F8
+    BorderColor #2C5F7C
+}
+
+' ========== Mobilya Fabrikası Yapısı ==========
+
+package "Mobilya Fabrikası (2 Stil)" #E8F5E9 {
+    
+    abstract class "FurnitureFactory" as FF1 <<Abstract Factory>> {
+        + createChair(): unique_ptr<Chair>
+        + createTable(): unique_ptr<Table>
+    }
+    
+    abstract class "Chair" as CH1 <<Product>> {
+        + sitOn(): void
+    }
+    
+    abstract class "Table" as TB1 <<Product>> {
+        + use(): void
+    }
+    
+    class "ModernFurnitureFactory" as MFF {
+    }
+    
+    class "ClassicFurnitureFactory" as CFF {
+    }
+    
+    class "ModernChair" as MC {
+    }
+    
+    class "ClassicChair" as CC {
+    }
+    
+    FF1 <|-- MFF
+    FF1 <|-- CFF
+    CH1 <|-- MC
+    CH1 <|-- CC
+    
+    FF1 ..> CH1 : creates
+    FF1 ..> TB1 : creates
+}
+
+' ========== GUI Fabrikası Yapısı ==========
+
+package "GUI Fabrikası (3 Platform)" #FFF3E0 {
+    
+    abstract class "GUIFactory" as GF1 <<Abstract Factory>> {
+        + createButton(): unique_ptr<Button>
+        + createCheckbox(): unique_ptr<Checkbox>
+    }
+    
+    abstract class "Button" as BT1 <<Product>> {
+        + render(): void
+        + onClick(): void
+    }
+    
+    abstract class "Checkbox" as CB1 <<Product>> {
+        + render(): void
+        + toggle(): void
+    }
+    
+    class "WindowsFactory" as WF {
+    }
+    
+    class "MacFactory" as MF {
+    }
+    
+    class "LinuxFactory" as LF {
+    }
+    
+    class "WindowsButton" as WB {
+    }
+    
+    class "MacButton" as MB {
+    }
+    
+    GF1 <|-- WF
+    GF1 <|-- MF
+    GF1 <|-- LF
+    BT1 <|-- WB
+    BT1 <|-- MB
+    
+    GF1 ..> BT1 : creates
+    GF1 ..> CB1 : creates
+    
+    class "Application" as APP <<Client>> {
+        - button: unique_ptr<Button>
+        - checkbox: unique_ptr<Checkbox>
+        + render(): void
+        + interact(): void
+    }
+    
+    APP o--> BT1
+    APP o--> CB1
+}
+
+' ========== Karşılaştırma Notları ==========
+
+note as StructuralDiff
+  **Yapısal Farklar**
+  
+  ╔═══════════════════════════════════════════════════════╗
+  ║ Özellik              │ Mobilya      │ GUI            ║
+  ╠═══════════════════════════════════════════════════════╣
+  ║ Fabrika Sayısı       │ 2 (M/C)      │ 3 (W/M/L)      ║
+  ║ Ürün Ailesi          │ 2 (C/T)      │ 2 (B/CB)       ║
+  ║ Toplam Somut Sınıf   │ 4            │ 6              ║
+  ║ Client Sınıfı        │ Yok          │ Application    ║
+  ║ Ürün Metod Sayısı    │ 1            │ 2              ║
+  ║ Domain               │ Mobilya      │ GUI/Platform   ║
+  ╚═══════════════════════════════════════════════════════╝
+  
+  **Ortak Özellikler:**
+  ✓ Abstract Factory Pattern
+  ✓ Soyut ürün aileleri
+  ✓ Tutarlı ürün oluşturma
+end note
+
+note as UsageDiff
+  **Kullanım Vakaları**
+  
+  **Mobilya Fabrikası:**
+  ```cpp
+  unique_ptr<FurnitureFactory> factory;
+  factory = make_unique<ModernFurnitureFactory>();
+  
+  auto chair = factory->createChair();
+  auto table = factory->createTable();
+  
+  chair->sitOn();  // Tek metod
+  table->use();    // Tek metod
+  ```
+  
+  **GUI Fabrikası:**
+  ```cpp
+  unique_ptr<GUIFactory> factory;
+  factory = make_unique<WindowsFactory>();
+  
+  Application app(*factory);
+  
+  app.render();    // Tüm bileşenleri çiz
+  app.interact();  // Tüm bileşenlerle etkileş
+  ```
+  
+  **Fark:** GUI'de Client sınıfı (Application)
+  fabrika kullanımını soyutlar ve yönetir
+end note
+
+note as ComplexityAnalysis
+  **Karmaşıklık Analizi**
+  
+  **Mobilya Fabrikası:**
+  • Karmaşıklık: ⭐⭐ (Düşük)
+  • Sınıf Sayısı: 7
+  • İlişki Sayısı: 6
+  • Öğrenme Eğrisi: Kolay
+  • Kullanım: Doğrudan fabrika
+  
+  **GUI Fabrikası:**
+  • Karmaşıklık: ⭐⭐⭐ (Orta)
+  • Sınıf Sayısı: 11
+  • İlişki Sayısı: 10
+  • Öğrenme Eğrisi: Orta
+  • Kullanım: Client sınıfı üzerinden
+  
+  **Sonuç:** GUI daha karmaşık ama
+  daha gerçekçi bir production örneği
+end note
+
+note as WhenToUse
+  **Hangi Yaklaşım Ne Zaman Kullanılır?**
+  
+  **Mobilya Tarzı (Basit):**
+  ✓ Öğrenme amaçlı projeler
+  ✓ Basit ürün aileleri
+  ✓ Az sayıda varyant
+  ✓ Doğrudan fabrika kullanımı yeterli
+  
+  **GUI Tarzı (Gelişmiş):**
+  ✓ Production kodları
+  ✓ Karmaşık ürün aileleri
+  ✓ Çok sayıda platform/varyant
+  ✓ Client sınıfı ile soyutlama gerekli
+  ✓ Bileşenler arası koordinasyon
+  
+  **Ortak Kullanım Alanları:**
+  • Tema/Stil sistemleri
+  • Platform bağımsız kod
+  • Plugin mimarileri
+  • Çoklu veritabanı desteği
+end note
+
+note as DesignPrinciples
+  **Tasarım İlkeleri Karşılaştırması**
+  
+  **Her İkisi de Sağlar:**
+  ✓ **Dependency Inversion:** Client soyut
+    fabrikaya bağımlı
+  ✓ **Open/Closed:** Yeni fabrika eklemek
+    mevcut kodu değiştirmez
+  ✓ **Single Responsibility:** Her fabrika
+    kendi ailesini üretir
+  
+  **GUI Ek Olarak Sağlar:**
+  ✓ **Facade Pattern:** Application sınıfı
+    fabrika kullanımını gizler
+  ✓ **Composition:** Application bileşenleri
+    kompozisyon ile tutar
+  
+  **Mobilya Artısı:**
+  ✓ **Simplicity:** Daha az soyutlama katmanı
+  ✓ **Directness:** Doğrudan fabrika erişimi
+end note
+
+note as RealWorldMapping
+  **Gerçek Dünya Eşleştirmeleri**
+  
+  **Mobilya Fabrikası Benzerleri:**
+  • Tema sistemleri (Light/Dark)
+  • Dokuman biçimleri (PDF/Word)
+  • Veritabanı türleri (SQL/NoSQL)
+  
+  **GUI Fabrikası Benzerleri:**
+  • Cross-platform UI (Qt, wxWidgets)
+  • Game engine renderers (DirectX/OpenGL/Vulkan)
+  • Cloud providers (AWS/Azure/GCP)
+  • Payment gateways (Stripe/PayPal/Square)
+  
+  **Fark:** GUI örneği daha gerçekçi
+  production vakalarını yansıtır
+end note
+
+StructuralDiff -[hidden]- UsageDiff
+ComplexityAnalysis -[hidden]- WhenToUse
+DesignPrinciples -[hidden]- RealWorldMapping
+
+footer Oluşturulma: 15.10.2025 | Sürüm: 1.0.0 | Karşılaştırma: Abstract Factory Diff
+
+@enduml

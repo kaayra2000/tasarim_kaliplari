@@ -1,0 +1,222 @@
+@startuml gui-abstract-factory
+/'
+ * @file gui-abstract-factory.puml
+ * @brief çoklu platform GUI bileşenleri için abstract factory pattern
+ * @author AI Assistant
+ * @date 15.10.2025
+ * @version 1.0.0
+ * 
+ * @description bu diyagram Windows, MacOS ve Linux platformları için
+ *              tutarlı GUI bileşenleri üreten abstract factory yapısını
+ *              gösterir. Her platform kendi tarzında buton ve checkbox üretir
+ * 
+ * @pattern Abstract Factory (Creational)
+ * @platforms Windows, MacOS, Linux
+ '/
+
+title GUI Fabrikası - Çoklu Platform Abstract Factory Pattern
+
+skinparam classAttributeIconSize 0
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+
+skinparam class {
+    BackgroundColor #E8F4F8
+    BorderColor #2C5F7C
+    ArrowColor #2C5F7C
+}
+
+' ========== Soyut Ürün Arayüzleri ==========
+
+abstract class Button <<interface>> {
+    + ~Button()
+    + {abstract} render(): void
+    + {abstract} onClick(): void
+}
+
+abstract class Checkbox <<interface>> {
+    + ~Checkbox()
+    + {abstract} render(): void
+    + {abstract} toggle(): void
+}
+
+' ========== Windows Ürünleri ==========
+
+package "Windows Bileşenleri" #E3F2FD {
+    class WindowsButton {
+        + render(): void
+        + onClick(): void
+    }
+    
+    class WindowsCheckbox {
+        + render(): void
+        + toggle(): void
+    }
+}
+
+' ========== MacOS Ürünleri ==========
+
+package "MacOS Bileşenleri" #F3E5F5 {
+    class MacButton {
+        + render(): void
+        + onClick(): void
+    }
+    
+    class MacCheckbox {
+        + render(): void
+        + toggle(): void
+    }
+}
+
+' ========== Linux Ürünleri ==========
+
+package "Linux Bileşenleri" #FFF9C4 {
+    class LinuxButton {
+        + render(): void
+        + onClick(): void
+    }
+    
+    class LinuxCheckbox {
+        + render(): void
+        + toggle(): void
+    }
+}
+
+' ========== Soyut Fabrika ==========
+
+abstract class GUIFactory <<Abstract Factory>> {
+    + ~GUIFactory()
+    + {abstract} createButton(): unique_ptr<Button>
+    + {abstract} createCheckbox(): unique_ptr<Checkbox>
+}
+
+' ========== Somut Fabrikalar ==========
+
+class WindowsFactory <<Concrete Factory>> {
+    + createButton(): unique_ptr<Button>
+    + createCheckbox(): unique_ptr<Checkbox>
+}
+
+class MacFactory <<Concrete Factory>> {
+    + createButton(): unique_ptr<Button>
+    + createCheckbox(): unique_ptr<Checkbox>
+}
+
+class LinuxFactory <<Concrete Factory>> {
+    + createButton(): unique_ptr<Button>
+    + createCheckbox(): unique_ptr<Checkbox>
+}
+
+' ========== Client Sınıfı ==========
+
+class Application <<Client>> {
+    - button: unique_ptr<Button>
+    - checkbox: unique_ptr<Checkbox>
+    __
+    + Application(factory: GUIFactory&)
+    + render(): void
+    + interact(): void
+}
+
+' ========== İlişkiler - Kalıtım ==========
+
+Button <|-- WindowsButton : implements
+Button <|-- MacButton : implements
+Button <|-- LinuxButton : implements
+
+Checkbox <|-- WindowsCheckbox : implements
+Checkbox <|-- MacCheckbox : implements
+Checkbox <|-- LinuxCheckbox : implements
+
+GUIFactory <|-- WindowsFactory : implements
+GUIFactory <|-- MacFactory : implements
+GUIFactory <|-- LinuxFactory : implements
+
+' ========== İlişkiler - Oluşturma ==========
+
+GUIFactory ..> Button : creates
+GUIFactory ..> Checkbox : creates
+
+WindowsFactory ..> WindowsButton : creates
+WindowsFactory ..> WindowsCheckbox : creates
+
+MacFactory ..> MacButton : creates
+MacFactory ..> MacCheckbox : creates
+
+LinuxFactory ..> LinuxButton : creates
+LinuxFactory ..> LinuxCheckbox : creates
+
+' ========== İlişkiler - Kullanım ==========
+
+Application o--> Button : uses
+Application o--> Checkbox : uses
+Application ..> GUIFactory : depends on
+
+' ========== Notlar ==========
+
+note right of GUIFactory
+  **Abstract Factory**
+  * Platform bağımsız arayüz
+  * Her platform kendi GUI
+    bileşenlerini üretir
+  * Tutarlı ürün ailesi teminatı
+end note
+
+note bottom of Application
+  **Client Kullanımı:**
+  
+  unique_ptr<GUIFactory> factory;
+  
+  if (platform == "windows")
+      factory = make_unique<WindowsFactory>();
+  else if (platform == "mac")
+      factory = make_unique<MacFactory>();
+  else
+      factory = make_unique<LinuxFactory>();
+  
+  Application app(*factory);
+  app.render();
+  app.interact();
+end note
+
+note top of Button
+  **Soyut Ürün Ailesi**
+  * Button (Buton)
+  * Checkbox (Onay Kutusu)
+  
+  Her platform için farklı
+  uygulama
+end note
+
+note as PlatformInfo
+  **Platform Desteği:**
+  
+  🪟 **Windows** → Windows tarzı bileşenler
+  🍎 **MacOS** → Mac tarzı bileşenler
+  🐧 **Linux** → Linux tarzı bileşenler
+  
+  **Faydalar:**
+  ✓ Platform bağımsız kod
+  ✓ Tutarlı kullanıcı deneyimi
+  ✓ Kolay platform ekleme
+  ✓ Bileşenler birlikte çalışır
+end note
+
+note as DesignPrinciples
+  **Tasarım İlkeleri:**
+  
+  • **Dependency Inversion:** Client soyut
+    fabrikaya bağımlı, somut sınıflara değil
+  
+  • **Open/Closed:** Yeni platform eklemek
+    için mevcut kod değişmez
+  
+  • **Single Responsibility:** Her fabrika
+    sadece kendi platformunu üretir
+end note
+
+PlatformInfo -[hidden]- DesignPrinciples
+
+footer Oluşturulma: 15.10.2025 | Sürüm: 1.0.0 | Pattern: Abstract Factory (Multi-Platform)
+
+@enduml
