@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Kullanım:
-#   ./puml_to_images.sh         # Bulunduğun dizinden itibaren
-#   ./puml_to_images.sh /yol    # Verilen kök dizinden itibaren
+#   ./puml_to_uml.sh         # Bulunduğun dizinden itibaren
+#   ./puml_to_uml.sh /yol    # Verilen kök dizinden itibaren
 ROOT="${1:-.}"
 
 # PlantUML var mı?
