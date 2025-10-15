@@ -36,15 +36,15 @@ Tasarım kalıpları doğru uygulandığında kodun okunaklığı artar çünkü
 
 Genel olarak üç ana kategori vardır:
 
-- Creational (Yaratıcı) Kalıplar:
-	- Nesne oluşturma süreçlerini soyutlar. Nesne yaratmayı merkezi hale getirerek esneklik sağlar.
+- Oluşum Kalıpları (Creational Patterns):
+	- Nesne oluşturma süreçlerini soyutlar. Nesne oluşturmayı merkezi hale getirerek esneklik sağlar.
 	- Örnekler: Singleton, Factory Method, Abstract Factory, Builder, Prototype.
 
-- Structural (Yapısal) Kalıplar:
+- Yapı Kalıpları (Structural Patterns):
 	- Sınıfların ve nesnelerin bileşimini düzenler; daha büyük yapıların oluşturulmasını kolaylaştırır.
 	- Örnekler: Adapter, Decorator, Facade, Composite, Bridge.
 
-- Behavioral (Davranışsal) Kalıplar:
+- Davranış Kalıpları (Behavioral Patterns):
 	- Nesneler arası iletişim ve sorumlulukların dağılımına odaklanır.
 	- Örnekler: Observer, Strategy, Command, Iterator, State, Chain of Responsibility.
 
