@@ -9,7 +9,7 @@
 - **Farklı temsiller** - Aynı yapım süreciyle farklı nesne türleri üretebilirsiniz (Gaming PC, Office PC)
 - **Okunabilir kod** - `builder.buildCPU().buildRAM().build()` şeklinde zincirleme çağrılar vesilesiyle daha anlaşılır kod yazılır.
 
-Örnekler
+## Örnekler
 
 ### 1. Basit Yaklaşım (Yönlendirici Yok)
 
@@ -42,6 +42,29 @@ auto pc = director.buildFullComputer();
 - **Klasik:** Farklı sınıf oluşturma vakaları için Director kullanımı
 
 Bilgisayar gibi çok bileşenli nesneler için idealdir. Kodunuz daha temiz ve bakımı kolay olur.
+
+## Nasıl Çalışır?
+
+1. **Builder sınıfı:** Nesnenin bileşenlerini adım adım ekleyen metotlar sağlar
+2. **Ürün (Product):** Oluşturulan karmaşık nesne (örn. Computer)
+3. **Director (opsiyonel):** Belirli bir yapım sırasını düzenler ve yönetir
+4. **İstemci:** Builder'ı kullanarak ihtiyacı olan bileşenleri seçer ve nesneyi inşa eder
+
+Builder genellikle method chaining (zincirleme çağrı) ile kullanılır: `builder.setCPU("Intel").setRAM(16).build()`
+
+## Ne Zaman Kullanılır?
+
+- **Çok sayıda seçimli parametre varsa** – Constructor'da 10+ parametre yerine builder kullanın
+- **Nesne oluşturma adımları karmaşıksa** – Her bileşenin ayrı mantığı varsa
+- **Farklı temsiller/konfigürasyonlar üretilecekse** – Gaming PC, Office PC gibi varyasyonlar
+- **Okunabilir ve bakımı kolay kod istiyorsanız** – Zincirleme çağrılar kodu anlaşılır yapar
+
+## Ne Zaman Kullanılmaz?
+
+- **Basit nesneler için** – Sadece 2-3 parametreli basit bir sınıfsa gereksizdir
+- **Nesne yapısı nadiren değişiyorsa** – Statik bir constructor yeterli olabilir
+- **Tek bir doğru yapım sırası varsa** – Normal constructor daha uygun
+- **Performans kritikse** – Builder ekstra nesne oluşturma maliyeti getirir
 
 ## Diğer Oluşturma Kalıplarıyla Farkları
 

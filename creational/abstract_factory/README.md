@@ -48,7 +48,7 @@ GUI ve Mobilya örneklerinin farklı kullanım senaryolarını ve benzerliklerin
 - **GUI:** Platform bağımsız arayüz bileşenleri
 - **Mobilya:** Stil tutarlılığı gerektiren ürün takımları
 
-## Nasıl Çalışır
+## Nasıl Çalışır?
 
 1. **Soyut Fabrika Arayüzü:** Tüm ürünleri oluşturacak metotları tanımlar
 2. **Somut Fabrikalar:** Her ürün ailesi için özel fabrika (ModernFactory, WindowsFactory vb.)
@@ -56,6 +56,20 @@ GUI ve Mobilya örneklerinin farklı kullanım senaryolarını ve benzerliklerin
 4. **Somut Ürünler:** Her fabrikaya özgü ürün implementasyonları (ModernChair, WindowsButton vb.)
 
 İstemci kodu sadece soyut fabrika ve soyut ürünlerle çalışır. Bu sayede somut sınıflara bağımlılık olmaz ve runtime'da farklı ürün aileleri kolayca değiştirilebilir.
+
+## Ne Zaman Kullanılır?
+
+- **Birbirleriyle uyumlu ürün aileleri gerektiğinde** – Örneğin bir tema için tüm GUI bileşenleri aynı stilden olmalı
+- **Platform bağımsız kod yazarken** – Windows, Mac, Linux gibi farklı platformlar için arayüz bileşenleri
+- **Ürün ailelerinin tutarlılığı kritikse** – Modern mobilya setindeki tüm parçaların Modern olması gerekiyor
+- **Yeni ürün aileleri eklenebileceği öngörülüyorsa** – Yeni bir platform veya stil eklemek mevcut kodu bozmaz
+
+## Ne Zaman Kullanılmaz?
+
+- **Tek bir ürün türü yeterliyse** – O zaman basit Factory Method kullanın
+- **Ürünler arası ilişki yoksa** – Abstract Factory gereksiz karmaşıklık oluşturur
+- **Ürün aileleri nadiren değişiyorsa** – Statik bir yapı daha basit olabilir
+- **Az sayıda varyasyon varsa** – Overengineering'den kaçının
 
 ## Diğer Oluşturma Kalıplarıyla Farkları
 

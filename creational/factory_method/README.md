@@ -8,7 +8,7 @@
 - **Yeni ürün tipi eklemeyi kolaylaştırır** - Yeni bir somut ürün eklemek genellikle fabrikanın güncellenmesiyle sınırlıdır.
 - **Bellek yönetimi ve akıllı işaretçilerle uyumlu** - Fabrika, ownership kurallarını merkezi olarak uygulayabilir.
 
-Örnekler
+## Örnekler
 
 ### 1. Basit string-tabanlı fabrika
 
@@ -40,9 +40,28 @@ car->displayInfo();
 
 Farklı factory yaklaşımlarının fayda/zararlarını gösterir.
 
-## Nasıl Çalışır
+## Nasıl Çalışır?
 
 Fabrika, istemciden aldığı bir anahtar (string, enum veya yapılandırma) ile hangi somut sınıfın üretileceğine karar verir ve nesneyi soyut bir sınıf olarak döndürür. Böylece istemci, somut sınıfın ayrıntılarına bağlı kalmadan davranışları kullanabilir.
+
+1. **Factory metodu:** Bir anahtar (string, enum) alır ve uygun somut sınıfı üretir
+2. **Soyut ürün:** Tüm somut ürünlerin paylaştığı arayüz veya taban sınıf
+3. **Somut ürünler:** Factory'nin ürettiği gerçek sınıflar (Circle, Car, vb.)
+4. **İstemci:** Sadece factory ve soyut ürünle çalışır, somut sınıfları bilmez
+
+## Ne Zaman Kullanılır?
+
+- **Hangi sınıfın oluşturulacağı runtime'da belli oluyorsa** – Kullanıcı girişi, config dosyası, veritabanı
+- **Yeni ürün tipleri sık ekleniyorsa** – Sadece factory'yi güncellemeniz yeterli
+- **İstemci kodunu somut sınıflardan ayırmak istiyorsanız** – Bağımlılığı azaltır
+- **Nesne yaratma mantığı merkezi olmalıysa** – Tekrar kullanım ve tutarlılık
+
+## Ne Zaman Kullanılmaz?
+
+- **Sadece bir veya iki somut sınıf varsa** – Gereksiz soyutlama oluşturur
+- **Ürün tipleri hiç değişmiyorsa** – Doğrudan `new Circle()` daha basittir
+- **Performans çok kritikse** – Factory ekstra indirection getirir
+- **Ürünler arası ilişki varsa** – O zaman Abstract Factory kullanın
 
 ## Diğer Oluşturma Kalıplarıyla Farkları
 

@@ -45,12 +45,26 @@ assassin->printStats();
 
 Şekil ve oyun karakteri örneklerinin farklı ihtiyaçlar (sığ/derin kopya) açısından karşılaştırmasını görselleştirir.
 
-## Nasıl Çalışır
+## Nasıl Çalışır?
 
 1. **Prototype Arayüzü**: `clone()` metodunu tanımlar (genellikle sanal/kopya yapıcı mantığıyla).
 2. **Somut Prototipler**: Kendi alanlarını kopyalayarak yeni bir örnek üretir; derin/sığ kopya kararı burada verilir.
 3. **İsteğe Bağlı Kayıt (Registry)**: Sık kullanılan prototipler bir haritada tutulur; anahtar ile `clone()` çağrılıp çoğaltılır.
 4. **İstemci**: Somut sınıfı bilmeden, prototipten klon alır ve küçük değişiklikler uygular.
+
+## Ne Zaman Kullanılır?
+
+- **Nesne oluşturma maliyetli olduğunda** – Veritabanı sorgusu, dosya okuma, karmaşık hesaplama gerektiren nesneler
+- **Çok sayıda benzer nesne gerektiğinde** – Bir şablon nesneyi klonlayıp küçük değişiklikler yaparak çoğaltma
+- **Runtime'da hangi sınıfın klonlanacağı belli oluyorsa** – Polimorfik klonlama
+- **Derin kopya kontrolü gerektiğinde** – Kendi `clone()` implementasyonunuzla kontrol sağlarsınız
+
+## Ne Zaman Kullanılmaz?
+
+- **Nesneler basit ve hızlı oluşturulabiliyorsa** – `new` ile oluşturmak daha direkt
+- **Durum (state) kopyalanmamalıysa** – Factory Method ile temiz başlatma daha uygun
+- **Sığ/derin kopya karmaşıklığı istemiyorsanız** – Hatalı implementasyon bug'lara yol açar
+- **Kopyalama mantığı karmaşıksa** – Builder veya Factory daha anlaşılır olabilir
 
 ## Diğer Oluşturma Kalıplarıyla Farkları
 

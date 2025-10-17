@@ -43,16 +43,25 @@ Bu örnek C++11 ve sonrası için yerel statik değişken başlatmanın thread-s
 - **Lazy (basit):** Uygulaması kolaydır, fakat çok iş parçacıklı ortamlarda güvenli değildir.
 - **Meyers (thread-safe):** Çağdaş C++’ta güvenli ve yalın bir yaklaşımdır.
 
-## Nasıl Çalışır
+## Nasıl Çalışır?
 
 1. Kurucu gizlenir (private) ve kopyalama devre dışı bırakılır.
 2. Sınıf kendi içinde tek örneği üretir ve saklar.
 3. İstemci, sağlanan statik yöntemle aynı örneğe erişir.
 
-## Ne Zaman Kullanılır / Kullanılmaz?
+## Ne Zaman Kullanılır?
 
-- Kullan: Gerçekten tek bir paylaşılan kaynak/servis olması gerekiyorsa (örn. loglayıcı, merkezi ayarlar).
-- Kaçın: Her yerde erişilebilir evrensel durum testleri zorlaştırıyorsa; çoğu durumda açık bağımlılık enjeksiyonu tercih edilmelidir.
+- **Gerçekten tek bir kaynak gerekiyorsa** – Loglayıcı, cache, thread pool gibi merkezi servisler
+- **Global erişim gerekli olduğunda** – Uygulama genelinde aynı nesneye erişim şart
+- **Kaynak paylaşımı kritikse** – Dosya yazma, konfigürasyon okuma gibi durumlar
+- **Lazy initialization istediğinizde** – İhtiyaç duyulana kadar nesne oluşturulmaz
+
+## Ne Zaman Kullanılmaz?
+
+- **Test edilebilirlik önemliyse** – Global state mock'lamayı zorlaştırır
+- **Çoklu instance gerekebilecekse** – Singleton bu esnekliği kaldırır
+- **Bağımlılık enjeksiyonu kullanıyorsanız** – DI container'lar daha iyi kontrol sağlar
+- **Thread-safety garanti edilemiyorsa** – Yanlış implementasyon race condition'a yol açar
 
 ## Diğer Oluşturma Kalıplarıyla Farkları
 
