@@ -37,7 +37,7 @@ Bu hataya birçok mühendis düşmektedir. Tam olarak hata sayılmasa da, gereks
 
 Genel olarak üç ana başlık vardır:
 
-- Oluşum Kalıpları (Creational Patterns):
+- **[Oluşum Kalıpları (Creational Patterns)](./creational/README.md)**:
 	- Nesne oluşturma süreçlerini soyutlar. Nesne oluşturmayı merkezi hale getirerek esneklik sağlar.
 	- Örnekler: [Singleton](./creational/singleton/README.md), [Abstract Factory](./creational/abstract_factory/README.md), [Builder](./creational/builder/README.md), [Factory Method](./creational/factory_method/README.md), [Prototype](./creational/prototype/README.md).
 
