@@ -43,3 +43,13 @@ Farklı factory yaklaşımlarının fayda/zararlarını gösterir.
 ## Nasıl Çalışır
 
 Fabrika, istemciden aldığı bir anahtar (string, enum veya yapılandırma) ile hangi somut sınıfın üretileceğine karar verir ve nesneyi soyut bir sınıf olarak döndürür. Böylece istemci, somut sınıfın ayrıntılarına bağlı kalmadan davranışları kullanabilir.
+
+## Diğer Oluşturma Kalıplarıyla Farkları
+
+- **Abstract Factory:** Factory Method tek bir ürün türü oluşturur. Abstract Factory ise birbirleriyle ilişkili birden fazla ürünü bir arada üretir (ürün ailesi). Abstract Factory içinde birden fazla Factory Method bulunur.
+
+- **Builder:** Factory Method hangi sınıfın üretileceğine karar verir. Builder ise tek bir karmaşık nesneyi adım adım nasıl inşa edeceğini belirler. Factory tür seçimi, Builder bileşen kombinasyonu içindir.
+
+- **Prototype:** Factory Method her seferinde sıfırdan yeni nesne üretir. Prototype ise mevcut bir nesneyi klonlar. Factory "yarat", Prototype "kopyala" mantığıyla çalışır.
+
+- **Singleton:** Factory Method her çağrıda yeni nesne döndürebilir. Singleton ise her zaman aynı tek örneği döndürür. Factory çeşitlilik, Singleton teklik içindir.

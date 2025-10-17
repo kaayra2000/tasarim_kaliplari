@@ -57,9 +57,12 @@ GUI ve Mobilya örneklerinin farklı kullanım senaryolarını ve benzerliklerin
 
 İstemci kodu sadece soyut fabrika ve soyut ürünlerle çalışır. Bu sayede somut sınıflara bağımlılık olmaz ve runtime'da farklı ürün aileleri kolayca değiştirilebilir.
 
-## Factory Method ile Farkı
+## Diğer Oluşturma Kalıplarıyla Farkları
 
-- **Factory Method:** Tek bir ürün türü oluşturur (örn. sadece Button)
-- **Abstract Factory:** Birbirleriyle ilişkili birden fazla ürün oluşturur (Button + Checkbox + TextField)
+- **Factory Method:** Tek bir ürün türü oluşturur (örn. sadece Button). Abstract Factory ise birbirleriyle ilişkili birden fazla ürün oluşturur (Button + Checkbox + TextField). Abstract Factory, aslında birden fazla Factory Method'un bir araya getirilmiş halidir.
 
-Abstract Factory, aslında birden fazla Factory Method'un bir araya getirilmiş halidir. Her ürün türü için bir factory method içerir ve tüm ürünlerin tutarlı bir aileden olmasını temin eder.
+- **Builder:** Karmaşık bir nesneyi adım adım inşa eder. Abstract Factory ise bir ürün ailesinin tamamını tek seferde üretir. Builder'da adımlar önemlidir, Abstract Factory'de ise ürünlerin birbiriyle uyumlu olması önemlidir.
+
+- **Prototype:** Mevcut nesneleri klonlayarak yeni örnekler üretir. Abstract Factory ise her seferinde sıfırdan yeni nesneler oluşturur. Prototype durum kopyalamada, Abstract Factory tutarlı ürün aileleri üretmede kullanılır.
+
+- **Singleton:** Bir sınıfın tek örneğini garanti eder. Abstract Factory ise birden fazla fabrika örneği olabilir ve her fabrika kendi ürün ailesini üretir. Singleton evrensel erişim sağlarken, Abstract Factory polimorfizm ile farklı fabrikalar arasında seçim yapar.

@@ -53,3 +53,11 @@ Bu örnek C++11 ve sonrası için yerel statik değişken başlatmanın thread-s
 
 - Kullan: Gerçekten tek bir paylaşılan kaynak/servis olması gerekiyorsa (örn. loglayıcı, merkezi ayarlar).
 - Kaçın: Her yerde erişilebilir evrensel durum testleri zorlaştırıyorsa; çoğu durumda açık bağımlılık enjeksiyonu tercih edilmelidir.
+
+## Diğer Oluşturma Kalıplarıyla Farkları
+
+- **Factory Method / Abstract Factory:** Fabrikalar her çağrıda yeni nesneler üretebilir ve hangi sınıfın oluşturulacağını belirler. Singleton ise her zaman aynı tek örneği döndürür. Factory çeşitlilik ve polimorfizm, Singleton teklik ve evrensel erişim içindir.
+
+- **Builder:** Builder her kullanımda farklı konfigürasyonlarda yeni nesneler üretir. Singleton ise sadece bir örnek oluşturur ve onu paylaşır. Builder esneklik, Singleton tutarlılık sağlar.
+
+- **Prototype:** Prototype mevcut nesnelerden istediğiniz kadar kopya üretmenizi sağlar. Singleton ise kopyalamayı engeller ve tek bir örneği garanti eder. Prototype çoğaltma, Singleton teklik ilkesiyle çalışır.

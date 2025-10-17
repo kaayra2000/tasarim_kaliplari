@@ -52,10 +52,10 @@ assassin->printStats();
 3. **İsteğe Bağlı Kayıt (Registry)**: Sık kullanılan prototipler bir haritada tutulur; anahtar ile `clone()` çağrılıp çoğaltılır.
 4. **İstemci**: Somut sınıfı bilmeden, prototipten klon alır ve küçük değişiklikler uygular.
 
-## Factory / Builder ile Farkı
+## Diğer Oluşturma Kalıplarıyla Farkları
 
-- **Factory/Abstract Factory**: Nesneleri “başından” oluşturur, tür seçimini soyutlar.
-- **Prototype**: Mevcut bir örneği kopyalar; hali hazırdaki durum (state) korunur ve ufak değişiklikler yapılır.
-- **Builder**: Karmaşık nesneleri adım adım inşa eder; Prototype ise var olanı çoğaltır.
+- **Factory Method / Abstract Factory:** Fabrikalar her seferinde sıfırdan yeni nesneler üretir ve hangi sınıfın oluşturulacağını belirler. Prototype ise mevcut bir örneği kopyalar ve durumunu (state) korur. Factory "yarat", Prototype "kopyala" mantığıyla çalışır. Uygulamada Prototype sıklıkla factory kayıt defteriyle birlikte kullanılır.
 
-Uygulamada Prototype, bir factory kayıt defteriyle birlikte sık kullanılır: önce prototip şablonları kayıt edilir, sonra `clone()` ile istenen varyasyon hızlıca üretilir.
+- **Builder:** Builder karmaşık bir nesneyi adım adım sıfırdan inşa eder. Prototype ise zaten var olan bir nesneyi klonlayıp küçük değişiklikler yapar. Builder bileşen kombinasyonu, Prototype durum çoğaltma içindir.
+
+- **Singleton:** Singleton bir sınıfın tek örneğini garanti eder. Prototype ise mevcut örneklerden istediğiniz kadar kopya üretmenizi sağlar. Singleton teklik, Prototype çoğaltma içindir.

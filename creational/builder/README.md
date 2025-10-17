@@ -42,3 +42,11 @@ auto pc = director.buildFullComputer();
 - **Klasik:** Farklı sınıf oluşturma vakaları için Director kullanımı
 
 Bilgisayar gibi çok bileşenli nesneler için idealdir. Kodunuz daha temiz ve bakımı kolay olur.
+
+## Diğer Oluşturma Kalıplarıyla Farkları
+
+- **Factory Method / Abstract Factory:** Fabrikalar hangi nesnenin üretileceğine odaklanır. Builder ise tek bir karmaşık nesneyi nasıl inşa edeceğine odaklanır. Factory sınıf seçimi yapar, Builder adım adım bileşenleri birleştirir.
+
+- **Prototype:** Mevcut bir nesneyi klonlayıp değiştirir. Builder ise sıfırdan başlayarak adım adım yeni bir nesne inşa eder. Prototype varolan durumu kopyalar, Builder yeni durumu oluşturur.
+
+- **Singleton:** Tek bir örnek garanti eder. Builder ise her çağrıda farklı konfigürasyonlarda yeni örnekler üretir. Singleton evrensel tek nesne için, Builder çok parametreli farklı nesneler için kullanılır.
