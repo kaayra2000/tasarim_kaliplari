@@ -4,9 +4,9 @@
 
 ## Ne İşe Yarar?
 
-- **Ürün ailelerini bir arada yönetir** - Birbirleriyle uyumlu birden fazla nesne (örn. sandalye + masa, buton + checkbox) aynı fabrika üzerinden üretilir
+- **Ürün ailelerini bir arada yönetir** - Birbirleriyle uyumlu birden fazla nesne (örn. sandalye + masa, buton + onay kutusu) aynı fabrika üzerinden üretilir
 - **Platform bağımsızlığı** - Windows, Mac veya Linux gibi farklı platformlar için GUI bileşenleri üretirken istemci kodu değişmez
-- **Tutarlılık garantisi** - Aynı fabrikadan üretilen tüm ürünler birbiriyle uyumludur (Modern fabrikadan klasik ürün çıkmaz)
+- **Tutarlılık güvencesi** - Aynı fabrikadan üretilen tüm ürünler birbiriyle uyumludur (Modern fabrikadan klasik ürün çıkmaz)
 - **Genişletilebilirlik** - Yeni bir ürün ailesi eklemek için sadece yeni bir fabrika sınıfı oluşturulur
 
 ## Örnekler
@@ -50,12 +50,12 @@ GUI ve Mobilya örneklerinin farklı kullanım senaryolarını ve benzerliklerin
 
 ## Nasıl Çalışır?
 
-1. **Soyut Fabrika Arayüzü:** Tüm ürünleri oluşturacak metotları tanımlar
+1. **Soyut Fabrika Arabirimi:** Tüm ürünleri oluşturacak yöntemleri tanımlar
 2. **Somut Fabrikalar:** Her ürün ailesi için özel fabrika (ModernFactory, WindowsFactory vb.)
-3. **Soyut Ürünler:** Ürün ailelerinin ortak arayüzleri (Chair, Button vb.)
-4. **Somut Ürünler:** Her fabrikaya özgü ürün implementasyonları (ModernChair, WindowsButton vb.)
+3. **Soyut Ürünler:** Ürün ailelerinin ortak arabirimleri (Chair, Button vb.)
+4. **Somut Ürünler:** Her fabrikaya özgü ürün gerçeklemeleri (ModernChair, WindowsButton vb.)
 
-İstemci kodu sadece soyut fabrika ve soyut ürünlerle çalışır. Bu sayede somut sınıflara bağımlılık olmaz ve runtime'da farklı ürün aileleri kolayca değiştirilebilir.
+İstemci kodu sadece soyut fabrika ve soyut ürünlerle çalışır. Bu sayede somut sınıflara bağımlılık olmaz ve çalışma zamanında farklı ürün aileleri kolayca değiştirilebilir.
 
 ## Ne Zaman Kullanılır?
 
@@ -69,14 +69,14 @@ GUI ve Mobilya örneklerinin farklı kullanım senaryolarını ve benzerliklerin
 - **Tek bir ürün türü yeterliyse** – O zaman basit Factory Method kullanın
 - **Ürünler arası ilişki yoksa** – Abstract Factory gereksiz karmaşıklık oluşturur
 - **Ürün aileleri nadiren değişiyorsa** – Statik bir yapı daha basit olabilir
-- **Az sayıda varyasyon varsa** – Overengineering'den kaçının
+- **Az sayıda varyasyon varsa** – Aşırı mühendislikten kaçının
 
 ## Diğer Oluşturma Kalıplarıyla Farkları
 
-- **Factory Method:** Tek bir ürün türü oluşturur (örn. sadece Button). Abstract Factory ise birbirleriyle ilişkili birden fazla ürün oluşturur (Button + Checkbox + TextField). Abstract Factory, aslında birden fazla Factory Method'un bir araya getirilmiş halidir.
+- **Factory Method:** Tek bir ürün türü oluşturur (örn. sadece Buton). Abstract Factory ise birbirleriyle ilişkili birden fazla ürün oluşturur (Buton + Onay Kutusu + Metin Alanı). Abstract Factory, aslında birden fazla Factory Method'un bir araya getirilmiş halidir.
 
 - **Builder:** Karmaşık bir nesneyi adım adım inşa eder. Abstract Factory ise bir ürün ailesinin tamamını tek seferde üretir. Builder'da adımlar önemlidir, Abstract Factory'de ise ürünlerin birbiriyle uyumlu olması önemlidir.
 
-- **Prototype:** Mevcut nesneleri klonlayarak yeni örnekler üretir. Abstract Factory ise her seferinde sıfırdan yeni nesneler oluşturur. Prototype durum kopyalamada, Abstract Factory tutarlı ürün aileleri üretmede kullanılır.
+- **Prototype:** Mevcut nesneleri çoğaltarak yeni örnekler üretir. Abstract Factory ise her seferinde sıfırdan yeni nesneler oluşturur. Prototype durum kopyalamada, Abstract Factory tutarlı ürün aileleri üretmede kullanılır.
 
-- **Singleton:** Bir sınıfın tek örneğini garanti eder. Abstract Factory ise birden fazla fabrika örneği olabilir ve her fabrika kendi ürün ailesini üretir. Singleton evrensel erişim sağlarken, Abstract Factory polimorfizm ile farklı fabrikalar arasında seçim yapar.
+- **Singleton:** Bir sınıfın tek örneğini temin eder. Abstract Factory ise birden fazla fabrika örneği olabilir ve her fabrika kendi ürün ailesini üretir. Singleton evrensel erişim sunarken, Abstract Factory çok biçimlilik ile farklı fabrikalar arasında seçim yapar.
