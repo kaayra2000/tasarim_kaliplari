@@ -1,0 +1,67 @@
+@startuml shape-prototype-simple
+/'
+ * @file shape-prototype-simple.puml
+ * @brief basit shape klonlama prototype pattern class diyagramı
+ * @author AI Assistant
+ * @date 17.10.2025
+ * @version 1.0.0
+ * 
+ * @description temel geometrik şekillerin klonlanması için
+ *              basit prototype pattern implementasyonu
+ '/
+
+title Prototype Pattern - Basit Shape Klonlama
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+
+skinparam class {
+    BackgroundColor #E8F4F8
+    BorderColor #2C5F7C
+    ArrowColor #2C5F7C
+}
+
+abstract class Shape <<Prototype>> {
+    # type: string
+    # x: int
+    # y: int
+    __
+    + {abstract} clone(): unique_ptr<Shape>
+    + {abstract} draw(): void
+    + setPosition(xPos: int, yPos: int): void
+}
+
+class Circle <<ConcretePrototype>> {
+    - radius: int
+    __
+    + Circle(r: int)
+    + clone(): unique_ptr<Shape>
+    + draw(): void
+}
+
+class Rectangle <<ConcretePrototype>> {
+    - width: int
+    - height: int
+    __
+    + Rectangle(w: int, h: int)
+    + clone(): unique_ptr<Shape>
+    + draw(): void
+}
+
+Shape <|-- Circle
+Shape <|-- Rectangle
+
+note right of Shape
+  **Prototype Interface**
+  • Clone metodunu tanımlar
+  • Ortak özellikleri tutar
+end note
+
+note bottom of Circle
+  **Klonlama:**
+  return make_unique<Circle>(*this);
+end note
+
+footer Oluşturulma: 17.10.2025 | Sürüm: 1.0.0 | Basit Yaklaşım
+
+@enduml

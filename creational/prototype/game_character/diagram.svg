@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="684px" preserveAspectRatio="none" style="width:710px;height:684px;" version="1.1" viewBox="0 0 710 684" width="710px" zoomAndPan="magnify"><defs/><g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="404" x="156.5" y="19.2419">Prototype Pattern - Registry ile Game Character</text><!--MD5=[e19e4703567e3401daa6107701944c65]
+class GameCharacter--><rect fill="#E8F4F8" height="148.5796" id="GameCharacter" style="stroke: #2C5F7C; stroke-width: 1.5;" width="199" x="216.5" y="215.5158"/><ellipse cx="269.25" cy="236.86" fill="#A9DCDF" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M269.3594,232.2037 L268.2031,237.2818 L270.5313,237.2818 L269.3594,232.2037 Z M267.875,229.9693 L270.8594,229.9693 L274.2188,242.36 L271.7656,242.36 L271,239.2975 L267.7188,239.2975 L266.9688,242.36 L264.5313,242.36 L267.875,229.9693 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="65" x="299.75" y="233.3439">«Prototype»</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="85" x="289.75" y="249.6881">GameCharacter</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="217.5" x2="414.5" y1="258.2041" y2="258.2041"/><polygon fill="none" points="227.5,264.2041,231.5,268.2041,227.5,272.2041,223.5,268.2041" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="66" x="236.5" y="273.963">name: string</text><polygon fill="none" points="227.5,279.186,231.5,283.186,227.5,287.186,223.5,283.186" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="53" x="236.5" y="288.9449">health: int</text><polygon fill="none" points="227.5,294.1679,231.5,298.1679,227.5,302.1679,223.5,298.1679" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="85" x="236.5" y="303.9268">attackPower: int</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="217.5" x2="414.5" y1="311.1497" y2="311.1497"/><ellipse cx="227.5" cy="322.1497" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="173" x="236.5" y="326.9087">clone(): unique_ptr&lt;GameCharacter&gt;</text><ellipse cx="227.5" cy="337.1316" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="66" x="236.5" y="341.8905">display(): void</text><ellipse cx="227.5" cy="352.1135" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="124" x="236.5" y="356.8724">setName(n: string): void</text><!--MD5=[4d0e61cd8102cff63ea9dd107048c79b]
+class Warrior--><rect fill="#E8F4F8" height="118.6158" id="Warrior" style="stroke: #2C5F7C; stroke-width: 1.5;" width="217" x="18.5" y="425.5158"/><ellipse cx="68.75" cy="446.86" fill="#ADD1B2" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M71.7188,452.5006 Q71.1406,452.7975 70.5,452.9381 Q69.8594,453.0943 69.1563,453.0943 Q66.6563,453.0943 65.3281,451.4537 Q64.0156,449.7975 64.0156,446.6725 Q64.0156,443.5475 65.3281,441.8912 Q66.6563,440.235 69.1563,440.235 Q69.8594,440.235 70.5,440.3912 Q71.1563,440.5475 71.7188,440.8443 L71.7188,443.5631 Q71.0938,442.985 70.5,442.7193 Q69.9063,442.4381 69.2813,442.4381 Q67.9375,442.4381 67.25,443.5162 Q66.5625,444.5787 66.5625,446.6725 Q66.5625,448.7662 67.25,449.8443 Q67.9375,450.9068 69.2813,450.9068 Q69.9063,450.9068 70.5,450.6412 Q71.0938,450.36 71.7188,449.7818 L71.7188,452.5006 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="112" x="87.25" y="443.3439">«ConcretePrototype»</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="43" x="121.75" y="459.6881">Warrior</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="19.5" x2="234.5" y1="468.2041" y2="468.2041"/><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="26.5" y="476.2041"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="53" x="38.5" y="483.963">armor: int</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="19.5" x2="234.5" y1="491.186" y2="491.186"/><ellipse cx="29.5" cy="502.186" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="185" x="38.5" y="506.9449">Warrior(hp: int, attack: int, arm: int)</text><ellipse cx="29.5" cy="517.1679" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="191" x="38.5" y="521.9268">clone(): unique_ptr&lt;GameCharacter&gt;</text><ellipse cx="29.5" cy="532.1497" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="72" x="38.5" y="536.9087">display(): void</text><!--MD5=[96cefd8d79f96826677f0cc3fdb6b9c9]
+class Mage--><rect fill="#E8F4F8" height="118.6158" id="Mage" style="stroke: #2C5F7C; stroke-width: 1.5;" width="217" x="270.5" y="425.5158"/><ellipse cx="320.75" cy="446.86" fill="#ADD1B2" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M323.7188,452.5006 Q323.1406,452.7975 322.5,452.9381 Q321.8594,453.0943 321.1563,453.0943 Q318.6563,453.0943 317.3281,451.4537 Q316.0156,449.7975 316.0156,446.6725 Q316.0156,443.5475 317.3281,441.8912 Q318.6563,440.235 321.1563,440.235 Q321.8594,440.235 322.5,440.3912 Q323.1563,440.5475 323.7188,440.8443 L323.7188,443.5631 Q323.0938,442.985 322.5,442.7193 Q321.9063,442.4381 321.2813,442.4381 Q319.9375,442.4381 319.25,443.5162 Q318.5625,444.5787 318.5625,446.6725 Q318.5625,448.7662 319.25,449.8443 Q319.9375,450.9068 321.2813,450.9068 Q321.9063,450.9068 322.5,450.6412 Q323.0938,450.36 323.7188,449.7818 L323.7188,452.5006 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="112" x="339.25" y="443.3439">«ConcretePrototype»</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="32" x="379.25" y="459.6881">Mage</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="271.5" x2="486.5" y1="468.2041" y2="468.2041"/><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="278.5" y="476.2041"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="49" x="290.5" y="483.963">mana: int</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="271.5" x2="486.5" y1="491.186" y2="491.186"/><ellipse cx="281.5" cy="502.186" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="162" x="290.5" y="506.9449">Mage(hp: int, attack: int, m: int)</text><ellipse cx="281.5" cy="517.1679" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="191" x="290.5" y="521.9268">clone(): unique_ptr&lt;GameCharacter&gt;</text><ellipse cx="281.5" cy="532.1497" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="72" x="290.5" y="536.9087">display(): void</text><!--MD5=[7689726788ee1d7ffa6b8e1b279b8ed9]
+class CharacterRegistry--><rect fill="#E8F4F8" height="103.6339" id="CharacterRegistry" style="stroke: #2C5F7C; stroke-width: 1.5;" width="405" x="113.5" y="32.5158"/><ellipse cx="256.75" cy="53.86" fill="#ADD1B2" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M259.7188,59.5006 Q259.1406,59.7975 258.5,59.9381 Q257.8594,60.0943 257.1563,60.0943 Q254.6563,60.0943 253.3281,58.4537 Q252.0156,56.7975 252.0156,53.6725 Q252.0156,50.5475 253.3281,48.8912 Q254.6563,47.235 257.1563,47.235 Q257.8594,47.235 258.5,47.3912 Q259.1563,47.5475 259.7188,47.8443 L259.7188,50.5631 Q259.0938,49.985 258.5,49.7193 Q257.9063,49.4381 257.2813,49.4381 Q255.9375,49.4381 255.25,50.5162 Q254.5625,51.5787 254.5625,53.6725 Q254.5625,55.7662 255.25,56.8443 Q255.9375,57.9068 257.2813,57.9068 Q257.9063,57.9068 258.5,57.6412 Q259.0938,57.36 259.7188,56.7818 L259.7188,59.5006 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="114" x="275.25" y="50.3439">«PrototypeManager»</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="101" x="281.75" y="66.6881">CharacterRegistry</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="114.5" x2="517.5" y1="75.2041" y2="75.2041"/><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="121.5" y="83.2041"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="287" x="133.5" y="90.963">prototypes: map&lt;string, unique_ptr&lt;GameCharacter&gt;&gt;</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="114.5" x2="517.5" y1="98.186" y2="98.186"/><ellipse cx="124.5" cy="109.186" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="379" x="133.5" y="113.9449">addPrototype(key: string, prototype: unique_ptr&lt;GameCharacter&gt;): void</text><ellipse cx="124.5" cy="124.1679" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="301" x="133.5" y="128.9268">createCharacter(key: string): unique_ptr&lt;GameCharacter&gt;</text><path d="M553.5,44.0158 L553.5,80.5158 L518.53,84.5158 L553.5,88.5158 L553.5,124.8399 A0,0 0 0 0 553.5,124.8399 L698.5,124.8399 A0,0 0 0 0 698.5,124.8399 L698.5,54.0158 L688.5,44.0158 L553.5,44.0158 A0,0 0 0 0 553.5,44.0158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M688.5,44.0158 L688.5,54.0158 L698.5,54.0158 L688.5,44.0158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="124" x="559.5" y="62.9129">Registry (Manager)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="114" x="559.5" y="80.6189">• Prototipleri saklar</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="112" x="559.5" y="98.3249">• İsme göre klonlar</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="108" x="559.5" y="116.0309">• Merkezi yönetim</text><path d="M6,605.5158 L6,650.9279 A0,0 0 0 0 6,650.9279 L248,650.9279 A0,0 0 0 0 248,650.9279 L248,615.5158 L238,605.5158 L131,605.5158 L127,544.5858 L123,605.5158 L6,605.5158 A0,0 0 0 0 6,605.5158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M238,605.5158 L238,615.5158 L248,615.5158 L238,605.5158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="67" x="12" y="624.4129">Klonlama:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="221" x="12" y="642.1189">return make_unique&lt;Warrior&gt;(*this);</text><!--MD5=[72c2f62cc8e05cb3074fa6ad4ffd1654]
+reverse link GameCharacter to Warrior--><path d="M229.96,378.8758 C214.53,394.6358 198.79,410.7058 184.41,425.3958 " fill="none" id="GameCharacter&lt;-Warrior" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="none" points="225.01,373.9258,244.01,364.5358,235.02,383.7158,225.01,373.9258" style="stroke: #2C5F7C; stroke-width: 1.0;"/><!--MD5=[58ef580c7db23ba8dc861c24bad9fd84]
+reverse link GameCharacter to Mage--><path d="M346.26,383.7058 C350.89,397.9058 355.56,412.2058 359.86,425.3958 " fill="none" id="GameCharacter&lt;-Mage" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="none" points="339.55,385.7158,340,364.5358,352.86,381.3758,339.55,385.7158" style="stroke: #2C5F7C; stroke-width: 1.0;"/><!--MD5=[67141c297c33ec93c7bed985e68b4c43]
+link CharacterRegistry to GameCharacter--><path d="M316,148.6058 C316,148.6058 316,184.4958 316,201.9858 " fill="none" id="CharacterRegistry-GameCharacter" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="#2C5F7C" points="316,215.2158,320,206.2158,316,210.2158,312,206.2158,316,215.2158" style="stroke: #2C5F7C; stroke-width: 1.0;"/><line style="stroke: #2C5F7C; stroke-width: 1.0;" x1="316" x2="316" y1="210.2158" y2="202.2158"/><polygon fill="#FFFFFF" points="316,136.6058,312,142.6058,316,148.6058,320,142.6058,316,136.6058" style="stroke: #2C5F7C; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="317" y="181.4129">manages</text><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="292" x="212.5" y="671.2058">Oluşturulma: 17.10.2025 | Sürüm: 1.0.0 | Registry Yaklaşımı</text><!--MD5=[90c339795c6a51810531aef10b3567e4]
+@startuml
+
+title Prototype Pattern - Registry ile Game Character
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+
+skinparam class {
+    BackgroundColor #E8F4F8
+    BorderColor #2C5F7C
+    ArrowColor #2C5F7C
+}
+
+abstract class GameCharacter <<Prototype>> {
+    # name: string
+    # health: int
+    # attackPower: int
+    __
+    + {abstract} clone(): unique_ptr<GameCharacter>
+    + {abstract} display(): void
+    + setName(n: string): void
+}
+
+class Warrior <<ConcretePrototype>> {
+    - armor: int
+    __
+    + Warrior(hp: int, attack: int, arm: int)
+    + clone(): unique_ptr<GameCharacter>
+    + display(): void
+}
+
+class Mage <<ConcretePrototype>> {
+    - mana: int
+    __
+    + Mage(hp: int, attack: int, m: int)
+    + clone(): unique_ptr<GameCharacter>
+    + display(): void
+}
+
+class CharacterRegistry <<PrototypeManager>> {
+    - prototypes: map<string, unique_ptr<GameCharacter>>
+    __
+    + addPrototype(key: string, prototype: unique_ptr<GameCharacter>): void
+    + createCharacter(key: string): unique_ptr<GameCharacter>
+}
+
+GameCharacter <|- - Warrior
+GameCharacter <|- - Mage
+CharacterRegistry o- -> GameCharacter : manages
+
+note right of CharacterRegistry
+  **Registry (Manager)**
+  • Prototipleri saklar
+  • İsme göre klonlar
+  • Merkezi yönetim
+end note
+
+note bottom of Warrior
+  **Klonlama:**
+  return make_unique<Warrior>(*this);
+end note
+
+footer Oluşturulma: 17.10.2025 | Sürüm: 1.0.0 | Registry Yaklaşımı
+
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 13:22:07 TRT 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 21.0.8+9-Ubuntu-0ubuntu124.04.1
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

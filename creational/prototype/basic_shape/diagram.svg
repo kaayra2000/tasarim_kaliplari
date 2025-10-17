@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="514px" preserveAspectRatio="none" style="width:559px;height:514px;" version="1.1" viewBox="0 0 559 514" width="559px" zoomAndPan="magnify"><defs/><g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="353" x="106" y="19.2419">Prototype Pattern - Basit Shape Klonlama</text><!--MD5=[426e75666daf533f17226ff4c87e20fd]
+class Shape--><rect fill="#E8F4F8" height="148.5796" id="Shape" style="stroke: #2C5F7C; stroke-width: 1.5;" width="215" x="114" y="32.5158"/><ellipse cx="186.75" cy="53.86" fill="#A9DCDF" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M186.8594,49.2037 L185.7031,54.2818 L188.0313,54.2818 L186.8594,49.2037 Z M185.375,46.9693 L188.3594,46.9693 L191.7188,59.36 L189.2656,59.36 L188.5,56.2975 L185.2188,56.2975 L184.4688,59.36 L182.0313,59.36 L185.375,46.9693 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="65" x="205.25" y="50.3439">«Prototype»</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="33" x="221.25" y="66.6881">Shape</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="115" x2="328" y1="75.2041" y2="75.2041"/><polygon fill="none" points="125,81.2041,129,85.2041,125,89.2041,121,85.2041" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="60" x="134" y="90.963">type: string</text><polygon fill="none" points="125,96.186,129,100.186,125,104.186,121,100.186" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="26" x="134" y="105.9449">x: int</text><polygon fill="none" points="125,111.1679,129,115.1679,125,119.1679,121,115.1679" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="26" x="134" y="120.9268">y: int</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="115" x2="328" y1="128.1497" y2="128.1497"/><ellipse cx="125" cy="139.1497" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="128" x="134" y="143.9087">clone(): unique_ptr&lt;Shape&gt;</text><ellipse cx="125" cy="154.1316" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="56" x="134" y="158.8905">draw(): void</text><ellipse cx="125" cy="169.1135" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="189" x="134" y="173.8724">setPosition(xPos: int, yPos: int): void</text><!--MD5=[a7f9118cae7621dd25d25149752faef0]
+class Circle--><rect fill="#E8F4F8" height="118.6158" id="Circle" style="stroke: #2C5F7C; stroke-width: 1.5;" width="168" x="36.5" y="249.0158"/><ellipse cx="64.1" cy="270.36" fill="#ADD1B2" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M67.0688,276.0006 Q66.4906,276.2975 65.85,276.4381 Q65.2094,276.5943 64.5063,276.5943 Q62.0062,276.5943 60.6781,274.9537 Q59.3656,273.2975 59.3656,270.1725 Q59.3656,267.0475 60.6781,265.3912 Q62.0062,263.735 64.5063,263.735 Q65.2094,263.735 65.85,263.8912 Q66.5063,264.0475 67.0688,264.3443 L67.0688,267.0631 Q66.4438,266.485 65.85,266.2193 Q65.2563,265.9381 64.6313,265.9381 Q63.2875,265.9381 62.6,267.0162 Q61.9125,268.0787 61.9125,270.1725 Q61.9125,272.2662 62.6,273.3443 Q63.2875,274.4068 64.6313,274.4068 Q65.2563,274.4068 65.85,274.1412 Q66.4438,273.86 67.0688,273.2818 L67.0688,276.0006 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="112" x="78.9" y="266.8439">«ConcretePrototype»</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="32" x="118.9" y="283.1881">Circle</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="37.5" x2="203.5" y1="291.7041" y2="291.7041"/><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="44.5" y="299.7041"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="53" x="56.5" y="307.463">radius: int</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="37.5" x2="203.5" y1="314.686" y2="314.686"/><ellipse cx="47.5" cy="325.686" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="60" x="56.5" y="330.4449">Circle(r: int)</text><ellipse cx="47.5" cy="340.6679" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="142" x="56.5" y="345.4268">clone(): unique_ptr&lt;Shape&gt;</text><ellipse cx="47.5" cy="355.6497" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="62" x="56.5" y="360.4087">draw(): void</text><!--MD5=[b5313cd49da22b0744b541f414f8445e]
+class Rectangle--><rect fill="#E8F4F8" height="133.5977" id="Rectangle" style="stroke: #2C5F7C; stroke-width: 1.5;" width="168" x="239.5" y="241.5158"/><ellipse cx="267.1" cy="262.86" fill="#ADD1B2" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M270.0688,268.5006 Q269.4906,268.7975 268.85,268.9381 Q268.2094,269.0943 267.5063,269.0943 Q265.0063,269.0943 263.6781,267.4537 Q262.3656,265.7975 262.3656,262.6725 Q262.3656,259.5475 263.6781,257.8912 Q265.0063,256.235 267.5063,256.235 Q268.2094,256.235 268.85,256.3912 Q269.5063,256.5475 270.0688,256.8443 L270.0688,259.5631 Q269.4438,258.985 268.85,258.7193 Q268.2563,258.4381 267.6313,258.4381 Q266.2875,258.4381 265.6,259.5162 Q264.9125,260.5787 264.9125,262.6725 Q264.9125,264.7662 265.6,265.8443 Q266.2875,266.9068 267.6313,266.9068 Q268.2563,266.9068 268.85,266.6412 Q269.4438,266.36 270.0688,265.7818 L270.0688,268.5006 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="112" x="281.9" y="259.3439">«ConcretePrototype»</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="55" x="310.4" y="275.6881">Rectangle</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="240.5" x2="406.5" y1="284.2041" y2="284.2041"/><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="247.5" y="292.2041"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="50" x="259.5" y="299.963">width: int</text><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="247.5" y="307.186"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="54" x="259.5" y="314.9449">height: int</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="240.5" x2="406.5" y1="322.1679" y2="322.1679"/><ellipse cx="250.5" cy="333.1679" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="119" x="259.5" y="337.9268">Rectangle(w: int, h: int)</text><ellipse cx="250.5" cy="348.1497" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="142" x="259.5" y="352.9087">clone(): unique_ptr&lt;Shape&gt;</text><ellipse cx="250.5" cy="363.1316" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="62" x="259.5" y="367.8905">draw(): void</text><path d="M364,75.5158 L364,103.0158 L329.36,107.0158 L364,111.0158 L364,138.6339 A0,0 0 0 0 364,138.6339 L547,138.6339 A0,0 0 0 0 547,138.6339 L547,85.5158 L537,75.5158 L364,75.5158 A0,0 0 0 0 364,75.5158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M537,75.5158 L537,85.5158 L547,85.5158 L537,75.5158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="130" x="370" y="94.4129">Prototype Interface</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="162" x="370" y="112.1189">• Clone metodunu tanımlar</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="133" x="370" y="129.8249">• Ortak özellikleri tutar</text><path d="M6,435.5158 L6,480.9279 A0,0 0 0 0 6,480.9279 L235,480.9279 A0,0 0 0 0 235,480.9279 L235,445.5158 L225,435.5158 L124.5,435.5158 L120.5,368.2358 L116.5,435.5158 L6,435.5158 A0,0 0 0 0 6,435.5158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M225,435.5158 L225,445.5158 L235,445.5158 L225,435.5158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="67" x="12" y="454.4129">Klonlama:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="208" x="12" y="472.1189">return make_unique&lt;Circle&gt;(*this);</text><!--MD5=[d637a7d0c5b779627461b5a6979d5756]
+reverse link Shape to Circle--><path d="M175.12,199.6358 C166.67,216.3258 158.06,233.3158 150.26,248.7358 " fill="none" id="Shape&lt;-Circle" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="none" points="168.9,196.4158,184.18,181.7358,181.39,202.7458,168.9,196.4158" style="stroke: #2C5F7C; stroke-width: 1.0;"/><!--MD5=[793668fe740f4b06a80dd095381d024c]
+reverse link Shape to Rectangle--><path d="M268.48,199.8958 C275.62,213.8758 282.88,228.0558 289.67,241.3458 " fill="none" id="Shape&lt;-Rectangle" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="none" points="262.06,202.7258,259.19,181.7358,274.53,196.3558,262.06,202.7258" style="stroke: #2C5F7C; stroke-width: 1.0;"/><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="275" x="145" y="501.2058">Oluşturulma: 17.10.2025 | Sürüm: 1.0.0 | Basit Yaklaşım</text><!--MD5=[b2eb36c45977bca2712f56bd161f3507]
+@startuml
+
+title Prototype Pattern - Basit Shape Klonlama
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+
+skinparam class {
+    BackgroundColor #E8F4F8
+    BorderColor #2C5F7C
+    ArrowColor #2C5F7C
+}
+
+abstract class Shape <<Prototype>> {
+    # type: string
+    # x: int
+    # y: int
+    __
+    + {abstract} clone(): unique_ptr<Shape>
+    + {abstract} draw(): void
+    + setPosition(xPos: int, yPos: int): void
+}
+
+class Circle <<ConcretePrototype>> {
+    - radius: int
+    __
+    + Circle(r: int)
+    + clone(): unique_ptr<Shape>
+    + draw(): void
+}
+
+class Rectangle <<ConcretePrototype>> {
+    - width: int
+    - height: int
+    __
+    + Rectangle(w: int, h: int)
+    + clone(): unique_ptr<Shape>
+    + draw(): void
+}
+
+Shape <|- - Circle
+Shape <|- - Rectangle
+
+note right of Shape
+  **Prototype Interface**
+  • Clone metodunu tanımlar
+  • Ortak özellikleri tutar
+end note
+
+note bottom of Circle
+  **Klonlama:**
+  return make_unique<Circle>(*this);
+end note
+
+footer Oluşturulma: 17.10.2025 | Sürüm: 1.0.0 | Basit Yaklaşım
+
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 13:22:07 TRT 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 21.0.8+9-Ubuntu-0ubuntu124.04.1
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

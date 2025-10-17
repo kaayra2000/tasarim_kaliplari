@@ -1,0 +1,81 @@
+@startuml prototype-comparison
+/'
+ * @file prototype-comparison.puml
+ * @brief Prototype Pattern yaklaşımlarının karşılaştırması
+ * @author AI Assistant
+ * @date 17.10.2025
+ * @version 1.0.0
+ '/
+
+title Prototype Pattern - İki Yaklaşımın Karşılaştırması
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+
+package "Basit Yaklaşım (Registry Yok)" #E8F4F8 {
+    class "Shape" as S1 {
+        +clone(): unique_ptr<Shape>
+    }
+    
+    class "Circle" as C1 {
+    }
+    
+    class "Rectangle" as R1 {
+    }
+    
+    S1 <|-- C1
+    S1 <|-- R1
+    
+    note bottom of S1
+      ✅ **Faydalar:**
+      • Çok basit
+      • Doğrudan klonlama
+      • Az kod
+      • Hızlı geliştirme
+      
+      ❌ **Zararlar:**
+      • Her nesneyi elle yönetme
+      • Merkezi kontrol yok
+      • Prototip havuzu yok
+    end note
+}
+
+package "Registry Yaklaşımı (Manager Var)" #FFE8CC {
+    class "GameCharacter" as GC {
+        +clone(): unique_ptr<GameCharacter>
+    }
+    
+    class "Warrior" as W {
+    }
+    
+    class "Mage" as M {
+    }
+    
+    class "CharacterRegistry" as REG {
+        +addPrototype()
+        +createCharacter()
+    }
+    
+    GC <|-- W
+    GC <|-- M
+    REG o--> GC
+    
+    note bottom of REG
+      ✅ **Faydalar:**
+      • Merkezi yönetim
+      • Prototip havuzu
+      • İsimle erişim
+      • Ölçeklenebilir
+      
+      ❌ **Zararlar:**
+      • Fazladan karmaşıklık
+      • Registry yönetimi
+      • Daha fazla kod
+    end note
+}
+
+note "**Ne Zaman Hangisi?**\n\n**Basit Yaklaşım:**\n• Az sayıda prototip\n• Basit klonlama\n• Prototip havuzu gereksiz\n\n**Registry Yaklaşımı:**\n• Çok sayıda prototip\n• Dinamik yükleme\n• Merkezi yönetim gerekli\n• Oyun/Simülasyon sistemleri" as CONCLUSION
+
+footer Oluşturulma: 17.10.2025 | Sürüm: 1.0.0 | Karşılaştırma
+
+@enduml

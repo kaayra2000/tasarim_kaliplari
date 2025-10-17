@@ -1,0 +1,75 @@
+@startuml game-character-prototype-registry
+/'
+ * @file game-character-prototype-registry.puml
+ * @brief registry pattern ile game character prototype diyagramı
+ * @author AI Assistant
+ * @date 17.10.2025
+ * @version 1.0.0
+ * 
+ * @description oyun karakterlerinin merkezi registry üzerinden
+ *              yönetildiği gelişmiş prototype pattern
+ '/
+
+title Prototype Pattern - Registry ile Game Character
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+
+skinparam class {
+    BackgroundColor #E8F4F8
+    BorderColor #2C5F7C
+    ArrowColor #2C5F7C
+}
+
+abstract class GameCharacter <<Prototype>> {
+    # name: string
+    # health: int
+    # attackPower: int
+    __
+    + {abstract} clone(): unique_ptr<GameCharacter>
+    + {abstract} display(): void
+    + setName(n: string): void
+}
+
+class Warrior <<ConcretePrototype>> {
+    - armor: int
+    __
+    + Warrior(hp: int, attack: int, arm: int)
+    + clone(): unique_ptr<GameCharacter>
+    + display(): void
+}
+
+class Mage <<ConcretePrototype>> {
+    - mana: int
+    __
+    + Mage(hp: int, attack: int, m: int)
+    + clone(): unique_ptr<GameCharacter>
+    + display(): void
+}
+
+class CharacterRegistry <<PrototypeManager>> {
+    - prototypes: map<string, unique_ptr<GameCharacter>>
+    __
+    + addPrototype(key: string, prototype: unique_ptr<GameCharacter>): void
+    + createCharacter(key: string): unique_ptr<GameCharacter>
+}
+
+GameCharacter <|-- Warrior
+GameCharacter <|-- Mage
+CharacterRegistry o--> GameCharacter : manages
+
+note right of CharacterRegistry
+  **Registry (Manager)**
+  • Prototipleri saklar
+  • İsme göre klonlar
+  • Merkezi yönetim
+end note
+
+note bottom of Warrior
+  **Klonlama:**
+  return make_unique<Warrior>(*this);
+end note
+
+footer Oluşturulma: 17.10.2025 | Sürüm: 1.0.0 | Registry Yaklaşımı
+
+@enduml
