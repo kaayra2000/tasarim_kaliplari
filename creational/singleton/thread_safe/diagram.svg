@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="793px" preserveAspectRatio="none" style="width:484px;height:793px;" version="1.1" viewBox="0 0 484 793" width="484px" zoomAndPan="magnify"><defs/><g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="418" x="36" y="19.2419">Thread-Safe Singleton Pattern - Meyers Singleton</text><!--MD5=[546ba68776482c16395b7fee08a39110]
+class SafeLogger--><rect fill="#E8F4F8" height="171.5614" id="SafeLogger" style="stroke: #2C5F7C; stroke-width: 1.5;" width="235" x="13" y="45.0158"/><ellipse cx="94.25" cy="66.36" fill="#ADD1B2" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M97.2188,72.0006 Q96.6406,72.2975 96,72.4381 Q95.3594,72.5943 94.6563,72.5943 Q92.1563,72.5943 90.8281,70.9537 Q89.5156,69.2975 89.5156,66.1725 Q89.5156,63.0475 90.8281,61.3912 Q92.1563,59.735 94.6563,59.735 Q95.3594,59.735 96,59.8912 Q96.6563,60.0475 97.2188,60.3443 L97.2188,63.0631 Q96.5938,62.485 96,62.2193 Q95.4063,61.9381 94.7813,61.9381 Q93.4375,61.9381 92.75,63.0162 Q92.0625,64.0787 92.0625,66.1725 Q92.0625,68.2662 92.75,69.3443 Q93.4375,70.4068 94.7813,70.4068 Q95.4063,70.4068 96,70.1412 Q96.5938,69.86 97.2188,69.2818 L97.2188,72.0006 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="62" x="115.75" y="62.8439">«Singleton»</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="64" x="114.75" y="79.1881">SafeLogger</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="14" x2="247" y1="87.7041" y2="87.7041"/><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="21" y="95.7041"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="68" x="33" y="103.463">prefix: string</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="14" x2="247" y1="110.686" y2="110.686"/><rect fill="#F24D5C" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="21" y="118.686"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="66" x="33" y="126.4449">SafeLogger()</text><rect fill="#F24D5C" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="21" y="133.6679"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="209" x="33" y="141.4268">SafeLogger(const SafeLogger&amp;) = delete</text><rect fill="#F24D5C" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="21" y="148.6497"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="202" x="33" y="156.4087">operator=(const SafeLogger&amp;) = delete</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="14" x2="247" y1="163.6316" y2="163.6316"/><ellipse cx="24" cy="174.6316" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="123" x="33" y="179.3905">instance(): SafeLogger&amp;</text><ellipse cx="24" cy="189.6135" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="125" x="33" y="194.3724">setPrefix(p: string): void</text><ellipse cx="24" cy="204.5954" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="111" x="33" y="209.3543">log(msg: string): void</text><path d="M283,32.5158 L283,122.0459 L156,175.1226 L283,130.0459 L283,219.576 A0,0 0 0 0 283,219.576 L472,219.576 A0,0 0 0 0 472,219.576 L472,42.5158 L462,32.5158 L283,32.5158 A0,0 0 0 0 283,32.5158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M462,32.5158 L462,42.5158 L472,42.5158 L462,32.5158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="117" x="289" y="51.4129">Meyers Singleton:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="34" x="289" y="69.1189">```cpp</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="131" x="289" y="86.8249">static SafeLogger inst;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="66" x="289" y="104.5309">return inst;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="12" x="289" y="122.2369">```</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="292" y="139.9429"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="131" x="289" y="157.649">• Statik yerel değişken</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="139" x="289" y="175.355">• İlk çağrıda oluşturulur</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="168" x="289" y="193.061">• C++11+ thread-safe garanti</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="122" x="289" y="210.767">• Otomatik yok edilir</text><path d="M6,289.5158 L6,759.8723 A0,0 0 0 0 6,759.8723 L255,759.8723 A0,0 0 0 0 255,759.8723 L255,299.5158 L245,289.5158 L134.5,289.5158 L130.5,217.4458 L126.5,289.5158 L6,289.5158 A0,0 0 0 0 6,289.5158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M245,289.5158 L245,299.5158 L255,299.5158 L245,289.5158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="11" x="12" y="308.4129">✅</text><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="158" x="26" y="308.4129">Thread Safety Garantisi:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="15" y="326.1189"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="107" x="12" y="343.8249">C++11 Standardı:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="189" x="12" y="361.5309">• Statik yerel değişken başlatma</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="217" x="18" y="379.2369">compiler tarafından senkronize edilir</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="180" x="12" y="396.9429">• Sadece bir thread başlatabilir</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="138" x="12" y="414.649">• Diğer threadler bekler</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="121" x="12" y="432.355">• Race condition yok</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="15" y="450.061"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="73" x="12" y="467.767">Avantajlar:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="138" x="12" y="485.473">✅ Thread-safe (C++11+)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="116" x="12" y="503.179">✅ Lazy initialization</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="165" x="12" y="520.8851">✅ Otomatik bellek yönetimi</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="155" x="12" y="538.5911">✅ Ekstra mutex gerekmez</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="122" x="12" y="556.2971">✅ Basit ve temiz kod</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="141" x="12" y="574.0031">✅ Magic Static garantisi</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="15" y="591.7091"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="96" x="12" y="609.4151">Dezavantajlar:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="178" x="12" y="627.1212">⚠️ C++11 öncesi desteklenmez</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="184" x="12" y="644.8272">⚠️ Yok etme sırası kontrolü yok</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="15" y="662.5332"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="64" x="12" y="680.2392">Kullanım:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="34" x="12" y="697.9452">```cpp</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="228" x="12" y="715.6512">auto&amp; logger = SafeLogger::instance();</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="156" x="12" y="733.3573">logger.log("Thread-safe!");</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="12" x="12" y="751.0633">```</text><!--MD5=[583c3ec8619252e5f176923cf6d6b0a8]
+link SafeLogger to SafeLogger$$$RIGHT--><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="329" x="80.5" y="780.2058">Oluşturulma: 17.10.2025 | Sürüm: 1.0.0 | Pattern: Meyers Singleton</text><!--MD5=[127430535e7941ff83498f47e86f19f7]
+@startuml
+
+title Thread-Safe Singleton Pattern - Meyers Singleton
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+
+skinparam class {
+    BackgroundColor #E8F4F8
+    BorderColor #2C5F7C
+    ArrowColor #2C5F7C
+}
+
+class SafeLogger <<Singleton>> {
+    - prefix: string
+    __
+    - SafeLogger()
+    - SafeLogger(const SafeLogger&) = delete
+    - operator=(const SafeLogger&) = delete
+    __
+    + {static} instance(): SafeLogger&
+    + setPrefix(p: string): void
+    + log(msg: string): void
+}
+
+note right of SafeLogger::instance
+  **Meyers Singleton:**
+  ```cpp
+  static SafeLogger inst;
+  return inst;
+  ```
+  
+  • Statik yerel değişken
+  • İlk çağrıda oluşturulur
+  • C++11+ thread-safe garanti
+  • Otomatik yok edilir
+end note
+
+note bottom of SafeLogger
+  ✅ **Thread Safety Garantisi:**
+  
+  **C++11 Standardı:**
+  • Statik yerel değişken başlatma
+    compiler tarafından senkronize edilir
+  • Sadece bir thread başlatabilir
+  • Diğer threadler bekler
+  • Race condition yok
+  
+  **Avantajlar:**
+  ✅ Thread-safe (C++11+)
+  ✅ Lazy initialization
+  ✅ Otomatik bellek yönetimi
+  ✅ Ekstra mutex gerekmez
+  ✅ Basit ve temiz kod
+  ✅ Magic Static garantisi
+  
+  **Dezavantajlar:**
+  ⚠️ C++11 öncesi desteklenmez
+  ⚠️ Yok etme sırası kontrolü yok
+  
+  **Kullanım:**
+  ```cpp
+  auto& logger = SafeLogger::instance();
+  logger.log("Thread-safe!");
+  ```
+end note
+
+footer Oluşturulma: 17.10.2025 | Sürüm: 1.0.0 | Pattern: Meyers Singleton
+
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 13:22:07 TRT 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 21.0.8+9-Ubuntu-0ubuntu124.04.1
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

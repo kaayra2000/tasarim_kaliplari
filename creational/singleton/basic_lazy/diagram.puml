@@ -1,0 +1,77 @@
+@startuml lazy-singleton
+/'
+ * @file lazy-singleton.puml
+ * @brief Thread-unsafe Lazy Singleton pattern class diyagramı
+ * @author AI Assistant
+ * @date 17.10.2025
+ * @version 1.0.0
+ * 
+ * @description Bu diyagram basit lazy initialization kullanan
+ *              ancak thread-safe olmayan singleton implementasyonunu gösterir
+ * 
+ * @warning Çoklu thread ortamında güvenli değildir!
+ '/
+
+title Basit (Lazy) Singleton Pattern - Thread-Unsafe
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+
+skinparam class {
+    BackgroundColor #FFE8CC
+    BorderColor #CC8800
+    ArrowColor #CC8800
+}
+
+class Logger <<Singleton>> {
+    - {static} instance: unique_ptr<Logger>
+    - prefix: string
+    __
+    - Logger()
+    - Logger(const Logger&) = delete
+    - operator=(const Logger&) = delete
+    __
+    + {static} getInstance(): Logger*
+    + setPrefix(p: string): void
+    + log(msg: string): void
+}
+
+note right of Logger::instance
+  **Statik Alan:**
+  • nullptr ile başlatılır
+  • İlk erişimde oluşturulur
+  • unique_ptr ile bellek yönetimi
+end note
+
+note bottom of Logger
+  ⚠️ **Thread Safety Problemi:**
+  
+  **Yarış Durumu:**
+  ```cpp
+  if (!instance) {
+      // Thread 1 ve Thread 2 aynı anda
+      // buraya girebilir!
+      instance = new Logger();
+  }
+  ```
+  
+  **Sonuç:**
+  • İki farklı instance oluşabilir
+  • Bellek sızıntısı riski
+  • Singleton garantisi bozulur
+  
+  ❌ **Zararlar:**
+  • Thread-safe değil
+  • Race condition riski
+  • Çoklu thread için uygun değil
+  
+  ✅ **Faydalar:**
+  • Basit implementasyon
+  • Lazy initialization
+  • Tek thread için yeterli
+  • Az kod
+end note
+
+footer Oluşturulma: 17.10.2025 | Sürüm: 1.0.0 | Pattern: Lazy Singleton
+
+@enduml

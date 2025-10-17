@@ -1,0 +1,83 @@
+@startuml safe-singleton
+/'
+ * @file safe-singleton.puml
+ * @brief Thread-safe Meyers Singleton pattern class diyagramı
+ * @author AI Assistant
+ * @date 17.10.2025
+ * @version 1.0.0
+ * 
+ * @description Bu diyagram C++11 Meyers Singleton tekniği ile
+ *              thread-safe singleton implementasyonunu gösterir
+ * 
+ * @note C++11 ve sonrası için statik yerel değişken
+ *       başlatma garantili olarak thread-safe'tir
+ '/
+
+title Thread-Safe Singleton Pattern - Meyers Singleton
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+
+skinparam class {
+    BackgroundColor #E8F4F8
+    BorderColor #2C5F7C
+    ArrowColor #2C5F7C
+}
+
+class SafeLogger <<Singleton>> {
+    - prefix: string
+    __
+    - SafeLogger()
+    - SafeLogger(const SafeLogger&) = delete
+    - operator=(const SafeLogger&) = delete
+    __
+    + {static} instance(): SafeLogger&
+    + setPrefix(p: string): void
+    + log(msg: string): void
+}
+
+note right of SafeLogger::instance
+  **Meyers Singleton:**
+  ```cpp
+  static SafeLogger inst;
+  return inst;
+  ```
+  
+  • Statik yerel değişken
+  • İlk çağrıda oluşturulur
+  • C++11+ thread-safe garanti
+  • Otomatik yok edilir
+end note
+
+note bottom of SafeLogger
+  ✅ **Thread Safety Garantisi:**
+  
+  **C++11 Standardı:**
+  • Statik yerel değişken başlatma
+    compiler tarafından senkronize edilir
+  • Sadece bir thread başlatabilir
+  • Diğer threadler bekler
+  • Race condition yok
+  
+  **Avantajlar:**
+  ✅ Thread-safe (C++11+)
+  ✅ Lazy initialization
+  ✅ Otomatik bellek yönetimi
+  ✅ Ekstra mutex gerekmez
+  ✅ Basit ve temiz kod
+  ✅ Magic Static garantisi
+  
+  **Dezavantajlar:**
+  ⚠️ C++11 öncesi desteklenmez
+  ⚠️ Yok etme sırası kontrolü yok
+  
+  **Kullanım:**
+  ```cpp
+  auto& logger = SafeLogger::instance();
+  logger.log("Thread-safe!");
+  ```
+end note
+
+footer Oluşturulma: 17.10.2025 | Sürüm: 1.0.0 | Pattern: Meyers Singleton
+
+@enduml

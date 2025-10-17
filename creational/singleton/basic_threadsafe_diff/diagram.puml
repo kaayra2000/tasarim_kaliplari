@@ -1,0 +1,113 @@
+@startuml singleton-comparison
+/'
+ * @file singleton-comparison.puml
+ * @brief Singleton Pattern yaklaşımlarının detaylı karşılaştırması
+ * @author AI Assistant
+ * @date 17.10.2025
+ * @version 1.0.0
+ * 
+ * @description Bu diyagram thread-unsafe lazy singleton ile
+ *              thread-safe Meyers singleton arasındaki farkları gösterir
+ '/
+
+title Singleton Pattern - Thread-Unsafe vs Thread-Safe Karşılaştırması
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+
+package "❌ Basit Lazy Singleton (Thread-Unsafe)" #FFE8CC {
+    class "Logger" as L1 <<Singleton>> {
+        - {static} instance: unique_ptr<Logger>
+        - prefix: string
+        __
+        - Logger()
+        - Logger(const Logger&) = delete
+        - operator=(const Logger&) = delete
+        __
+        + {static} getInstance(): Logger*
+        + setPrefix(p: string): void
+        + log(msg: string): void
+    }
+    
+    note bottom of L1
+      **Implementasyon:**
+      ```cpp
+      static unique_ptr<Logger> instance = nullptr;
+      
+      Logger* getInstance() {
+          if (!instance) {  // ⚠️ Race condition!
+              instance = unique_ptr<Logger>(new Logger());
+          }
+          return instance.get();
+      }
+      ```
+      
+      **Karakteristikler:**
+      • Pointer döndürür (Logger*)
+      • Manuel null kontrolü
+      • Heap allocation
+      • unique_ptr ile yönetim
+      
+      ❌ **Problemler:**
+      • Thread 1 ve 2 aynı anda if'e girebilir
+      • İki instance oluşabilir
+      • Bellek sızıntısı riski
+      • Singleton garantisi bozulur
+      
+      **Kullanım Alanı:**
+      • Tek thread uygulamalar
+      • Basit scriptler
+      • Prototip geliştirme
+    end note
+}
+
+package "✅ Meyers Singleton (Thread-Safe)" #E8F4F8 {
+    class "SafeLogger" as L2 <<Singleton>> {
+        - prefix: string
+        __
+        - SafeLogger()
+        - SafeLogger(const SafeLogger&) = delete
+        - operator=(const SafeLogger&) = delete
+        __
+        + {static} instance(): SafeLogger&
+        + setPrefix(p: string): void
+        + log(msg: string): void
+    }
+    
+    note bottom of L2
+      **Implementasyon:**
+      ```cpp
+      SafeLogger& instance() {
+          static SafeLogger inst;  // ✅ Thread-safe!
+          return inst;
+      }
+      ```
+      
+      **Karakteristikler:**
+      • Referans döndürür (SafeLogger&)
+      • Null kontrolü gereksiz
+      • Stack/static allocation
+      • Otomatik yönetim
+      
+      ✅ **Garantiler:**
+      • C++11 Magic Static
+      • Compiler senkronizasyonu
+      • Tek instance garantisi
+      • Otomatik yok etme
+      
+      **Kullanım Alanı:**
+      • Çoklu thread uygulamalar
+      • Production kod
+      • Modern C++ projeleri
+    end note
+}
+
+note "**Temel Farklar:**\n\n**1. Thread Safety:**\n   Lazy: ❌ Race condition var\n   Meyers: ✅ C++11+ garanti\n\n**2. Bellek Yönetimi:**\n   Lazy: unique_ptr (heap)\n   Meyers: static local (stack/static)\n\n**3. Dönüş Tipi:**\n   Lazy: Logger* (pointer)\n   Meyers: SafeLogger& (referans)\n\n**4. Null Kontrolü:**\n   Lazy: if (!instance) gerekli\n   Meyers: Gereksiz\n\n**5. Performans:**\n   Lazy: Pointer dereference\n   Meyers: Doğrudan erişim\n\n**6. Kod Karmaşıklığı:**\n   Lazy: Daha fazla kod\n   Meyers: Daha basit" as DIFF
+
+note "**Sequence Karşılaştırması:**\n\n**Lazy Singleton (Thread-Unsafe):**\n```\nThread 1: getInstance() → if(!instance) → new Logger()\nThread 2: getInstance() → if(!instance) → new Logger() ⚠️\nSonuç: İki instance!\n```\n\n**Meyers Singleton (Thread-Safe):**\n```\nThread 1: instance() → static init başlar\nThread 2: instance() → bekler (compiler lock)\nThread 1: init tamamlanır\nThread 2: mevcut instance döner ✅\nSonuç: Tek instance!\n```" as SEQ
+
+note "**Öneriler:**\n\n**Lazy Singleton Kullan:**\n• Tek thread ortamı\n• Hızlı prototip\n• Basit uygulamalar\n• Legacy kod (C++03)\n\n**Meyers Singleton Kullan:**\n• Çoklu thread ortamı\n• Production kod\n• Modern C++ (C++11+)\n• Güvenlik kritik\n• Performans önemli\n\n**Genel Tavsiye:**\nModern C++ projelerinde\nher zaman Meyers Singleton\ntercihi yapın!" as REC
+
+footer Oluşturulma: 17.10.2025 | Sürüm: 1.0.0 | Karşılaştırma: Singleton Patterns
+
+@enduml
