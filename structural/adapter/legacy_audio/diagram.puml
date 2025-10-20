@@ -1,0 +1,106 @@
+@startuml legacy-audio-adapter
+/'
+ * @file legacy-audio-adapter.puml
+ * @brief usb-c telefon çıkışının analog kulaklığa adapter pattern ile uyarlanması
+ * @author Muhammed Kayra Bulut
+ * @date 20.10.2025
+ * @version 1.0.0
+ *
+ * @description bu diyagram dijital ses çıkışı sağlayan bir
+ *              telefonun, analog kulaklık arayüzüne nasıl
+ *              uyarlandığını gösterir. Adapter, pcm verisini
+ *              dönüştürerek istemciye analog sinyal sunar.
+ *
+ * @pattern Adapter (Structural)
+'/
+
+title USB-C'den 3.5mm Jak'a - Adapter Pattern
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+
+skinparam class {
+    BackgroundColor #FFF7F0
+    BorderColor #C26E2B
+    ArrowColor #C26E2B
+}
+
+skinparam package {
+    BackgroundColor #FFF2E3
+    BorderColor #D47F36
+}
+
+' ========== Hedef Arayüz ve Eski Cihaz ==========
+
+package "Analog Ses Sistemi" {
+    interface AnalogHeadset <<Target>> {
+        + playAnalog(left: float, right: float)
+    }
+
+    class StudioHeadphones <<Concrete Target>> {
+        + playAnalog(left: float, right: float)
+    }
+}
+
+' ========== Adaptee Cihaz ==========
+
+package "Modern Telefon" #E9F7FF {
+    class UsbTypeCPhone <<Adaptee>> {
+        + streamDigital(track: string): vector<int>
+        + calibrateDac(): void
+    }
+}
+
+' ========== Adapter ==========
+
+class UsbToJackAdapter <<Adapter>> {
+    - phone: unique_ptr<UsbTypeCPhone>
+    - gainLeft: float
+    - gainRight: float
+    + UsbToJackAdapter(unique_ptr<UsbTypeCPhone> phone)
+    + playAnalog(left: float, right: float)
+    + playFromPhone(track: string)
+    - convertToStereo(pcm: vector<int>): pair<float, float>
+}
+
+' ========== İlişkiler ==========
+
+AnalogHeadset <|.. StudioHeadphones : implements
+AnalogHeadset <|.. UsbToJackAdapter : implements
+UsbToJackAdapter *-- UsbTypeCPhone : composition
+
+' ========== Notlar ==========
+
+note left of UsbToJackAdapter
+  **Adaptasyon Adımları**
+  1. Dijital PCM akışını al
+  2. DAC kalibrasyonu yap
+  3. Sol/sağ kanal kazancını ayarla
+  4. AnalogHeadset arayüzünü besle
+end note
+
+note right of AnalogHeadset
+  Analog arayüz eski sistemlerle
+  uyumludur. Adapter olmadan
+  modern telefon dijital çıktıyı
+  doğrudan iletemez.
+end note
+
+note bottom of UsbTypeCPhone
+  **Kullanım Örneği**
+  auto phone = std::make_unique<UsbTypeCPhone>();
+  UsbToJackAdapter adapter(std::move(phone));
+  adapter.playFromPhone("analog-dreams.aac");
+end note
+
+legend right
+  == Stereotipler ==
+  <b><<Target>></b> : Eski sistem arayüzü
+  <b><<Adapter>></b> : Dönüştürücü sınıf
+  <b><<Adaptee>></b> : Modern cihaz
+end legend
+
+footer Oluşturulma: 20.10.2025 | Sürüm: 1.0.0 | Pattern: Adapter
+
+@enduml

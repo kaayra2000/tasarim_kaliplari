@@ -1,0 +1,92 @@
+@startuml adapter-scenarios-comparison
+allowmixing
+/'
+ * @file adapter-scenarios-comparison.puml
+ * @brief bulut servis adapteri ile donanım adapterinin görsel karşılaştırması
+ * @author Muhammed Kayra Bulut
+ * @date 20.10.2025
+ * @version 1.0.0
+ *
+ * @description bu diyagram iki farklı adapter senaryosunu yan yana
+ *              inceleyerek ortak noktalarını ve farklılıklarını
+ *              gösterir. Birincisi yazılım tabanlı bulut servis
+ *              entegrasyonu, ikincisi ise donanım port dönüşümüdür.
+ *
+ * @pattern Adapter (Structural)
+'/
+
+title Adapter Senaryolarının Karşılaştırması
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+skinparam package {
+    BackgroundColor #F5F7FA
+    BorderColor #2D6AA6
+}
+
+skinparam class {
+    BackgroundColor #FFFFFF
+    BorderColor #2D6AA6
+    ArrowColor #2D6AA6
+}
+
+' ========== Bulut Servis Adapteri ==========
+
+package "Bulut Akışı" {
+    interface MediaPlayer <<Target>>
+    class StreamingAdapter <<Adapter>>
+    class CloudStreamingService <<Adaptee>>
+
+    MediaPlayer <|.. StreamingAdapter
+    StreamingAdapter *-- CloudStreamingService
+}
+
+' ========== Donanım Adapteri ==========
+
+package "USB'den Jak'a" #FFF5EC {
+    interface AnalogHeadset <<Target>>
+    class UsbToJackAdapter <<Adapter>>
+    class UsbTypeCPhone <<Adaptee>>
+
+    AnalogHeadset <|.. UsbToJackAdapter
+    UsbToJackAdapter *-- UsbTypeCPhone
+}
+
+' ========== Karşılaştırmalı İlişkiler ==========
+
+StreamingAdapter ..> MediaPlayer : hedef arayüz
+UsbToJackAdapter ..> AnalogHeadset : hedef arayüz
+CloudStreamingService ..> StreamingAdapter : adaptee çağrıları
+UsbTypeCPhone ..> UsbToJackAdapter : adaptee çağrıları
+
+' ========== Açıklayıcı Notlar ==========
+
+note bottom of StreamingAdapter
+  **Bulut Akışı**
+  * Bölge seçimi ve kimlik doğrulama
+  * Ağ gecikmesi ve bağlantı tekrarları
+  * Üçüncü parti API çağrıları
+end note
+
+note bottom of UsbToJackAdapter
+  **Donanım Uyarlaması**
+  * Dijital -> analog dönüşüm
+  * Fiziksel port uyumluluğu
+  * Gerçek zamanlı sinyal işleme
+end note
+
+rectangle "== Ortak Noktalar ==\n* İstemci arayüzünü değişmeden tutar\n* Adapter ekstra kurulum adımlarını gizler\n* Uygulama tarafında tek tip kullanım sunar" as SharedInsights #EEF2F6
+
+legend right
+  == Stereotipler ==
+  <b><<Target>></b> : İstemcinin beklediği arayüz
+  <b><<Adapter>></b> : Dönüştürücü katman
+  <b><<Adaptee>></b> : Uyum sağlanan kaynak
+end legend
+
+footer Oluşturulma: 20.10.2025 | Sürüm: 1.0.0 | Pattern: Adapter
+
+@enduml

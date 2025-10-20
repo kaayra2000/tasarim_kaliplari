@@ -1,0 +1,108 @@
+@startuml cloud-streaming-adapter
+/'
+ * @file cloud-streaming-adapter.puml
+ * @brief bulut tabanlı medya servisinin adapter pattern ile uyarlanması
+ * @author Muhammed Kayra Bulut
+ * @date 20.10.2025
+ * @version 1.0.0
+ *
+ * @description bu diyagram yerel `MediaPlayer` arayüzünün
+ *              üçüncü parti `CloudStreamingService` servisine
+ *              nasıl uyarlandığını gösterir. Adapter sınıfı
+ *              bağlantı, kimlik doğrulama ve yayın akışını
+ *              istemciden gizler.
+ *
+ * @pattern Adapter (Structural)
+'/
+
+title Bulut Akışı - Adapter Pattern
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+
+skinparam class {
+    BackgroundColor #F4F8FB
+    BorderColor #245B8E
+    ArrowColor #245B8E
+}
+
+skinparam package {
+    BackgroundColor #EFF5F9
+    BorderColor #3B6A99
+}
+
+' ========== Hedef Arayüz ve Yerel Uygulama ==========
+
+package "Yerel Oynatıcı" {
+    interface MediaPlayer <<Target>> {
+        + play(resource: string)
+    }
+
+    class LocalAudioPlayer <<Concrete Target>> {
+        + play(resource: string)
+    }
+}
+
+' ========== Adaptee Servis ==========
+
+package "Bulut Servisi" #F7F1FF {
+    class CloudStreamingService <<Adaptee>> {
+        + connect(region: string)
+        + authenticate(token: string)
+        + startStream(trackId: string)
+        + stopStream()
+    }
+}
+
+' ========== Adapter ==========
+
+class StreamingAdapter <<Adapter>> {
+    - service: unique_ptr<CloudStreamingService>
+    - regionEndpoint: string
+    - authToken: string
+    + StreamingAdapter(region: string, token: string)
+    + play(resource: string)
+    - prepareStream(resource: string): void
+}
+
+' ========== İlişkiler ==========
+
+MediaPlayer <|.. LocalAudioPlayer : implements
+MediaPlayer <|.. StreamingAdapter : implements
+StreamingAdapter *-- CloudStreamingService : uses
+
+' ========== Davranış Notları ==========
+
+note left of StreamingAdapter
+  **Adapter Sorumlulukları**
+  * Bağlantı başlatma
+  * Kimlik doğrulama
+  * Yayın akışını başlatma
+  * İstemci arayüzünü koruma
+end note
+
+note right of CloudStreamingService
+  **Adaptee Detayları**
+  * Bölgesel uç noktalar
+  * Token bazlı kimlik doğrulama
+  * Yayın kontrol metotları
+end note
+
+note bottom of MediaPlayer
+  **Kullanım Örneği**
+  std::unique_ptr<MediaPlayer> player;
+  player = std::make_unique<StreamingAdapter>("eu-central-1", "token-42");
+  player->play("lofi-beats.mp3");
+end note
+
+legend right
+  == Stereotipler ==
+  <b><<Target>></b> : İstemcinin beklediği arayüz
+  <b><<Adapter>></b> : Çevirim yapan sınıf
+  <b><<Adaptee>></b> : Uyum sağlanacak mevcut sınıf
+end legend
+
+footer Oluşturulma: 20.10.2025 | Sürüm: 1.0.0 | Pattern: Adapter
+
+@enduml
