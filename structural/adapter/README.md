@@ -1,6 +1,6 @@
 # Adapter Pattern Nedir?
 
-**Adapter Pattern**, uyumsuz arayüzlere sahip sınıfları birlikte çalışabilir hale getiren bir **yapısal kalıptır (structural pattern)**. İstemci kodu beklediği arayüzü kullanmaya devam ederken adapter sınıfı çağrıları hedef sınıfa çevirir. Böylece hem mevcut kod korunur hem de yeni sistemler entegre edilir.
+**Adapter Pattern**, uyumsuz arayüzlere sahip sınıfları birlikte çalışabilir hale getiren bir **yapısal kalıptır (structural pattern)**. İstemci kodu beklediği arayüzü kullanmaya devam ederken, adapter sınıfı çağrıları hedef sınıfa çevirir. Böylece hem mevcut kod korunur hem de yeni sistemler entegre edilir.
 
 ## Ne İşe Yarar?
 
@@ -13,7 +13,7 @@
 
 ### 1. Bulut Akışı (Cloud Streaming)
 
-![Cloud Streaming Adapter](./cloud_streaming/diagram.png)
+![Bulut Akışı Adaptörü](./cloud_streaming/diagram.png)
 
 Yerel `MediaPlayer` arayüzü, üçüncü parti `CloudStreamingService` servisine uyarlanır. `StreamingAdapter`, bağlantı, kimlik doğrulama ve akış yönetimini üstlenirken istemci hâlâ aynı `play()` metodunu kullanır.
 
@@ -25,7 +25,7 @@ player->play("song_id_123");
 
 ### 2. Eski Kulaklık (Legacy Audio)
 
-![Legacy Audio Adapter](./legacy_audio/diagram.png)
+![Eski Kulaklık Adaptörü](./legacy_audio/diagram.png)
 
 `UsbToJackAdapter`, dijital USB-C telefon çıkışını analog kulaklığa çevirir. Dijital PCM verisi alınır, manuel olarak analog değerlere dönüştürülür ve `AnalogAudioOutput` arayüzüne uygun şekilde iletilir.
 
@@ -39,9 +39,9 @@ headset.plugIn(&adapter);
 phone.playAudio("analog-dreams.aac");   
 ```
 
-### 3. İki Senaryonun Karşılaştırması
+### 3. İki Vakanın Karşılaştırması
 
-![Adapter Comparison](./cloud_legacy_diff/diagram.png)
+![Adapter Karşılaştırması](./cloud_legacy_diff/diagram.png)
 
 Karşılaştırma diyagramı, bulut servis uyarlaması ile fiziksel port uyarlamasının ortak noktalarını (**aynı arayüzü koruma**, **adapter üzerinden ek hazırlık adımları**) ve farklarını (**ağ çağrıları vs. gerçek zamanlı sinyal dönüştürme**, **yazılım entegrasyonu vs. donanım uyumluluğu**) yan yana gösterir.
 

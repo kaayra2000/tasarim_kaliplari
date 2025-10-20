@@ -82,9 +82,9 @@ class UsbToJackAdapter <<Adapter>> {
 
 ' ========== İlişkiler ==========
 
-AnalogHeadset <|.. StudioHeadphones : implements
-AnalogHeadset <|.. UsbToJackAdapter : implements
-UsbToJackAdapter *-- UsbTypeCPhone : owns >
+AnalogHeadset <|.. StudioHeadphones : uygular
+AnalogHeadset <|.. UsbToJackAdapter : uygular
+UsbToJackAdapter *-- UsbTypeCPhone : sahiplik
 
 ' ========== Açıklayıcı Notlar ==========
 
@@ -134,7 +134,7 @@ end note
 ' ========== Legend ==========
 
 legend right
-  |= Stereotype |= Açıklama |
+  |= Stereotip |= Açıklama |
   | <<Target>> | eski sistem arayüzü |
   | <<Adapter>> | dönüştürücü sınıf |
   | <<Adaptee>> | modern cihaz |

@@ -96,9 +96,9 @@ class StreamingAdapter <<Adapter>> {
 
 ' ========== İlişkiler ==========
 
-MediaPlayer <|.. LocalAudioPlayer : implements
-MediaPlayer <|.. StreamingAdapter : implements
-StreamingAdapter o-- CloudStreamingService : uses >
+MediaPlayer <|.. LocalAudioPlayer : uygular
+MediaPlayer <|.. StreamingAdapter : uygular
+StreamingAdapter o-- CloudStreamingService : kullanır
 
 note right of MediaPlayer
   **Target Interface**
@@ -116,7 +116,7 @@ note left of StreamingAdapter
   5. İstemci arayüzünü koruma
   
   **Örnek Kullanım:**
-  auto player = make_unique<StreamingAdapter>(
+  auto player = std::make_unique<StreamingAdapter>(
       "eu-central-1", 
       "token-42"
   );
@@ -144,15 +144,15 @@ note bottom of LocalAudioPlayer
 end note
 
 legend right
-  |= Stereotype |= Açıklama |
+  |= Stereotip |= Açıklama |
   | <<Target>> | İstemcinin beklediği arayüz |
   | <<Adapter>> | Çevirim yapan sınıf |
   | <<Adaptee>> | Uyum sağlanacak mevcut sınıf |
   | <<Concrete Target>> | Target'ın doğrudan implementasyonu |
   
   **İlişki Türleri:**
-  <|.. : Interface implementation
-  o-- : Composition (has-a)
+  <|.. : Arayüz uygulaması
+  o-- : Bileşim (sahiplik)
 endlegend
 
 footer Oluşturulma: 20.10.2025 | Sürüm: 1.0.0 | Pattern: Adapter (Structural) | Modül: MediaPlayer

@@ -78,8 +78,8 @@ package "Senaryo 1: Bulut Akış Entegrasyonu" #E8F4F8 {
         +authenticate(credentials: String): Token
     }
     
-    MediaPlayer <|.. StreamingAdapter : implements
-    StreamingAdapter o--> CloudStreamingService : uses
+    MediaPlayer <|.. StreamingAdapter : uygular
+    StreamingAdapter o--> CloudStreamingService : kullanır
 }
 
 ' ========== Senaryo 2: Donanım Adapteri ==========
@@ -111,8 +111,8 @@ package "Senaryo 2: USB-C'den 3.5mm Jack'e Dönüşüm" #FFF5EC {
         +getAudioFormat(): AudioFormat
     }
     
-    AnalogHeadset <|.. UsbToJackAdapter : implements
-    UsbToJackAdapter o--> UsbTypeCPhone : uses
+    AnalogHeadset <|.. UsbToJackAdapter : uygular
+    UsbToJackAdapter o--> UsbTypeCPhone : kullanır
 }
 
 ' ========== Karşılaştırma Notları ==========
@@ -158,15 +158,15 @@ UsbTypeCPhone .up.> UsbToJackAdapter : "adaptee\nçağrıları"
 
 ' ========== Legend ==========
 legend right
-  <b>== Stereotipler ==</b>
-  <<Target>>   : İstemcinin beklediği arayüz
-  <<Adapter>>  : Dönüştürücü katman (wrapper)
-  <<Adaptee>>  : Uyum sağlanan mevcut sistem
+    <b>== Stereotipler ==</b>
+    <<Target>>   : İstemcinin beklediği arayüz
+    <<Adapter>>  : Dönüştürücü katman (sarmalayıcı)
+    <<Adaptee>>  : Uyum sağlanan mevcut sistem
   
-  <b>== İlişki Türleri ==</b>
-  <|..         : Interface implementation
-  o-->         : Composition (has-a)
-  .>           : Dependency
+    <b>== İlişki Türleri ==</b>
+    <|..         : Arayüz uygulaması
+    o-->         : Bileşim (has-a)
+    .>           : Bağımlılık
 end legend
 
 footer Oluşturulma: 20.10.2025 | Sürüm: 1.0.0 | Pattern: Adapter (Structural) | Modül: Design Patterns
