@@ -11,6 +11,62 @@
 FILTER="${1:-}"
 ROOT="${2:-.}"
 
+CURRENT_FILE=""
+CURRENT_TMP=""
+CURRENT_DIR=""
+CURRENT_TMPBASE=""
+
+remove_matches() {
+  local pattern="$1"
+  local match
+  while IFS= read -r match; do
+    rm -f "$match"
+  done < <(compgen -G "$pattern" 2>/dev/null || true)
+}
+
+cleanup_outputs() {
+  if [[ -z "$CURRENT_DIR" ]]; then
+    return
+  fi
+
+  if [[ -n "$CURRENT_TMPBASE" ]]; then
+    remove_matches "$CURRENT_DIR/$CURRENT_TMPBASE.png"
+    remove_matches "$CURRENT_DIR/${CURRENT_TMPBASE}"_*.png
+    remove_matches "$CURRENT_DIR/$CURRENT_TMPBASE.svg"
+    remove_matches "$CURRENT_DIR/${CURRENT_TMPBASE}"_*.svg
+  fi
+}
+
+cleanup_temp() {
+  if [[ -n "$CURRENT_TMP" && -f "$CURRENT_TMP" ]]; then
+    rm -f "$CURRENT_TMP"
+    CURRENT_TMP=""
+  fi
+
+  cleanup_outputs
+}
+
+cleanup_on_exit() {
+  cleanup_temp
+}
+
+handle_interrupt() {
+  trap - INT TERM
+  echo -e "\n🛑 Ctrl+C algılandı. İşlem sonlandırılıyor..."
+  if [[ -n "$CURRENT_FILE" ]]; then
+    echo "⏹️  Yarım kalan dosya: $CURRENT_FILE"
+  fi
+  cleanup_temp
+  CURRENT_FILE=""
+  CURRENT_DIR=""
+  CURRENT_BASE=""
+  CURRENT_TMPBASE=""
+  exit 130
+}
+
+trap 'handle_interrupt' INT TERM
+trap 'cleanup_on_exit' EXIT
+
 ensure_root_exists() {
   if [[ ! -d "$ROOT" ]]; then
     echo "Hata: '$ROOT' geçerli bir dizin değil." >&2
@@ -80,14 +136,18 @@ process_file() {
   local puml="$1"
   local dir base tmp tmpbase
 
+  CURRENT_FILE="$puml"
   dir="$(dirname "$puml")"
   base="$(basename "$puml" .puml)"
+  CURRENT_DIR="$dir"
 
   # Aynı klasörde geçici .puml oluştur (başlıktaki ismi temizle)
   if ! tmp="$(mktemp -p "$dir" ".__tmp_${base}_XXXXXX.puml")"; then
     echo "mktemp hatası: $puml" >&2
     return
   fi
+
+  CURRENT_TMP="$tmp"
 
   # Dosyada @startuml varsa isim temizle; yoksa sarmala
   if grep -q '^@startuml' "$puml"; then
@@ -98,6 +158,7 @@ process_file() {
   fi
 
   tmpbase="$(basename "$tmp" .puml)"
+  CURRENT_TMPBASE="$tmpbase"
 
   # PNG üret
   if plantuml -tpng "$tmp" >/dev/null 2>&1; then
@@ -124,6 +185,10 @@ process_file() {
   fi
 
   rm -f "$tmp"
+  CURRENT_TMP=""
+  CURRENT_FILE=""
+  CURRENT_DIR=""
+  CURRENT_TMPBASE=""
 }
 
 process_filtered_files() {
