@@ -1,8 +1,15 @@
 #!/usr/bin/env bash
 # Kullanım:
 #   ./puml_to_uml.sh         # Bulunduğun dizinden itibaren
-#   ./puml_to_uml.sh /yol    # Verilen kök dizinden itibaren
-ROOT="${1:-.}"
+#   ./puml_to_uml.sh <filtre>    # Filtreli (yolunda <filtre> geçen dosyalar)
+#   ./puml_to_uml.sh <filtre> <kök_dizin> # Belirtilen kök dizinden itibaren
+# Açıklama:
+#   Belirtilen dizin ve alt dizinlerdeki tüm .puml dosyalarını bulur,
+#   her dosya için PNG ve SVG çıktıları üretir.
+#   Eğer dosyada @startuml yoksa, geçici olarak sarar.
+#   İlerleme durumu ve hata mesajları gösterir.
+FILTER="${1:-.}"
+ROOT="${2:-}"
 
 # PlantUML var mı?
 if ! command -v plantuml >/dev/null 2>&1; then
@@ -60,17 +67,37 @@ process_file() {
   rm -f "$tmp"
 }
 
-# Tüm .puml dosyalarını say
+# Tüm .puml dosyalarını say (filtreye göre)
 echo "🔍 .puml dosyaları aranıyor..."
-total=$(find "$ROOT" -type f -name "*.puml" | wc -l)
+
+if [[ -n "$FILTER" ]]; then
+    echo "📌 Filtre aktif: '$FILTER' içeren yollar"
+    total=$(find "$ROOT" -type f -name "*.puml" -path "*${FILTER}*" | wc -l)
+else
+    echo "📌 Filtre yok, tüm dosyalar işlenecek"
+    total=$(find "$ROOT" -type f -name "*.puml" | wc -l)
+fi
+
 echo "✅ Toplam $total adet .puml dosyası bulundu."
 echo ""
 
 # Dosyaları işle ve ilerlemeyi göster
 count=0
-find "$ROOT" -type f -name "*.puml" -print0 \
-  | while IFS= read -r -d '' file; do
-      ((count++))
-      echo "[$count/$total] İşleniyor: $file"
-      process_file "$file"
-    done
+
+if [[ -n "$FILTER" ]]; then
+    # Filtreli işleme
+    find "$ROOT" -type f -name "*.puml" -path "*${FILTER}*" -print0 \
+      | while IFS= read -r -d '' file; do
+          ((count++))
+          echo "[$count/$total] İşleniyor: $file"
+          process_file "$file"
+        done
+else
+    # Filtresiz işleme (orijinal hali)
+    find "$ROOT" -type f -name "*.puml" -print0 \
+      | while IFS= read -r -d '' file; do
+          ((count++))
+          echo "[$count/$total] İşleniyor: $file"
+          process_file "$file"
+        done
+fi
