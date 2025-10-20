@@ -1,92 +1,174 @@
 @startuml adapter-scenarios-comparison
 allowmixing
+
 /'
  * @file adapter-scenarios-comparison.puml
  * @brief bulut servis adapteri ile donanım adapterinin görsel karşılaştırması
  * @author Muhammed Kayra Bulut
  * @date 20.10.2025
  * @version 1.0.0
- *
+ * 
  * @description bu diyagram iki farklı adapter senaryosunu yan yana
  *              inceleyerek ortak noktalarını ve farklılıklarını
  *              gösterir. Birincisi yazılım tabanlı bulut servis
  *              entegrasyonu, ikincisi ise donanım port dönüşümüdür.
- *
- * @pattern Adapter (Structural)
-'/
+ * 
+ * @pattern Adapter (Structural Design Pattern)
+ * @related StreamingAdapter.java, UsbToJackAdapter.java
+ '/
 
-title Adapter Senaryolarının Karşılaştırması
+title Adapter Pattern: Bulut Servis vs Donanım Dönüşümü Karşılaştırması
 
+' ========== Stil Tanımlamaları ==========
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
 skinparam classAttributeIconSize 0
 skinparam linetype ortho
 
 skinparam package {
-    BackgroundColor #F5F7FA
-    BorderColor #2D6AA6
+    BackgroundColor #E8F4F8
+    BorderColor #2C5F7C
+    FontStyle bold
 }
 
 skinparam class {
     BackgroundColor #FFFFFF
-    BorderColor #2D6AA6
-    ArrowColor #2D6AA6
+    BorderColor #2C5F7C
+    ArrowColor #2C5F7C
+    HeaderBackgroundColor #E8F4F8
 }
 
-' ========== Bulut Servis Adapteri ==========
-
-package "Bulut Akışı" {
-    interface MediaPlayer <<Target>>
-    class StreamingAdapter <<Adapter>>
-    class CloudStreamingService <<Adaptee>>
-
-    MediaPlayer <|.. StreamingAdapter
-    StreamingAdapter *-- CloudStreamingService
+skinparam interface {
+    BackgroundColor #FFE8CC
+    BorderColor #CC8800
 }
 
-' ========== Donanım Adapteri ==========
-
-package "USB'den Jak'a" #FFF5EC {
-    interface AnalogHeadset <<Target>>
-    class UsbToJackAdapter <<Adapter>>
-    class UsbTypeCPhone <<Adaptee>>
-
-    AnalogHeadset <|.. UsbToJackAdapter
-    UsbToJackAdapter *-- UsbTypeCPhone
+skinparam note {
+    BackgroundColor #FFF9E6
+    BorderColor #CCA300
 }
 
-' ========== Karşılaştırmalı İlişkiler ==========
+' ========== Senaryo 1: Bulut Servis Adapteri ==========
+package "Senaryo 1: Bulut Akış Entegrasyonu" #E8F4F8 {
+    
+    interface MediaPlayer <<Target>> {
+        +play(fileName: String): void
+        +pause(): void
+        +stop(): void
+    }
+    
+    class StreamingAdapter <<Adapter>> {
+        -cloudService: CloudStreamingService
+        __
+        +StreamingAdapter(service: CloudStreamingService)
+        +play(fileName: String): void
+        +pause(): void
+        +stop(): void
+        -authenticateUser(): boolean
+        -selectRegion(): String
+    }
+    
+    class CloudStreamingService <<Adaptee>> {
+        -apiKey: String
+        -region: String
+        __
+        +streamContent(contentId: String): Stream
+        +pauseStream(streamId: String): void
+        +stopStream(streamId: String): void
+        +authenticate(credentials: String): Token
+    }
+    
+    MediaPlayer <|.. StreamingAdapter : implements
+    StreamingAdapter o--> CloudStreamingService : uses
+}
 
-StreamingAdapter ..> MediaPlayer : hedef arayüz
-UsbToJackAdapter ..> AnalogHeadset : hedef arayüz
-CloudStreamingService ..> StreamingAdapter : adaptee çağrıları
-UsbTypeCPhone ..> UsbToJackAdapter : adaptee çağrıları
+' ========== Senaryo 2: Donanım Adapteri ==========
+package "Senaryo 2: USB-C'den 3.5mm Jack'e Dönüşüm" #FFF5EC {
+    
+    interface AnalogHeadset <<Target>> {
+        +playAudio(signal: AnalogSignal): void
+        +adjustVolume(level: int): void
+        +mute(): void
+    }
+    
+    class UsbToJackAdapter <<Adapter>> {
+        -usbPhone: UsbTypeCPhone
+        -dacConverter: DigitalToAnalogConverter
+        __
+        +UsbToJackAdapter(phone: UsbTypeCPhone)
+        +playAudio(signal: AnalogSignal): void
+        +adjustVolume(level: int): void
+        +mute(): void
+        -convertDigitalToAnalog(data: byte[]): AnalogSignal
+    }
+    
+    class UsbTypeCPhone <<Adaptee>> {
+        -usbPort: UsbTypeC
+        __
+        +sendDigitalAudio(data: byte[]): void
+        +setVolume(level: int): void
+        +muteAudio(): void
+        +getAudioFormat(): AudioFormat
+    }
+    
+    AnalogHeadset <|.. UsbToJackAdapter : implements
+    UsbToJackAdapter o--> UsbTypeCPhone : uses
+}
 
-' ========== Açıklayıcı Notlar ==========
-
-note bottom of StreamingAdapter
-  **Bulut Akışı**
-  * Bölge seçimi ve kimlik doğrulama
-  * Ağ gecikmesi ve bağlantı tekrarları
-  * Üçüncü parti API çağrıları
+' ========== Karşılaştırma Notları ==========
+note top of StreamingAdapter
+  **Yazılım Katmanı Adaptasyonu**
+  • API çağrılarını dönüştürür
+  • Kimlik doğrulama ekler
+  • Bölge seçimi yapar
+  • Ağ hatalarını yönetir
+  • Asenkron işlemleri senkronize eder
 end note
 
-note bottom of UsbToJackAdapter
-  **Donanım Uyarlaması**
-  * Dijital -> analog dönüşüm
-  * Fiziksel port uyumluluğu
-  * Gerçek zamanlı sinyal işleme
+note top of UsbToJackAdapter
+  **Donanım Katmanı Adaptasyonu**
+  • Dijital → Analog dönüşüm (DAC)
+  • Fiziksel port uyumluluğu
+  • Gerçek zamanlı sinyal işleme
+  • Voltaj seviyesi ayarı
+  • Empedans eşleştirme
 end note
 
-rectangle "== Ortak Noktalar ==\n* İstemci arayüzünü değişmeden tutar\n* Adapter ekstra kurulum adımlarını gizler\n* Uygulama tarafında tek tip kullanım sunar" as SharedInsights #EEF2F6
+' ========== Ortak Özellikler ==========
+note as CommonFeatures
+  <b>== Adapter Pattern Ortak Özellikleri ==</b>
+  
+  ✓ İstemci kodu değişmeden kalır
+  ✓ Uyumsuz arayüzleri birleştirir
+  ✓ Tek Sorumluluk İlkesi (SRP)
+  ✓ Açık/Kapalı İlkesi (OCP)
+  ✓ Eski kod ile yeni kod entegrasyonu
+  
+  <b>Farklılıklar:</b>
+  • Bulut: Yazılım katmanı, ağ iletişimi
+  • Donanım: Fiziksel katman, sinyal dönüşümü
+end note
 
+' ========== İlişki Açıklamaları ==========
+StreamingAdapter .down.> MediaPlayer : "hedef arayüzü\nuygular"
+UsbToJackAdapter .down.> AnalogHeadset : "hedef arayüzü\nuygular"
+
+CloudStreamingService .up.> StreamingAdapter : "adaptee\nçağrıları"
+UsbTypeCPhone .up.> UsbToJackAdapter : "adaptee\nçağrıları"
+
+' ========== Legend ==========
 legend right
-  == Stereotipler ==
-  <b><<Target>></b> : İstemcinin beklediği arayüz
-  <b><<Adapter>></b> : Dönüştürücü katman
-  <b><<Adaptee>></b> : Uyum sağlanan kaynak
+  <b>== Stereotipler ==</b>
+  <<Target>>   : İstemcinin beklediği arayüz
+  <<Adapter>>  : Dönüştürücü katman (wrapper)
+  <<Adaptee>>  : Uyum sağlanan mevcut sistem
+  
+  <b>== İlişki Türleri ==</b>
+  <|..         : Interface implementation
+  o-->         : Composition (has-a)
+  .>           : Dependency
 end legend
 
-footer Oluşturulma: 20.10.2025 | Sürüm: 1.0.0 | Pattern: Adapter
+footer Oluşturulma: 20.10.2025 | Sürüm: 1.0.0 | Pattern: Adapter (Structural) | Modül: Design Patterns
 
 @enduml
