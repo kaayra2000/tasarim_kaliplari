@@ -1,0 +1,227 @@
+@startuml facade-pattern-comparison-vertical
+/'
+ * @file facade-pattern-comparison-vertical.puml
+ * @brief İki farklı Facade Pattern uygulamasının dikey karşılaştırmalı class diyagramı
+ * @author AI Assistant
+ * @date 20.10.2025
+ * @version 1.0.2
+ * 
+ * @description Bu diyagram Home Theater ve Computer Facade uygulamalarını
+ *              alt alta göstererek Facade Pattern'in farklı kullanım
+ *              senaryolarını karşılaştırır
+ '/
+
+title Facade Pattern - İki Yaklaşımın Dikey Karşılaştırması
+
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam linetype ortho
+
+' ============================================
+' ÜST KISIM - HOME THEATER FACADE
+' ============================================
+
+package "Home Theater Sistemi (Basit Facade - Raw Pointer)" #E8F4F8 {
+    
+    class HomeTheaterFacade <<Facade>> {
+        -dvd: DVDPlayer*
+        -amp: Amplifier*
+        -projector: Projector*
+        -lights: Lights*
+        -screen: Screen*
+        __
+        +HomeTheaterFacade(...)
+        +watchMovie(movie: string): void
+        +endMovie(): void
+    }
+    
+    class DVDPlayer {
+        +on(): void
+        +play(movie: string): void
+        +stop(): void
+        +off(): void
+    }
+    
+    class Amplifier {
+        +on(): void
+        +setVolume(level: int): void
+        +setSurroundSound(): void
+        +off(): void
+    }
+    
+    class Projector {
+        +on(): void
+        +wideScreenMode(): void
+        +off(): void
+    }
+    
+    class Lights {
+        +dim(level: int): void
+        +on(): void
+    }
+    
+    class Screen {
+        +down(): void
+        +up(): void
+    }
+    
+    ' İlişkiler - yatay düzenleme
+    HomeTheaterFacade o-right-> DVDPlayer
+    HomeTheaterFacade o-right-> Amplifier
+    HomeTheaterFacade o-right-> Projector
+    HomeTheaterFacade o-right-> Lights
+    HomeTheaterFacade o-right-> Screen
+    
+    DVDPlayer -[hidden]down- Amplifier
+    Amplifier -[hidden]down- Projector
+    Projector -[hidden]down- Lights
+    Lights -[hidden]down- Screen
+}
+
+note right of HomeTheaterFacade
+    **Home Theater Yaklaşımı**
+    
+    **✓ Faydalar:**
+    • Çok basit kullanım
+    • Tek metod: watchMovie()
+    • 5 alt sistemi koordine eder
+    • Hızlı prototipleme
+    
+    **✗ Zararlar:**
+    • Manuel bellek yönetimi
+    • Sahiplik belirsiz
+    • Yaşam döngüsü kontrolü yok
+    • Raw pointer riskleri
+    
+    **İlişki Tipi:**
+    ◇→ Aggregation (zayıf sahiplik)
+end note
+
+' ============================================
+' ALT KISIM - COMPUTER FACADE
+' ============================================
+
+package "Bilgisayar Sistemi (Modern Facade - Smart Pointer)" #FFE8CC {
+    
+    class ComputerFacade <<Facade>> {
+        -cpu: unique_ptr<CPU>
+        -memory: unique_ptr<Memory>
+        -hardDrive: unique_ptr<HardDrive>
+        -bios: unique_ptr<BIOS>
+        -os: unique_ptr<OperatingSystem>
+        __
+        +ComputerFacade()
+        +start(): void
+        +restart(): void
+    }
+    
+    class CPU {
+        +freeze(): void
+        +jump(position: long): void
+        +execute(): void
+    }
+    
+    class Memory {
+        +load(position: long, data: string): void
+        +initialize(): void
+    }
+    
+    class HardDrive {
+        +read(lba: long, size: int): string
+        +spinUp(): void
+    }
+    
+    class BIOS {
+        +powerOnSelfTest(): void
+        +loadBootloader(): void
+    }
+    
+    class OperatingSystem {
+        +loadKernel(): void
+        +startServices(): void
+        +showDesktop(): void
+    }
+    
+    ' İlişkiler - yatay düzenleme
+    ComputerFacade *-right-> CPU
+    ComputerFacade *-right-> Memory
+    ComputerFacade *-right-> HardDrive
+    ComputerFacade *-right-> BIOS
+    ComputerFacade *-right-> OperatingSystem
+    
+    CPU -[hidden]down- Memory
+    Memory -[hidden]down- HardDrive
+    HardDrive -[hidden]down- BIOS
+    BIOS -[hidden]down- OperatingSystem
+}
+
+note right of ComputerFacade
+    **Computer Yaklaşımı**
+    
+    **✓ Faydalar:**
+    • Otomatik bellek yönetimi
+    • RAII prensibi
+    • Güvenli sahiplik
+    • Production-ready
+    • Karmaşık boot sürecini basitleştirir
+    
+    **✗ Zararlar:**
+    • Biraz daha fazla kod
+    • unique_ptr overhead
+    • Daha karmaşık yapı
+    
+    **İlişki Tipi:**
+    ◆→ Composition (güçlü sahiplik)
+end note
+
+' ============================================
+' KARŞILAŞTIRMA TABLOLARI - ALT KISIM
+' ============================================
+
+note as ComparisonTable #CCFFCC
+    **Detaylı Karşılaştırma Tablosu**
+    
+    |= Özellik |= Home Theater |= Computer |
+    | **Pointer Tipi** | Raw pointer (*) | Smart pointer (unique_ptr) |
+    | **Sahiplik** | Dışarıdan alınan | Facade'in sahibi |
+    | **Bellek Yönetimi** | Manuel | Otomatik (RAII) |
+    | **Alt Sistem Sayısı** | 5 bileşen | 5 bileşen |
+    | **Karmaşıklık** | Orta (eğlence) | Yüksek (boot süreci) |
+    | **Kullanım Kolaylığı** | watchMovie() | start() |
+    | **Constructor** | Parametreli | Parametresiz |
+    | **Bağımlılık Enjeksiyonu** | Evet (DI) | Hayır (kendi oluşturur) |
+    | **Test Edilebilirlik** | Yüksek (mock'lanabilir) | Orta |
+    | **Üretim Hazırlığı** | Prototip | Production-ready |
+    | **C++ Standardı** | C++98+ | C++11+ |
+end note
+
+note as DecisionGuide #FFFFCC
+    **Ne Zaman Hangisi?**
+    
+    **Raw Pointer Yaklaşımı (Home Theater):**
+    • Bağımlılıklar dışarıdan geliyorsa
+    • Dependency Injection kullanıyorsanız
+    • Test edilebilirlik önemliyse
+    • Nesneler başka yerde yönetiliyorsa
+    • Hızlı prototipleme için
+    
+    **Smart Pointer Yaklaşımı (Computer):**
+    • Facade nesne sahipliğini almalıysa
+    • Bellek güvenliği kritikse
+    • RAII prensibi gerekiyorsa
+    • Karmaşık yaşam döngüsü varsa
+    • Üretim kodu için
+    
+    **Ortak Pattern Özellikleri:**
+    • Karmaşık alt sistemlere basit arayüz
+    • Çoklu bileşeni tek noktadan yönetim
+    • İstemci kodunu izole etme
+    • Tek sorumluluk prensibi
+end note
+
+' Tabloları yan yana yerleştir
+ComparisonTable -[hidden]right- DecisionGuide
+
+footer Oluşturulma: 20.10.2025 | Sürüm: 1.0.2 | Pattern: Facade Comparison (Vertical Layout)
+
+@enduml

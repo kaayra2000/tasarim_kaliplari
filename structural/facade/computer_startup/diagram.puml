@@ -1,0 +1,64 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+' Alt sistem sınıfları
+class CPU {
+    + freeze()
+    + jump(position: long)
+    + execute()
+}
+
+class Memory {
+    + load(position: long, data: string)
+    + initialize()
+}
+
+class HardDrive {
+    + read(lba: long, size: int): string
+    + spinUp()
+}
+
+class BIOS {
+    + powerOnSelfTest()
+    + loadBootloader()
+}
+
+class OperatingSystem {
+    + loadKernel()
+    + startServices()
+    + showDesktop()
+}
+
+' Facade sınıfı
+class ComputerFacade {
+    - cpu: unique_ptr<CPU>
+    - memory: unique_ptr<Memory>
+    - hardDrive: unique_ptr<HardDrive>
+    - bios: unique_ptr<BIOS>
+    - os: unique_ptr<OperatingSystem>
+    + ComputerFacade()
+    + start()
+    + restart()
+}
+
+' İlişkiler
+ComputerFacade *-- CPU
+ComputerFacade *-- Memory
+ComputerFacade *-- HardDrive
+ComputerFacade *-- BIOS
+ComputerFacade *-- OperatingSystem
+
+note left of ComputerFacade
+  Facade basitleştirilmiş
+  arayüz sağlar:
+  - start()
+  - restart()
+end note
+
+note bottom of CPU
+  Alt sistemler
+  karmaşık işlemlere
+  sahiptir
+end note
+
+@enduml

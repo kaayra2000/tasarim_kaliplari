@@ -1,0 +1,60 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+' Alt sistem sınıfları
+class DVDPlayer {
+    + on()
+    + play(movie: string)
+    + stop()
+    + off()
+}
+
+class Amplifier {
+    + on()
+    + setVolume(level: int)
+    + setSurroundSound()
+    + off()
+}
+
+class Projector {
+    + on()
+    + wideScreenMode()
+    + off()
+}
+
+class Lights {
+    + dim(level: int)
+    + on()
+}
+
+class Screen {
+    + down()
+    + up()
+}
+
+' Facade sınıfı
+class HomeTheaterFacade {
+    - dvd: DVDPlayer*
+    - amp: Amplifier*
+    - projector: Projector*
+    - lights: Lights*
+    - screen: Screen*
+    + HomeTheaterFacade(...)
+    + watchMovie(movie: string)
+    + endMovie()
+}
+
+' İlişkiler
+HomeTheaterFacade o-- DVDPlayer
+HomeTheaterFacade o-- Amplifier
+HomeTheaterFacade o-- Projector
+HomeTheaterFacade o-- Lights
+HomeTheaterFacade o-- Screen
+
+note right of HomeTheaterFacade
+  Facade deseni:
+  Karmaşık alt sistemi
+  basit arayüzle sarmalar
+end note
+
+@enduml
