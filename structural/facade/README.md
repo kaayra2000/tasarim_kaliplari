@@ -1,17 +1,17 @@
 # Facade Pattern Nedir?
 
-**Facade Pattern**, karmaşık bir alt sistemi basit ve anlaşılır bir arayüzle sarmalar. Bu kalıp, istemci kodunun alt sistemin karmaşıklığından korunmasını sağlayan bir **yapısal kalıptır (structural pattern)**. Mesela, bir ev sinema sistemi kurmak için DVD oynatıcı, amplifikatör, projektör, ışıklar ve ekran gibi birçok bileşeni tek bir tuşla kontrol etmek istersiniz kullanılabilir.
+**Facade Pattern**, karmaşık bir alt sistemi basit ve anlaşılır bir arayüzle sarmalar. Bu kalıp, istemci kodunun alt sistemin karmaşıklığından korunmasını sağlayan bir **yapısal kalıptır (structural pattern)**. Mesela, bir ev sinema sistemi kurmak için DVD oynatıcı, amplifikatör, projektör, ışıklar ve ekran gibi birçok bileşeni tek bir tuşla yönetmek için kullanılabilir.
 
 ## Ne İşe Yarar?
 
-- **Karmaşık sistemi basitleştirir** - Çok sayıda alt sistem bileşenini tek bir arayüzden yönetir
-- **Alt sistem bağımlılıklarını azaltır** - İstemci, alt sistemin iç detaylarını bilmek zorunda kalmaz
-- **Kullanımı kolaylaştırır** - Tek bir yöntem çağrısı ile birden fazla işlemi gerçekleştirir
-- **Kod tekrarını önler** - Sık kullanılan işlem dizileri tek bir yerde toplanır
+- **Karmaşık sistemi basitleştirir** – Çok sayıda alt sistem bileşenini tek bir arayüzden yönetir
+- **Alt sistem bağımlılıklarını azaltır** – İstemci, alt sistemin iç ayrıntılarını bilmek zorunda kalmaz
+- **Kullanımı kolaylaştırır** – Tek bir yöntem çağrısı ile birden fazla işlemi gerçekleştirir
+- **Kod tekrarını önler** – Sık kullanılan işlem dizileri tek bir yerde toplanır
 
 ## Örnekler
 
-### 1. Home Theater (Ev Sinema Sistemi)
+### 1. Ev Sinema Sistemi (Home Theater)
 
 ![Home Theater Facade](./home_theater/diagram.png)
 
@@ -24,7 +24,7 @@ theater.watchMovie("Inception");
 theater.endMovie();
 ```
 
-### 2. Computer Startup (Bilgisayar Başlatma)
+### 2. Bilgisayar Başlatma (Computer Startup)
 
 ![Computer Startup Facade](./computer_startup/diagram.png)
 
@@ -41,31 +41,31 @@ computer.start(); // Tüm başlatma işlemlerini yönetir
 ![Facade Comparison](./computer_home_diff/diagram.png)
 
 İki farklı facade kullanım senaryosunun karşılaştırması:
-- **Home Theater:** Eğlence sistemi yönetimi
-- **Computer Startup:** Sistem başlatma süreçleri
+- **Ev Sinema Sistemi:** Eğlence sistemi yönetimi
+- **Bilgisayar Başlatma:** Sistem başlatma süreçleri
 
 ## Nasıl Çalışır?
 
 1. **Facade sınıfı:** Alt sistemlere basit bir arayüz sunar ve karmaşık işlemleri yönetir
 2. **Alt sistemler:** Facade tarafından kullanılan bağımsız karmaşık bileşenler (CPU, Memory, DVD, Amplifier vb.)
-3. **İstemci:** Sadece facade ile iletişim kurar, alt sistemlerin detaylarını bilmez
+3. **İstemci:** Sadece facade ile iletişim kurar, alt sistemlerin ayrıntılarını bilmez
 4. **Basit arayüz:** İstemci tek bir yöntem çağrısı ile birden fazla alt sistem işlemini gerçekleştirir
 
 Facade, alt sistemlerin yöntemlerini düzenli bir sırada çağırarak karmaşık işlemleri otomatikleştirir.
 
 ## Ne Zaman Kullanılır?
 
-- **Karmaşık alt sistemler basitleştirilecekse** - Çok sayıda bileşen ve onların etkileşimleri varsa
-- **Alt sistemlere bağımlılığı azaltmak istiyorsanız** - İstemci kodunu alt sistem değişikliklerinden korur
-- **Katmanlı mimari oluşturuyorsanız** - Her katman bir facade ile temsil edilebilir
-- **Sık kullanılan işlem dizileri varsa** - Tekrar eden kod bloklarını tek yerde toplar
+- **Karmaşık alt sistemler basitleştirilecekse** – Çok sayıda bileşen ve onların etkileşimleri varsa
+- **Alt sistemlere bağımlılığı azaltmak istiyorsanız** – İstemci kodunu alt sistem değişikliklerinden korur
+- **Katmanlı mimari oluşturuyorsanız** – Her katman bir facade ile temsil edilebilir
+- **Sık kullanılan işlem dizileri varsa** – Tekrar eden kod bloklarını tek yerde toplar
 
 ## Ne Zaman Kullanılmaz?
 
-- **Basit sistemlerde** - Sadece birkaç sınıf varsa gereksiz soyutlama oluşturur
-- **Tüm alt sistem işlevlerine erişim gerekiyorsa** - Facade bazı ayrıntılı işlemleri gizleyebilir
-- **Alt sistem zaten basitse** - Fazladan katman karmaşıklık getirir
-- **Hız çok önemliyse** - Fazladan bir dolaylama katmanı ekler
+- **Basit sistemlerde** – Sadece birkaç sınıf varsa gereksiz soyutlama oluşturur
+- **Tüm alt sistem işlevlerine erişim gerekiyorsa** – Facade bazı ayrıntılı işlemleri gizleyebilir
+- **Alt sistem zaten basitse** – Fazladan katman karmaşıklık getirir
+- **Hız çok önemliyse** – Fazladan bir dolaylama katmanı ekler
 
 ## Diğer Yapısal Kalıplarla Farkları
 
