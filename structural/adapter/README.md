@@ -1,6 +1,6 @@
 # Adapter Pattern Nedir?
 
-**Adapter Pattern**, uyumsuz arayüzlere sahip sınıfları birlikte çalışabilir hale getiren bir **yapısal kalıptır (structural pattern)**. İstemci kodu beklediği arayüzü kullanmaya devam ederken, adapter sınıfı çağrıları hedef sınıfa çevirir. Böylece hem mevcut kod korunur hem de yeni sistemler entegre edilir.
+**Adapter Pattern**, uyumsuz arayüzlere sahip sınıfları birlikte çalışabilir hale getiren bir **yapısal kalıptır (structural pattern)**. İstemci kodu beklediği arayüzü kullanmaya devam ederken, adapter sınıfı çağrıları hedef sınıfa çevirir. Böylece hem mevcut kod korunur hem de yeni sistemler entegre edilir. Uyumsuz bir sınıfı veya servisi mevcut hedef arayüze uydurmanız gerektiğinde kullanılır.
 
 ## Ne İşe Yarar?
 

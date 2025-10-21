@@ -1,6 +1,6 @@
 # Decorator Pattern Nedir?
 
-**Decorator Pattern**, mevcut bir nesneye çalışma zamanında yeni sorumluluklar/özellikler eklemeyi sağlayan bir **yapısal kalıptır (structural pattern)**. Miras almadan, aynı arayüzü koruyarak davranışı katmanlı şekilde genişletebilirsiniz. Böylece sınıf patlaması (farklı kombinasyonlar için çok fazla alt sınıf) engellenir ve Açık/Kapalı Prensibi (OCP) desteklenir.
+**Decorator Pattern**, mevcut bir nesneye çalışma zamanında yeni sorumluluklar/özellikler eklemeyi sağlayan bir **yapısal kalıptır (structural pattern)**. Miras almadan, aynı arayüzü koruyarak davranışı katmanlı şekilde genişletebilirsiniz. Böylece sınıf patlaması (farklı kombinasyonlar için çok fazla alt sınıf) engellenir ve Açık/Kapalı Prensibi (OCP) desteklenir. Bir nesnenin arayüzünü değiştirmeden, özelliklerini esnekçe ve aşamalı olarak genişletmek istediğinizde kullanılır.
 
 ## Ne İşe Yarar?
 
@@ -58,7 +58,7 @@ Karşılaştırma diyagramı, iki örneğin ortak noktalarını (aynı arayüz, 
 ## Ne Zaman Kullanılır?
 
 - **Seçmeli özellikler** çalışma zamanında eklenmek isteniyorsa
-- **Sınıf patlaması** (özellik kombinasyonları) riskine karşı daha esnek bir yaklaşım gerekiyorsa
+- **Sınıf patlaması** (özellik kombinasyonları) tehlikesine karşı daha esnek bir yaklaşım gerekiyorsa
 - **Kalıtımdan kaçınmak** ve **bileşimi tercih etmek** istiyorsanız
 - **Aynı arayüzü koruyarak** davranışı genişletmek istiyorsanız
 
