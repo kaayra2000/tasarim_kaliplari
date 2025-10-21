@@ -1,0 +1,58 @@
+@startuml decorator-comparison
+/'
+ * @file decorator-comparison.puml
+ * @brief Decorator - Coffee Shop vs Secure I/O karşılaştırması
+ * @date 21.10.2025
+ * @version 1.0.0
+'/
+
+title Decorator Pattern - Coffee Shop vs Secure I/O
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+
+package "Coffee Shop" #E8F4F8 {
+  abstract class Beverage
+  class Espresso
+  class HouseBlend
+  abstract class CondimentDecorator
+  class Milk
+  class Mocha
+  class Whip
+
+  Beverage <|-- Espresso
+  Beverage <|-- HouseBlend
+  Beverage <|-- CondimentDecorator
+  CondimentDecorator <|-- Milk
+  CondimentDecorator <|-- Mocha
+  CondimentDecorator <|-- Whip
+}
+
+package "Secure I/O" #FFE8CC {
+  abstract class DataSource
+  class MemoryDataSource
+  abstract class DataSourceDecorator
+  class CompressionDecorator
+  class EncryptionDecorator
+
+  DataSource <|-- MemoryDataSource
+  DataSource <|-- DataSourceDecorator
+  DataSourceDecorator <|-- CompressionDecorator
+  DataSourceDecorator <|-- EncryptionDecorator
+}
+
+note bottom
+  Ortak Noktalar:
+  • Soyut bir temel arayüz (Beverage / DataSource)
+  • Temel sınıfa sarılan decorator zinciri
+  • Çalışma zamanında genişletilebilirlik (OCP)
+
+  Farklılıklar:
+  • Coffee Shop: fiyat ve açıklama kompozisyonu
+  • Secure I/O: yazma/okuma akışında dönüşüm
+  • Secure I/O'da işlem sırası önem arz eder
+end note
+
+footer Oluşturulma: 21.10.2025 | Sürüm: 1.0.0 | Karşılaştırma
+
+@enduml

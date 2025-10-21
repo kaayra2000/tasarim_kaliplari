@@ -1,0 +1,83 @@
+@startuml decorator-secure-io
+/'
+ * @file decorator-secure-io.puml
+ * @brief Decorator Pattern - Secure I/O örneği sınıf diyagramı
+ * @date 21.10.2025
+ * @version 1.0.0
+ *
+ * @description DataSource üzerine CompressionDecorator ve EncryptionDecorator
+ *              eklenerek veri akışına dinamik sorumluluklar kazandırılır.
+ * @pattern Decorator (Structural)
+'/
+
+title Decorator Pattern - Secure I/O
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+
+skinparam class {
+    BackgroundColor #E8F4F8
+    BorderColor #2C5F7C
+    ArrowColor #2C5F7C
+}
+
+' ========== Bileşen ve Somut Bileşen ==========
+abstract class DataSource {
+    +{abstract} write(data: string): void
+    +{abstract} read(): string
+}
+
+class MemoryDataSource {
+    -buffer: string
+    __
+    +write(data: string): void
+    +read(): string
+}
+
+DataSource <|-- MemoryDataSource
+
+' ========== Decorator Temeli ve Somut Decoratorler ==========
+abstract class DataSourceDecorator {
+    -wrappee: unique_ptr<DataSource>
+    __
+    +write(data: string): void
+    +read(): string
+}
+
+class CompressionDecorator {
+    -compress(raw: string): string
+    -decompress(rle: string): string
+    __
+    +write(data: string): void
+    +read(): string
+}
+
+class EncryptionDecorator {
+    -encrypt(plain: string): string
+    -decrypt(cipher: string): string
+    __
+    +write(data: string): void
+    +read(): string
+}
+
+DataSource <|-- DataSourceDecorator
+DataSourceDecorator o-- DataSource : wrappee
+DataSourceDecorator <|-- CompressionDecorator
+DataSourceDecorator <|-- EncryptionDecorator
+
+note right of DataSourceDecorator
+  Sorumluluk zinciri:
+  * Sıkıştırma → Şifreleme
+  * Tersine okuma: Şifre çöz → Aç
+  * Sıra doğruluğu önemlidir
+end note
+
+note bottom of MemoryDataSource
+  Basit bir bellek içi depolamadır.
+  Dosya/soket yerine örnek amaçlı tutulmuştur.
+end note
+
+footer Oluşturulma: 21.10.2025 | Sürüm: 1.0.0 | Pattern: Decorator (Secure I/O)
+
+@enduml

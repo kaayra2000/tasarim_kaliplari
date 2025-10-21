@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="476px" preserveAspectRatio="none" style="width:874px;height:476px;" version="1.1" viewBox="0 0 874 476" width="874px" zoomAndPan="magnify"><defs/><g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="271" x="304.5" y="19.2419">Decorator Pattern - Coffee Shop</text><!--MD5=[f45f2220b0b110c1551a8318691639c0]
+class Beverage--><rect fill="#E8F4F8" height="77.9638" id="Beverage" style="stroke: #2C5F7C; stroke-width: 1.5;" width="111" x="165.5" y="204.5158"/><ellipse cx="193.55" cy="220.5158" fill="#A9DCDF" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M193.6594,215.8596 L192.5031,220.9377 L194.8313,220.9377 L193.6594,215.8596 Z M192.175,213.6252 L195.1594,213.6252 L198.5188,226.0158 L196.0656,226.0158 L195.3,222.9533 L192.0188,222.9533 L191.2688,226.0158 L188.8313,226.0158 L192.175,213.6252 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="50" x="210.45" y="225.1719">Beverage</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="166.5" x2="275.5" y1="236.5158" y2="236.5158"/><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="166.5" x2="275.5" y1="244.5158" y2="244.5158"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="99" x="171.5" y="260.2748">+description(): string</text><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="70" x="171.5" y="275.2566">+cost(): double</text><!--MD5=[f5ea9ff06fc8109cace2c9440d07df67]
+class Espresso--><rect fill="#E8F4F8" height="77.9638" id="Espresso" style="stroke: #2C5F7C; stroke-width: 1.5;" width="120" x="6" y="354.0158"/><ellipse cx="37.65" cy="370.0158" fill="#ADD1B2" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M40.6188,375.6565 Q40.0406,375.9533 39.4,376.094 Q38.7594,376.2502 38.0563,376.2502 Q35.5563,376.2502 34.2281,374.6096 Q32.9156,372.9533 32.9156,369.8283 Q32.9156,366.7033 34.2281,365.0471 Q35.5563,363.3908 38.0563,363.3908 Q38.7594,363.3908 39.4,363.5471 Q40.0563,363.7033 40.6188,364.0002 L40.6188,366.719 Q39.9938,366.1408 39.4,365.8752 Q38.8063,365.594 38.1813,365.594 Q36.8375,365.594 36.15,366.6721 Q35.4625,367.7346 35.4625,369.8283 Q35.4625,371.9221 36.15,373.0002 Q36.8375,374.0627 38.1813,374.0627 Q38.8063,374.0627 39.4,373.7971 Q39.9938,373.5158 40.6188,372.9377 L40.6188,375.6565 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="51" x="55.35" y="374.6719">Espresso</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="7" x2="125" y1="386.0158" y2="386.0158"/><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="7" x2="125" y1="394.0158" y2="394.0158"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="108" x="12" y="409.7748">+description(): string</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="76" x="12" y="424.7566">+cost(): double</text><!--MD5=[bd7e272a4a95bdce642fcc687eddedc1]
+class HouseBlend--><rect fill="#E8F4F8" height="77.9638" id="HouseBlend" style="stroke: #2C5F7C; stroke-width: 1.5;" width="120" x="161" y="354.0158"/><ellipse cx="185" cy="370.0158" fill="#ADD1B2" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M187.9688,375.6565 Q187.3906,375.9533 186.75,376.094 Q186.1094,376.2502 185.4063,376.2502 Q182.9063,376.2502 181.5781,374.6096 Q180.2656,372.9533 180.2656,369.8283 Q180.2656,366.7033 181.5781,365.0471 Q182.9063,363.3908 185.4063,363.3908 Q186.1094,363.3908 186.75,363.5471 Q187.4063,363.7033 187.9688,364.0002 L187.9688,366.719 Q187.3438,366.1408 186.75,365.8752 Q186.1563,365.594 185.5313,365.594 Q184.1875,365.594 183.5,366.6721 Q182.8125,367.7346 182.8125,369.8283 Q182.8125,371.9221 183.5,373.0002 Q184.1875,374.0627 185.5313,374.0627 Q186.1563,374.0627 186.75,373.7971 Q187.3438,373.5158 187.9688,372.9377 L187.9688,375.6565 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="68" x="201" y="374.6719">HouseBlend</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="162" x2="280" y1="386.0158" y2="386.0158"/><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="162" x2="280" y1="394.0158" y2="394.0158"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="108" x="167" y="409.7748">+description(): string</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="76" x="167" y="424.7566">+cost(): double</text><!--MD5=[8db1e71afe3fc67a239e81af71b3e2c9]
+class CondimentDecorator--><rect fill="#E8F4F8" height="92.9457" id="CondimentDecorator" style="stroke: #2C5F7C; stroke-width: 1.5;" width="190" x="277" y="32.5158"/><ellipse cx="312.25" cy="48.5158" fill="#A9DCDF" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M312.3594,43.8596 L311.2031,48.9377 L313.5313,48.9377 L312.3594,43.8596 Z M310.875,41.6252 L313.8594,41.6252 L317.2188,54.0158 L314.7656,54.0158 L314,50.9533 L310.7188,50.9533 L309.9688,54.0158 L307.5313,54.0158 L310.875,41.6252 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="113" x="330.75" y="53.1719">CondimentDecorator</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="278" x2="466" y1="64.5158" y2="64.5158"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="178" x="283" y="80.2748">-beverage: unique_ptr&lt;Beverage&gt;</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="278" x2="466" y1="87.4977" y2="87.4977"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="108" x="283" y="103.2566">+description(): string</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="76" x="283" y="118.2385">+cost(): double</text><!--MD5=[100525086f0e815ee31f4f59acfdddec]
+class Milk--><rect fill="#E8F4F8" height="77.9638" id="Milk" style="stroke: #2C5F7C; stroke-width: 1.5;" width="120" x="312" y="204.5158"/><ellipse cx="356.25" cy="220.5158" fill="#ADD1B2" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M359.2188,226.1565 Q358.6406,226.4533 358,226.594 Q357.3594,226.7502 356.6563,226.7502 Q354.1563,226.7502 352.8281,225.1096 Q351.5156,223.4533 351.5156,220.3283 Q351.5156,217.2033 352.8281,215.5471 Q354.1563,213.8908 356.6563,213.8908 Q357.3594,213.8908 358,214.0471 Q358.6563,214.2033 359.2188,214.5002 L359.2188,217.219 Q358.5938,216.6408 358,216.3752 Q357.4063,216.094 356.7813,216.094 Q355.4375,216.094 354.75,217.1721 Q354.0625,218.2346 354.0625,220.3283 Q354.0625,222.4221 354.75,223.5002 Q355.4375,224.5627 356.7813,224.5627 Q357.4063,224.5627 358,224.2971 Q358.5938,224.0158 359.2188,223.4377 L359.2188,226.1565 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="23" x="376.75" y="225.1719">Milk</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="313" x2="431" y1="236.5158" y2="236.5158"/><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="313" x2="431" y1="244.5158" y2="244.5158"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="108" x="318" y="260.2748">+description(): string</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="76" x="318" y="275.2566">+cost(): double</text><!--MD5=[826a7f68534f7bc14c11c5eacbfd79df]
+class Mocha--><rect fill="#E8F4F8" height="77.9638" id="Mocha" style="stroke: #2C5F7C; stroke-width: 1.5;" width="120" x="467" y="204.5158"/><ellipse cx="504.5" cy="220.5158" fill="#ADD1B2" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M507.4688,226.1565 Q506.8906,226.4533 506.25,226.594 Q505.6094,226.7502 504.9063,226.7502 Q502.4063,226.7502 501.0781,225.1096 Q499.7656,223.4533 499.7656,220.3283 Q499.7656,217.2033 501.0781,215.5471 Q502.4063,213.8908 504.9063,213.8908 Q505.6094,213.8908 506.25,214.0471 Q506.9063,214.2033 507.4688,214.5002 L507.4688,217.219 Q506.8438,216.6408 506.25,216.3752 Q505.6563,216.094 505.0313,216.094 Q503.6875,216.094 503,217.1721 Q502.3125,218.2346 502.3125,220.3283 Q502.3125,222.4221 503,223.5002 Q503.6875,224.5627 505.0313,224.5627 Q505.6563,224.5627 506.25,224.2971 Q506.8438,224.0158 507.4688,223.4377 L507.4688,226.1565 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="38" x="523.5" y="225.1719">Mocha</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="468" x2="586" y1="236.5158" y2="236.5158"/><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="468" x2="586" y1="244.5158" y2="244.5158"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="108" x="473" y="260.2748">+description(): string</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="76" x="473" y="275.2566">+cost(): double</text><!--MD5=[855bfe7603ce1fa68f47ee6242167d19]
+class Whip--><rect fill="#E8F4F8" height="77.9638" id="Whip" style="stroke: #2C5F7C; stroke-width: 1.5;" width="120" x="622" y="204.5158"/><ellipse cx="664" cy="220.5158" fill="#ADD1B2" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M666.9688,226.1565 Q666.3906,226.4533 665.75,226.594 Q665.1094,226.7502 664.4063,226.7502 Q661.9063,226.7502 660.5781,225.1096 Q659.2656,223.4533 659.2656,220.3283 Q659.2656,217.2033 660.5781,215.5471 Q661.9063,213.8908 664.4063,213.8908 Q665.1094,213.8908 665.75,214.0471 Q666.4063,214.2033 666.9688,214.5002 L666.9688,217.219 Q666.3438,216.6408 665.75,216.3752 Q665.1563,216.094 664.5313,216.094 Q663.1875,216.094 662.5,217.1721 Q661.8125,218.2346 661.8125,220.3283 Q661.8125,222.4221 662.5,223.5002 Q663.1875,224.5627 664.5313,224.5627 Q665.1563,224.5627 665.75,224.2971 Q666.3438,224.0158 666.9688,223.4377 L666.9688,226.1565 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="28" x="684" y="225.1719">Whip</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="623" x2="741" y1="236.5158" y2="236.5158"/><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="623" x2="741" y1="244.5158" y2="244.5158"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="108" x="628" y="260.2748">+description(): string</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="76" x="628" y="275.2566">+cost(): double</text><path d="M502,38.5158 L502,75.0158 L467.06,79.0158 L502,83.0158 L502,119.3399 A0,0 0 0 0 502,119.3399 L862,119.3399 A0,0 0 0 0 862,119.3399 L862,48.5158 L852,38.5158 L502,38.5158 A0,0 0 0 0 502,38.5158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M852,38.5158 L852,48.5158 L862,48.5158 L852,38.5158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="138" x="508" y="57.4129">"Katmanlı Sorumluluk":</text><ellipse cx="513.5" cy="71.4279" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="327" x="520" y="75.1189">Yeni özellikleri (ör. süt, mocha) çalışma zamanında ekler</text><ellipse cx="513.5" cy="89.1339" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="212" x="520" y="92.8249">OCP: Yeni süslemeler eklemek kolay</text><ellipse cx="513.5" cy="106.8399" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="187" x="520" y="110.5309">Miras yerine bileşim tercih edilir</text><path d="M316.5,343.5158 L316.5,442.0459 A0,0 0 0 0 316.5,442.0459 L523.5,442.0459 A0,0 0 0 0 523.5,442.0459 L523.5,353.5158 L513.5,343.5158 L358.42,343.5158 L272.51,282.6958 L350.42,343.5158 L316.5,343.5158 A0,0 0 0 0 316.5,343.5158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M513.5,343.5158 L513.5,353.5158 L523.5,353.5158 L513.5,343.5158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="95" x="322.5" y="362.4129">Örnek Kullanım:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="99" x="322.5" y="380.1189">order = Espresso</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="128" x="322.5" y="397.8249">order = Mocha(order)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="112" x="322.5" y="415.5309">order = Milk(order)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="186" x="322.5" y="433.2369">order.description(), order.cost()</text><!--MD5=[9ab9d4bf547d7982b0339bff1cafba9c]
+reverse link Beverage to Espresso--><path d="M166.08,296.7858 C146.31,315.5958 124.39,336.4558 106.12,353.8358 " fill="none" id="Beverage&lt;-Espresso" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="none" points="161.37,291.6058,180.68,282.8858,171.02,301.7458,161.37,291.6058" style="stroke: #2C5F7C; stroke-width: 1.0;"/><!--MD5=[45d306746d61aae6853d584fda6d9989]
+reverse link Beverage to HouseBlend--><path d="M221,302.9358 C221,320.0558 221,338.3258 221,353.8358 " fill="none" id="Beverage&lt;-HouseBlend" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="none" points="214,302.8858,221,282.8858,228,302.8858,214,302.8858" style="stroke: #2C5F7C; stroke-width: 1.0;"/><!--MD5=[520e3a59fb10c3c044ab0f1ed697dfb8]
+reverse link Beverage to CondimentDecorator--><path d="M276.88,190.0658 C282.06,184.8858 287.18,179.6458 292,174.5158 C306.58,159.0158 321.85,141.3658 335.09,125.5558 " fill="none" id="Beverage&lt;-CondimentDecorator" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="none" points="281.45,195.3958,262.27,204.3958,271.65,185.3958,281.45,195.3958" style="stroke: #2C5F7C; stroke-width: 1.0;"/><!--MD5=[571487931be3c37ecc5360d601bedab1]
+reverse link CondimentDecorator to Beverage--><path d="M265.62,120.9758 C251.78,130.4058 239.23,141.8058 230,155.5158 C220.5,169.6258 217.59,188.0358 217.32,204.2958 " fill="none" id="CondimentDecorator&lt;-Beverage" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="276.96,113.8258,269.7513,113.639,266.8063,120.2214,274.015,120.4082,276.96,113.8258" style="stroke: #2C5F7C; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="52" x="231" y="170.4129">wrappee</text><!--MD5=[e0b40310d863662c60be0a585fc86e22]
+reverse link CondimentDecorator to Milk--><path d="M372,145.7658 C372,165.6558 372,186.8358 372,204.2958 " fill="none" id="CondimentDecorator&lt;-Milk" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="none" points="365,145.7158,372,125.7158,379,145.7158,365,145.7158" style="stroke: #2C5F7C; stroke-width: 1.0;"/><!--MD5=[a8ddc1e494c296992a933b761d3c2a93]
+reverse link CondimentDecorator to Mocha--><path d="M429.66,140.4658 C450.05,161.8358 472.4,185.2758 490.54,204.2958 " fill="none" id="CondimentDecorator&lt;-Mocha" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="none" points="424.33,145.0158,415.59,125.7158,434.46,135.3558,424.33,145.0158" style="stroke: #2C5F7C; stroke-width: 1.0;"/><!--MD5=[4f2329419c5f4da4a439c67d0b584d15]
+reverse link CondimentDecorator to Whip--><path d="M476.95,135.0258 C525.26,160.3558 580.85,189.4958 621.94,211.0358 " fill="none" id="CondimentDecorator&lt;-Whip" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="none" points="473.64,141.1958,459.18,125.7158,480.14,128.7958,473.64,141.1958" style="stroke: #2C5F7C; stroke-width: 1.0;"/><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="359" x="260.5" y="463.2058">Oluşturulma: 21.10.2025 | Sürüm: 1.0.0 | Pattern: Decorator (Coffee Shop)</text><!--MD5=[8d99994df926827ea1531d29684ef23d]
+@startuml
+
+title Decorator Pattern - Coffee Shop
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+
+skinparam class {
+    BackgroundColor #E8F4F8
+    BorderColor #2C5F7C
+    ArrowColor #2C5F7C
+}
+
+abstract class Beverage {
+    +{abstract} description(): string
+    +{abstract} cost(): double
+}
+
+class Espresso {
+    +description(): string
+    +cost(): double
+}
+
+class HouseBlend {
+    +description(): string
+    +cost(): double
+}
+
+Beverage <|- - Espresso
+Beverage <|- - HouseBlend
+
+abstract class CondimentDecorator {
+    -beverage: unique_ptr<Beverage>
+    __
+    +description(): string
+    +cost(): double
+}
+
+class Milk {
+    +description(): string
+    +cost(): double
+}
+
+class Mocha {
+    +description(): string
+    +cost(): double
+}
+
+class Whip {
+    +description(): string
+    +cost(): double
+}
+
+Beverage <|- - CondimentDecorator
+CondimentDecorator o- - Beverage : wrappee
+
+CondimentDecorator <|- - Milk
+CondimentDecorator <|- - Mocha
+CondimentDecorator <|- - Whip
+
+note right of CondimentDecorator
+  "Katmanlı Sorumluluk":
+  * Yeni özellikleri (ör. süt, mocha) çalışma zamanında ekler
+  * OCP: Yeni süslemeler eklemek kolay
+  * Miras yerine bileşim tercih edilir
+end note
+
+note bottom of Beverage
+  Örnek Kullanım:
+  order = Espresso
+  order = Mocha(order)
+  order = Milk(order)
+  order.description(), order.cost()
+end note
+
+footer Oluşturulma: 21.10.2025 | Sürüm: 1.0.0 | Pattern: Decorator (Coffee Shop)
+
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 13:22:07 TRT 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 21.0.8+9-Ubuntu-0ubuntu124.04.1
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

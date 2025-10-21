@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="606px" preserveAspectRatio="none" style="width:654px;height:606px;" version="1.1" viewBox="0 0 654 606" width="654px" zoomAndPan="magnify"><defs/><g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="258" x="201" y="19.2419">Decorator Pattern - Secure I/O</text><!--MD5=[81c1678f3b146417d42d9549aee5a5c0]
+class DataSource--><rect fill="#E8F4F8" height="77.9638" id="DataSource" style="stroke: #2C5F7C; stroke-width: 1.5;" width="130" x="88" y="219.5158"/><ellipse cx="119.2" cy="235.5158" fill="#A9DCDF" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M119.3094,230.8596 L118.1531,235.9377 L120.4813,235.9377 L119.3094,230.8596 Z M117.825,228.6252 L120.8094,228.6252 L124.1688,241.0158 L121.7156,241.0158 L120.95,237.9533 L117.6688,237.9533 L116.9188,241.0158 L114.4813,241.0158 L117.825,228.6252 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="62" x="136.8" y="240.1719">DataSource</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="89" x2="217" y1="251.5158" y2="251.5158"/><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="89" x2="217" y1="259.5158" y2="259.5158"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="118" x="94" y="275.2748">+write(data: string): void</text><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="67" x="94" y="290.2566">+read(): string</text><!--MD5=[f54f6edd286d0694ee2349cf874a97fd]
+class MemoryDataSource--><rect fill="#E8F4F8" height="92.9457" id="MemoryDataSource" style="stroke: #2C5F7C; stroke-width: 1.5;" width="145" x="80.5" y="373.5158"/><ellipse cx="95.5" cy="389.5158" fill="#ADD1B2" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M98.4688,395.1565 Q97.8906,395.4533 97.25,395.594 Q96.6094,395.7502 95.9063,395.7502 Q93.4063,395.7502 92.0781,394.1096 Q90.7656,392.4533 90.7656,389.3283 Q90.7656,386.2033 92.0781,384.5471 Q93.4063,382.8908 95.9063,382.8908 Q96.6094,382.8908 97.25,383.0471 Q97.9063,383.2033 98.4688,383.5002 L98.4688,386.219 Q97.8438,385.6408 97.25,385.3752 Q96.6563,385.094 96.0313,385.094 Q94.6875,385.094 94,386.1721 Q93.3125,387.2346 93.3125,389.3283 Q93.3125,391.4221 94,392.5002 Q94.6875,393.5627 96.0313,393.5627 Q96.6563,393.5627 97.25,393.2971 Q97.8438,393.0158 98.4688,392.4377 L98.4688,395.1565 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="113" x="109.5" y="394.1719">MemoryDataSource</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="81.5" x2="224.5" y1="405.5158" y2="405.5158"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="74" x="86.5" y="421.2748">-buffer: string</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="81.5" x2="224.5" y1="428.4977" y2="428.4977"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="128" x="86.5" y="444.2566">+write(data: string): void</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="73" x="86.5" y="459.2385">+read(): string</text><!--MD5=[ddac42190244e95aa64aeb1c395b2925]
+class DataSourceDecorator--><rect fill="#E8F4F8" height="92.9457" id="DataSourceDecorator" style="stroke: #2C5F7C; stroke-width: 1.5;" width="198" x="203" y="32.5158"/><ellipse cx="240.5" cy="48.5158" fill="#A9DCDF" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M240.6094,43.8596 L239.4531,48.9377 L241.7813,48.9377 L240.6094,43.8596 Z M239.125,41.6252 L242.1094,41.6252 L245.4688,54.0158 L243.0156,54.0158 L242.25,50.9533 L238.9688,50.9533 L238.2188,54.0158 L235.7813,54.0158 L239.125,41.6252 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="116" x="259.5" y="53.1719">DataSourceDecorator</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="204" x2="400" y1="64.5158" y2="64.5158"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="186" x="209" y="80.2748">-wrappee: unique_ptr&lt;DataSource&gt;</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="204" x2="400" y1="87.4977" y2="87.4977"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="128" x="209" y="103.2566">+write(data: string): void</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="73" x="209" y="118.2385">+read(): string</text><!--MD5=[8594eb18153218124ed6c468ec8228c2]
+class CompressionDecorator--><rect fill="#E8F4F8" height="107.9276" id="CompressionDecorator" style="stroke: #2C5F7C; stroke-width: 1.5;" width="173" x="253.5" y="204.5158"/><ellipse cx="273" cy="220.5158" fill="#ADD1B2" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M275.9688,226.1565 Q275.3906,226.4533 274.75,226.594 Q274.1094,226.7502 273.4063,226.7502 Q270.9063,226.7502 269.5781,225.1096 Q268.2656,223.4533 268.2656,220.3283 Q268.2656,217.2033 269.5781,215.5471 Q270.9063,213.8908 273.4063,213.8908 Q274.1094,213.8908 274.75,214.0471 Q275.4063,214.2033 275.9688,214.5002 L275.9688,217.219 Q275.3438,216.6408 274.75,216.3752 Q274.1563,216.094 273.5313,216.094 Q272.1875,216.094 271.5,217.1721 Q270.8125,218.2346 270.8125,220.3283 Q270.8125,222.4221 271.5,223.5002 Q272.1875,224.5627 273.5313,224.5627 Q274.1563,224.5627 274.75,224.2971 Q275.3438,224.0158 275.9688,223.4377 L275.9688,226.1565 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="131" x="288" y="225.1719">CompressionDecorator</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="254.5" x2="425.5" y1="236.5158" y2="236.5158"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="154" x="259.5" y="252.2748">-compress(raw: string): string</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="161" x="259.5" y="267.2566">-decompress(rle: string): string</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="254.5" x2="425.5" y1="274.4796" y2="274.4796"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="128" x="259.5" y="290.2385">+write(data: string): void</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="73" x="259.5" y="305.2204">+read(): string</text><!--MD5=[fb5187f5baa158895e6974f1d35304c9]
+class EncryptionDecorator--><rect fill="#E8F4F8" height="107.9276" id="EncryptionDecorator" style="stroke: #2C5F7C; stroke-width: 1.5;" width="169" x="461.5" y="204.5158"/><ellipse cx="485.95" cy="220.5158" fill="#ADD1B2" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M488.9188,226.1565 Q488.3406,226.4533 487.7,226.594 Q487.0594,226.7502 486.3563,226.7502 Q483.8563,226.7502 482.5281,225.1096 Q481.2156,223.4533 481.2156,220.3283 Q481.2156,217.2033 482.5281,215.5471 Q483.8563,213.8908 486.3563,213.8908 Q487.0594,213.8908 487.7,214.0471 Q488.3563,214.2033 488.9188,214.5002 L488.9188,217.219 Q488.2938,216.6408 487.7,216.3752 Q487.1063,216.094 486.4813,216.094 Q485.1375,216.094 484.45,217.1721 Q483.7625,218.2346 483.7625,220.3283 Q483.7625,222.4221 484.45,223.5002 Q485.1375,224.5627 486.4813,224.5627 Q487.1063,224.5627 487.7,224.2971 Q488.2938,224.0158 488.9188,223.4377 L488.9188,226.1565 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="116" x="502.05" y="225.1719">EncryptionDecorator</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="462.5" x2="629.5" y1="236.5158" y2="236.5158"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="150" x="467.5" y="252.2748">-encrypt(plain: string): string</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="157" x="467.5" y="267.2566">-decrypt(cipher: string): string</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="462.5" x2="629.5" y1="274.4796" y2="274.4796"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="128" x="467.5" y="290.2385">+write(data: string): void</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="73" x="467.5" y="305.2204">+read(): string</text><path d="M436,38.5158 L436,75.0158 L401.06,79.0158 L436,83.0158 L436,119.3399 A0,0 0 0 0 436,119.3399 L642,119.3399 A0,0 0 0 0 642,119.3399 L642,48.5158 L632,38.5158 L436,38.5158 A0,0 0 0 0 436,38.5158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M632,38.5158 L632,48.5158 L642,48.5158 L632,38.5158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="109" x="442" y="57.4129">Sorumluluk zinciri:</text><ellipse cx="447.5" cy="71.4279" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="129" x="454" y="75.1189">Sıkıştırma → Şifreleme</text><ellipse cx="447.5" cy="89.1339" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="173" x="454" y="92.8249">Tersine okuma: Şifre çöz → Aç</text><ellipse cx="447.5" cy="106.8399" fill="#000000" rx="2.5" ry="2.5" style="stroke: #000000; stroke-width: 0.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="149" x="454" y="110.5309">Sıra doğruluğu önemlidir</text><path d="M6,527.5158 L6,572.9279 A0,0 0 0 0 6,572.9279 L300,572.9279 A0,0 0 0 0 300,572.9279 L300,537.5158 L290,527.5158 L157,527.5158 L153,466.8658 L149,527.5158 L6,527.5158 A0,0 0 0 0 6,527.5158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M290,527.5158 L290,537.5158 L300,537.5158 L290,527.5158 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="183" x="12" y="546.4129">Basit bir bellek içi depolamadır.</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="273" x="12" y="564.1189">Dosya/soket yerine örnek amaçlı tutulmuştur.</text><!--MD5=[d6417fe66d268ead751a97c0a51a0d59]
+reverse link DataSource to MemoryDataSource--><path d="M153,317.8658 C153,336.1958 153,356.1558 153,373.4658 " fill="none" id="DataSource&lt;-MemoryDataSource" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="none" points="146,317.7158,153,297.7158,160,317.7158,146,317.7158" style="stroke: #2C5F7C; stroke-width: 1.0;"/><!--MD5=[737405c2675ff40c8f5df14d7a48e30b]
+reverse link DataSource to DataSourceDecorator--><path d="M205.86,204.8158 C215.14,194.9658 224.54,184.5858 233,174.5158 C245.94,159.1158 259.19,141.4958 270.57,125.6758 " fill="none" id="DataSource&lt;-DataSourceDecorator" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="none" points="210.88,209.6958,191.98,219.2658,200.78,199.9958,210.88,209.6958" style="stroke: #2C5F7C; stroke-width: 1.0;"/><!--MD5=[4ddc30d41cbfeaa3fce31e4b0822aa75]
+reverse link DataSourceDecorator to DataSource--><path d="M192.57,132.1058 C184.43,139.0958 177.05,146.8858 171,155.5158 C158.1,173.9258 153.51,198.6758 152.18,219.1858 " fill="none" id="DataSourceDecorator&lt;-DataSource" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="202.83,123.9758,195.6432,124.5672,193.4249,131.4287,200.6117,130.8373,202.83,123.9758" style="stroke: #2C5F7C; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="52" x="172" y="170.4129">wrappee</text><!--MD5=[ffccd973fd03dfd6f5e70799a6b78aea]
+reverse link DataSourceDecorator to CompressionDecorator--><path d="M316.03,145.5558 C320.18,164.9458 324.67,185.9158 328.63,204.4058 " fill="none" id="DataSourceDecorator&lt;-CompressionDecorator" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="none" points="309.13,146.7458,311.79,125.7258,322.82,143.8158,309.13,146.7458" style="stroke: #2C5F7C; stroke-width: 1.0;"/><!--MD5=[14236522c5e6f85e64da50e4f0d14691]
+reverse link DataSourceDecorator to EncryptionDecorator--><path d="M381.24,137.6658 C410.75,159.1258 444.07,183.3658 472.99,204.4058 " fill="none" id="DataSourceDecorator&lt;-EncryptionDecorator" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="none" points="376.89,143.1558,364.84,125.7258,385.13,131.8358,376.89,143.1558" style="stroke: #2C5F7C; stroke-width: 1.0;"/><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="353" x="153.5" y="593.2058">Oluşturulma: 21.10.2025 | Sürüm: 1.0.0 | Pattern: Decorator (Secure I/O)</text><!--MD5=[e70e085d91f79ebc68d95fa01a47cec2]
+@startuml
+
+title Decorator Pattern - Secure I/O
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+
+skinparam class {
+    BackgroundColor #E8F4F8
+    BorderColor #2C5F7C
+    ArrowColor #2C5F7C
+}
+
+abstract class DataSource {
+    +{abstract} write(data: string): void
+    +{abstract} read(): string
+}
+
+class MemoryDataSource {
+    -buffer: string
+    __
+    +write(data: string): void
+    +read(): string
+}
+
+DataSource <|- - MemoryDataSource
+
+abstract class DataSourceDecorator {
+    -wrappee: unique_ptr<DataSource>
+    __
+    +write(data: string): void
+    +read(): string
+}
+
+class CompressionDecorator {
+    -compress(raw: string): string
+    -decompress(rle: string): string
+    __
+    +write(data: string): void
+    +read(): string
+}
+
+class EncryptionDecorator {
+    -encrypt(plain: string): string
+    -decrypt(cipher: string): string
+    __
+    +write(data: string): void
+    +read(): string
+}
+
+DataSource <|- - DataSourceDecorator
+DataSourceDecorator o- - DataSource : wrappee
+DataSourceDecorator <|- - CompressionDecorator
+DataSourceDecorator <|- - EncryptionDecorator
+
+note right of DataSourceDecorator
+  Sorumluluk zinciri:
+  * Sıkıştırma → Şifreleme
+  * Tersine okuma: Şifre çöz → Aç
+  * Sıra doğruluğu önemlidir
+end note
+
+note bottom of MemoryDataSource
+  Basit bir bellek içi depolamadır.
+  Dosya/soket yerine örnek amaçlı tutulmuştur.
+end note
+
+footer Oluşturulma: 21.10.2025 | Sürüm: 1.0.0 | Pattern: Decorator (Secure I/O)
+
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 13:22:07 TRT 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 21.0.8+9-Ubuntu-0ubuntu124.04.1
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

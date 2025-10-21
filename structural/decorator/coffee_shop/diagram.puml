@@ -1,0 +1,92 @@
+@startuml decorator-coffee-shop
+/'
+ * @file decorator-coffee-shop.puml
+ * @brief Decorator Pattern - Coffee Shop örneği sınıf diyagramı
+ * @author Repo
+ * @date 21.10.2025
+ * @version 1.0.0
+ *
+ * @description Beverage tabanına çalışma zamanında farklı süslemeleri (Milk, Mocha, Whip)
+ *              eklemeyi gösterir. Siparişler katmanlı şekilde oluşturulabilir.
+ * @pattern Decorator (Structural)
+'/
+
+title Decorator Pattern - Coffee Shop
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+
+skinparam class {
+    BackgroundColor #E8F4F8
+    BorderColor #2C5F7C
+    ArrowColor #2C5F7C
+}
+
+' ========== Bileşen ve Somut Bileşenler ==========
+abstract class Beverage {
+    +{abstract} description(): string
+    +{abstract} cost(): double
+}
+
+class Espresso {
+    +description(): string
+    +cost(): double
+}
+
+class HouseBlend {
+    +description(): string
+    +cost(): double
+}
+
+Beverage <|-- Espresso
+Beverage <|-- HouseBlend
+
+' ========== Decorator Temeli ve Somut Decoratorler ==========
+abstract class CondimentDecorator {
+    -beverage: unique_ptr<Beverage>
+    __
+    +description(): string
+    +cost(): double
+}
+
+class Milk {
+    +description(): string
+    +cost(): double
+}
+
+class Mocha {
+    +description(): string
+    +cost(): double
+}
+
+class Whip {
+    +description(): string
+    +cost(): double
+}
+
+Beverage <|-- CondimentDecorator
+CondimentDecorator o-- Beverage : wrappee
+
+CondimentDecorator <|-- Milk
+CondimentDecorator <|-- Mocha
+CondimentDecorator <|-- Whip
+
+note right of CondimentDecorator
+  "Katmanlı Sorumluluk":
+  * Yeni özellikleri (ör. süt, mocha) çalışma zamanında ekler
+  * OCP: Yeni süslemeler eklemek kolay
+  * Miras yerine bileşim tercih edilir
+end note
+
+note bottom of Beverage
+  Örnek Kullanım:
+  order = Espresso
+  order = Mocha(order)
+  order = Milk(order)
+  order.description(), order.cost()
+end note
+
+footer Oluşturulma: 21.10.2025 | Sürüm: 1.0.0 | Pattern: Decorator (Coffee Shop)
+
+@enduml
