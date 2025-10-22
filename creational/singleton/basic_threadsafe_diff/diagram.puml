@@ -30,7 +30,7 @@ package "❌ Basit Lazy Singleton (Thread-Unsafe)" #FFE8CC {
     }
     
     note bottom of L1
-      **Implementasyon:**
+    **Uygulama:**
       ```cpp
       static unique_ptr<Logger> instance = nullptr;
       
@@ -75,7 +75,7 @@ package "✅ Meyers Singleton (Thread-Safe)" #E8F4F8 {
     }
     
     note bottom of L2
-      **Implementasyon:**
+    **Uygulama:**
       ```cpp
       SafeLogger& instance() {
           static SafeLogger inst;  // ✅ Thread-safe!

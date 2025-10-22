@@ -7,7 +7,7 @@
  * @version 1.0.0
  * 
  * @description Bu diyagram C++11 Meyers Singleton tekniği ile
- *              thread-safe singleton implementasyonunu gösterir
+ *              thread-safe singleton uygulamasını gösterir
  * 
  * @note C++11 ve sonrası için statik yerel değişken
  *       başlatma garantili olarak thread-safe'tir

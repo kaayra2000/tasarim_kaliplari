@@ -138,7 +138,7 @@ legend right
   | <<Target>> | eski sistem arayüzü |
   | <<Adapter>> | dönüştürücü sınıf |
   | <<Adaptee>> | modern cihaz |
-  | <<Concrete Target>> | hedef implementasyon |
+  | <<Concrete Target>> | hedef uygulama |
   
   **Pattern Amacı:**
   uyumsuz arayüzleri birlikte

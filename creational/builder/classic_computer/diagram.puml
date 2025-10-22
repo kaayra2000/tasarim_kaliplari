@@ -7,7 +7,7 @@
  * @version 1.0
  *
  * @description Bu diyagram Builder pattern'in Yönlendirici sınıfı ile
- *              klasik GoF implementasyonunu gösterir. Yönlendirici
+ *              klasik GoF uygulamasını gösterir. Yönlendirici
  *              farklı construction stratejilerini yönetir.
  '/
 

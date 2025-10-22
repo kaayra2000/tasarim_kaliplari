@@ -140,7 +140,7 @@ note bottom of LocalAudioPlayer
   **Yerel Oynatıcı**
   * Dosya sisteminden oynatır
   * Adapter pattern gerektirmez
-  * Basit implementasyon
+  * Basit uygulama
 end note
 
 legend right
@@ -148,7 +148,7 @@ legend right
   | <<Target>> | İstemcinin beklediği arayüz |
   | <<Adapter>> | Çevirim yapan sınıf |
   | <<Adaptee>> | Uyum sağlanacak mevcut sınıf |
-  | <<Concrete Target>> | Target'ın doğrudan implementasyonu |
+  | <<Concrete Target>> | Target'ın doğrudan uygulaması |
   
   **İlişki Türleri:**
   <|.. : Arayüz uygulaması

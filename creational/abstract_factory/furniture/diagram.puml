@@ -1,7 +1,7 @@
 @startuml furniture-abstract-factory
 /'
  * @file furniture-abstract-factory.puml
- * @brief mobilya üretimi için abstract factory pattern implementasyonu
+ * @brief mobilya üretimi için abstract factory pattern uygulaması
  * @author Muhammed Kayra Bulut
  * @date 15.10.2025
  * @version 1.0.0

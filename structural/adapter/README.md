@@ -73,4 +73,4 @@ Bu yapı sayesinde istemci kodu değişmeden yeni servisler veya cihazlar entegr
 
 - **Facade:** Facade karmaşık alt sistemleri basitleştirir; adapter ise uyumsuz arayüzleri dönüştürür. Adapter uyumluluk, facade kullanım kolaylığı sağlar.
 - **Decorator:** Decorator mevcut nesneye yeni davranış ekler fakat aynı arayüzü korur. Adapter arayüz değiştirir, davranış eklemez.
-- **Bridge:** Bridge soyutlama ile implementasyonu ayırır ve birlikte evrimleşmelerine yardım eder. Adapter, halihazırda var olan iki arayüzü sonradan bağlamak için kullanılır.
+- **Bridge:** Bridge soyutlama ile uygulamayı (implementation) ayırır ve birlikte evrimleşmelerine yardım eder. Adapter, halihazırda var olan iki arayüzü sonradan bağlamak için kullanılır.

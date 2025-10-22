@@ -1,7 +1,7 @@
 @startuml advanced-vehicle-factory-class
 /'
  * @file advanced-vehicle-factory-class.puml
- * @brief gelişmiş factory pattern implementasyonu - vehicle örneği
+ * @brief gelişmiş factory pattern uygulaması - vehicle örneği
  * @author Muhammed Kayra Bulut
  * @date 15.10.2025
  * @version 1.0.0

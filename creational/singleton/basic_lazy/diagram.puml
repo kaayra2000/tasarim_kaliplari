@@ -7,7 +7,7 @@
  * @version 1.0.0
  * 
  * @description Bu diyagram basit lazy initialization kullanan
- *              ancak thread-safe olmayan singleton implementasyonunu gösterir
+ *              ancak thread-safe olmayan singleton uygulamasını gösterir
  * 
  * @warning Çoklu thread ortamında güvenli değildir!
  '/
@@ -66,7 +66,7 @@ note bottom of Logger
   • Çoklu thread için uygun değil
   
   ✅ **Faydalar:**
-  • Basit implementasyon
+  • Basit uygulama
   • Lazy initialization
   • Tek thread için yeterli
   • Az kod

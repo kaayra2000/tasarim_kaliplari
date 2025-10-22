@@ -1,10 +1,10 @@
 # Bridge Pattern Nedir?
 
-**Bridge Pattern**, bir soyutlamayı (abstraction) gerçekleme/uygulama (implementation) hiyerarşisinden ayırarak ikisinin de birbirinden bağımsız evrilmesini sağlar. Böylece iki (veya daha fazla) boyutta büyüyen sınıf kombinasyonlarında sınıf patlaması (Cartesian ürün) yaşamadan tasarım yapılır.
+**Bridge Pattern**, bir soyutlamayı (abstraction) uygulama/gerçekleme (implementation) hiyerarşisinden ayırarak ikisinin de birbirinden bağımsız evrilmesini sağlar. Böylece iki (veya daha fazla) boyutta büyüyen sınıf kombinasyonlarında aşırı sınıf karmaşıklığı (çok sayıda kombinasyon) yaşamadan tasarım yapılır.
 
 ## Hangi durumda Bridge aklımıza gelmeli?
 
-- Aynı kavramın iki ekseni bağımsızca değişiyorsa ve ikisini birden kalıtımla birleştirmek sınıf patlamasına yol açıyorsa. Örn: **Şekil türleri** (daire, kare) ve **renk** (kırmızı, mavi).
+- Aynı kavramın iki ekseni bağımsızca değişiyorsa ve ikisini birden kalıtımla birleştirmek aşırı sınıf karmaşıklığına yol açıyorsa. Örn: **Şekil türleri** (daire, kare) ve **renk** (kırmızı, mavi).
 - Soyut bir denetim katmanının (kumanda) farklı gerçeklemelerle (TV, Radyo) çalışması isteniyorsa ve ikisi de ayrı ayrı genişlemeye devam edecekse.
 - Bir arayüzün değişmesi muhtemel, fakat istemcinin kullandığı soyutlama sabit kalmalıysa.
 - Derin kalıtım hiyerarşileri yerine, **kompozisyon ile delege** ederek esnek kalmak istiyorsanız.
@@ -12,7 +12,7 @@
 ## Ne İşe Yarar?
 
 - **Soyutlama ile gerçekleştirmeyi ayırır** – Her iki hiyerarşi bağımsız genişler.
-- **Sınıf patlamasını önler** – İki eksenin ürününe göre sınıf üretmek yerine kompozisyon kullanır.
+- **Aşırı sınıf karmaşıklığını önler** – İki eksenin ürününe göre sınıf üretmek yerine kompozisyon kullanır.
 - **Bağımlılığı azaltır** – İstemci soyutlamaya konuşur, gerçekleştirme detayları gizlenir.
 - **Test edilebilirlik** – Implementor sahte (mock) ile değiştirilebilir.
 
@@ -56,6 +56,6 @@ Kompozisyon ile köprü kurulur: Abstraction, bir Implementor referansı tutar v
 ## Diğer Yapısal Kalıplarla Farkları
 
 - **Adapter:** Var olan, uyumsuz iki arayüzü sonradan bağlar. Bridge, iki hiyerarşiyi en baştan ayrıştırır ve birlikte evrimleşmelerine izin verir.
-- **Decorator:** Aynı arayüzü koruyarak nesneye yeni davranışlar ekler (katmanlama). Bridge arayüz dönüştürmez; soyutlama ile implementasyonu ayırır.
+- **Decorator:** Aynı arayüzü koruyarak nesneye yeni davranışlar ekler (katmanlama). Bridge arayüz dönüştürmez; soyutlama ile uygulamayı (implementation) ayırır.
 - **Facade:** Karmaşık alt sistemleri basitleştirir. Bridge ise iki eksenli hiyerarşileri ayırır.
 - **Composite:** Ağaç yapıları tekil nesne gibi ele alır. Bridge ise iki bağımsız hiyerarşiyi köprüler.

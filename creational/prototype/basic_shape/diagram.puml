@@ -7,7 +7,7 @@
  * @version 1.0.0
  * 
  * @description temel geometrik şekillerin klonlanması için
- *              basit prototype pattern implementasyonu
+ *              basit prototype pattern uygulaması
  '/
 
 title Prototype Pattern - Basit Shape Klonlama

@@ -1,13 +1,13 @@
 @startuml factory-pattern-comparison
 /'
  * @file factory-pattern-comparison.puml
- * @brief iki factory pattern implementasyonunun karşılaştırmalı analizi
+ * @brief iki factory pattern uygulamasının karşılaştırmalı analizi
  * @author Muhammed Kayra Bulut
  * @date 15.10.2025
  * @version 1.0.0
  * 
  * @description bu diyagram basit ve gelişmiş factory pattern
- *              implementasyonlarını yan yana karşılaştırır ve
+ *              uygulamalarını yan yana karşılaştırır ve
  *              aralarındaki farkları vurgular
  '/
 
