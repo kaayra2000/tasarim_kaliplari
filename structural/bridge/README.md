@@ -1,6 +1,6 @@
 # Bridge Pattern Nedir?
 
-**Bridge Pattern**, bir soyutlamayı (abstraction) uygulama/gerçekleme (implementation) hiyerarşisinden ayırarak ikisinin de birbirinden bağımsız evrilmesini sağlar. Böylece iki (veya daha fazla) boyutta büyüyen sınıf kombinasyonlarında aşırı sınıf karmaşıklığı (çok sayıda kombinasyon) yaşamadan tasarım yapılır.
+**Bridge Pattern**, bir soyutlamayı (abstraction) uygulama/gerçekleme (implementation) hiyerarşisinden ayırarak ikisinin de birbirinden bağımsız evrilmesini sağlar. Böylece iki (veya daha fazla) boyutta büyüyen sınıf kombinasyonlarında aşırı sınıf karmaşıklığı (çok sayıda kombinasyon) yaşamadan tasarım yapılır. Yani ikili bir kombinasyonu (ör. soyutlama × uygulama) kompozisyonla birleştirir, iki ekseni ayrı ayrı geliştirmenize izin verir ve yeni kombinasyonlar için yeni sınıflar üretme ihtiyacını azaltır.
 
 ## Hangi durumda Bridge aklımıza gelmeli?
 
@@ -56,6 +56,6 @@ Kompozisyon ile köprü kurulur: Abstraction, bir Implementor referansı tutar v
 ## Diğer Yapısal Kalıplarla Farkları
 
 - **Adapter:** Var olan, uyumsuz iki arayüzü sonradan bağlar. Bridge, iki hiyerarşiyi en baştan ayrıştırır ve birlikte evrimleşmelerine izin verir.
-- **Decorator:** Aynı arayüzü koruyarak nesneye yeni davranışlar ekler (katmanlama). Bridge arayüz dönüştürmez; soyutlama ile uygulamayı (implementation) ayırır.
+- **Decorator:** Aynı arayüzü koruyarak nesneye yeni davranışlar ekler (katmanlama). Bridge, 2 boyutlu kombinasyon (Abstraction × Implementation) çözer; Decorator ise N katmanlı kombinasyonla özellik ekler. Bridge arayüz dönüştürmez; soyutlama ile uygulamayı (implementation) ayırır.
 - **Facade:** Karmaşık alt sistemleri basitleştirir. Bridge ise iki eksenli hiyerarşileri ayırır.
 - **Composite:** Ağaç yapıları tekil nesne gibi ele alır. Bridge ise iki bağımsız hiyerarşiyi köprüler.

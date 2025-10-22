@@ -1,6 +1,6 @@
 # Decorator Pattern Nedir?
 
-**Decorator Pattern**, mevcut bir nesneye çalışma zamanında yeni sorumluluklar/özellikler eklemeyi sağlayan bir **yapısal kalıptır (structural pattern)**. Miras almadan, aynı arayüzü koruyarak davranışı katmanlı şekilde genişletebilirsiniz. Böylece aşırı sınıf karmaşıklığı (farklı kombinasyonlar için çok fazla alt sınıf) engellenir ve Açık/Kapalı Prensibi (OCP) desteklenir. Bir nesnenin arayüzünü değiştirmeden, özelliklerini esnekçe ve aşamalı olarak genişletmek istediğinizde kullanılır.
+**Decorator Pattern**, mevcut bir nesneye çalışma zamanında yeni sorumluluklar/özellikler eklemeyi sağlayan bir **yapısal kalıptır (structural pattern)**. Miras almadan, aynı arayüzü koruyarak davranışı katmanlı şekilde genişletebilirsiniz. Böylece aşırı sınıf karmaşıklığı (farklı kombinasyonlar için çok fazla alt sınıf) engellenir ve Açık/Kapalı Prensibi (OCP) desteklenir. Bir nesnenin arayüzünü değiştirmeden, özelliklerini esnekçe ve aşamalı olarak genişletmek istediğinizde kullanılır. Yani temel bir nesnenin üzerine N katman ekleyerek (Base + Decorator₁ + Decorator₂ + ... + Decoratorₙ) farklı kombinasyonlar oluşturmanızı sağlar. Katmanların sırası ve kombinasyonu davranışı belirler; arayüz aynı kalır.
 
 ## Ne İşe Yarar?
 
@@ -73,3 +73,4 @@ Karşılaştırma diyagramı, iki örneğin ortak noktalarını (aynı arayüz, 
 - **Adapter:** Adapter uyumsuz arayüzleri dönüştürür; Decorator aynı arayüzü korur ve davranışı genişletir.
 - **Facade:** Facade karmaşık alt sistemleri tek arayüzle basitleştirir; Decorator tek nesnenin davranışını katmanlı genişletir.
 - **Proxy:** Proxy bir nesneye erişimi yönetir (aynı arayüz); Decorator yeni davranış ekler (genişletme).
+- **Bridge:** Bridge iki boyutlu bir kombinasyonu (ör. soyutlama × uygulama) ayırıp her iki ekseni bağımsız geliştirmeye odaklanır. Decorator ise tek bir nesnenin etrafında N katmanlı kombinasyonlar kurarak özellik ekler.
