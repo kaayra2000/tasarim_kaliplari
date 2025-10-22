@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="615px" preserveAspectRatio="none" style="width:1115px;height:615px;" version="1.1" viewBox="0 0 1115 615" width="1115px" zoomAndPan="magnify"><defs/><g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="318" x="397.5" y="19.2419">Bridge: Şekil &lt;-&gt; Renk Sınıf Diyagramı</text><!--MD5=[18eee71c88ab61f27581b8cbdd3ef5ee]
+class Color--><rect fill="#E8F4F8" height="73.6701" id="Color" style="stroke: #2C5F7C; stroke-width: 1.5;" width="113" x="128" y="230.5158"/><ellipse cx="143.9" cy="251.86" fill="#B4A7E5" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M139.8219,247.6256 L139.8219,245.4693 L147.2125,245.4693 L147.2125,247.6256 L144.7438,247.6256 L144.7438,255.7037 L147.2125,255.7037 L147.2125,257.86 L139.8219,257.86 L139.8219,255.7037 L142.2906,255.7037 L142.2906,247.6256 L139.8219,247.6256 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="83" x="156.1" y="248.3439">«Implementor»</text><text fill="#000000" font-family="Arial" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="29" x="183.1" y="264.6881">Color</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="129" x2="240" y1="273.2041" y2="273.2041"/><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="129" x2="240" y1="281.2041" y2="281.2041"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="101" x="134" y="296.963">+name(): const char*</text><!--MD5=[08be530975453a47bdc5b5370100f2fc]
+class Red--><rect fill="#E8F4F8" height="73.6701" id="Red" style="stroke: #2C5F7C; stroke-width: 1.5;" width="161" x="6" y="380.5158"/><ellipse cx="21" cy="401.86" fill="#ADD1B2" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M23.9688,407.5006 Q23.3906,407.7975 22.75,407.9381 Q22.1094,408.0943 21.4063,408.0943 Q18.9063,408.0943 17.5781,406.4537 Q16.2656,404.7975 16.2656,401.6725 Q16.2656,398.5475 17.5781,396.8912 Q18.9063,395.235 21.4063,395.235 Q22.1094,395.235 22.75,395.3912 Q23.4063,395.5475 23.9688,395.8443 L23.9688,398.5631 Q23.3438,397.985 22.75,397.7193 Q22.1563,397.4381 21.5313,397.4381 Q20.1875,397.4381 19.5,398.5162 Q18.8125,399.5787 18.8125,401.6725 Q18.8125,403.7662 19.5,404.8443 Q20.1875,405.9068 21.5313,405.9068 Q22.1563,405.9068 22.75,405.6412 Q23.3438,405.36 23.9688,404.7818 L23.9688,407.5006 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="133" x="33" y="398.3439">«Concrete Implementor»</text><text fill="#000000" font-family="Arial" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="21" x="89" y="414.6881">Red</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="7" x2="166" y1="423.2041" y2="423.2041"/><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="7" x2="166" y1="431.2041" y2="431.2041"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="107" x="12" y="446.963">+name(): const char*</text><!--MD5=[e5fcaaf7dd279fcaa419853012f8d36f]
+class Blue--><rect fill="#E8F4F8" height="73.6701" id="Blue" style="stroke: #2C5F7C; stroke-width: 1.5;" width="161" x="202" y="380.5158"/><ellipse cx="217" cy="401.86" fill="#ADD1B2" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M219.9688,407.5006 Q219.3906,407.7975 218.75,407.9381 Q218.1094,408.0943 217.4063,408.0943 Q214.9063,408.0943 213.5781,406.4537 Q212.2656,404.7975 212.2656,401.6725 Q212.2656,398.5475 213.5781,396.8912 Q214.9063,395.235 217.4063,395.235 Q218.1094,395.235 218.75,395.3912 Q219.4063,395.5475 219.9688,395.8443 L219.9688,398.5631 Q219.3438,397.985 218.75,397.7193 Q218.1563,397.4381 217.5313,397.4381 Q216.1875,397.4381 215.5,398.5162 Q214.8125,399.5787 214.8125,401.6725 Q214.8125,403.7662 215.5,404.8443 Q216.1875,405.9068 217.5313,405.9068 Q218.1563,405.9068 218.75,405.6412 Q219.3438,405.36 219.9688,404.7818 L219.9688,407.5006 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="133" x="229" y="398.3439">«Concrete Implementor»</text><text fill="#000000" font-family="Arial" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="25" x="283" y="414.6881">Blue</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="203" x2="362" y1="423.2041" y2="423.2041"/><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="203" x2="362" y1="431.2041" y2="431.2041"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="107" x="208" y="446.963">+name(): const char*</text><!--MD5=[426e75666daf533f17226ff4c87e20fd]
+class Shape--><rect fill="#E8F4F8" height="103.6339" id="Shape" style="stroke: #2C5F7C; stroke-width: 1.5;" width="135" x="576" y="32.5158"/><ellipse cx="606.3" cy="53.86" fill="#A9DCDF" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M606.4094,49.2037 L605.2531,54.2818 L607.5813,54.2818 L606.4094,49.2037 Z M604.925,46.9693 L607.9094,46.9693 L611.2688,59.36 L608.8156,59.36 L608.05,56.2975 L604.7688,56.2975 L604.0188,59.36 L601.5813,59.36 L604.925,46.9693 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="73" x="621.7" y="50.3439">«Abstraction»</text><text fill="#000000" font-family="Arial" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="33" x="641.7" y="66.6881">Shape</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="577" x2="710" y1="75.2041" y2="75.2041"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="110" x="582" y="90.963">-color_: const Color&amp;</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="577" x2="710" y1="98.186" y2="98.186"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="123" x="582" y="113.9449">+Shape(c: const Color&amp;)</text><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="62" x="582" y="128.9268">+draw(): void</text><!--MD5=[a7f9118cae7621dd25d25149752faef0]
+class Circle--><rect fill="#E8F4F8" height="103.6339" id="Circle" style="stroke: #2C5F7C; stroke-width: 1.5;" width="163" x="562" y="215.5158"/><ellipse cx="585.55" cy="236.86" fill="#ADD1B2" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M588.5188,242.5006 Q587.9406,242.7975 587.3,242.9381 Q586.6594,243.0943 585.9563,243.0943 Q583.4563,243.0943 582.1281,241.4537 Q580.8156,239.7975 580.8156,236.6725 Q580.8156,233.5475 582.1281,231.8912 Q583.4563,230.235 585.9563,230.235 Q586.6594,230.235 587.3,230.3912 Q587.9563,230.5475 588.5188,230.8443 L588.5188,233.5631 Q587.8938,232.985 587.3,232.7193 Q586.7063,232.4381 586.0813,232.4381 Q584.7375,232.4381 584.05,233.5162 Q583.3625,234.5787 583.3625,236.6725 Q583.3625,238.7662 584.05,239.8443 Q584.7375,240.9068 586.0813,240.9068 Q586.7063,240.9068 587.3,240.6412 Q587.8938,240.36 588.5188,239.7818 L588.5188,242.5006 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="116" x="599.45" y="233.3439">«Refined Abstraction»</text><text fill="#000000" font-family="Arial" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="32" x="641.45" y="249.6881">Circle</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="563" x2="724" y1="258.2041" y2="258.2041"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="34" x="568" y="273.963">-r_: int</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="563" x2="724" y1="281.186" y2="281.186"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="151" x="568" y="296.9449">+Circle(c: const Color&amp;, r: int)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="68" x="568" y="311.9268">+draw(): void</text><!--MD5=[5655ee3e2a0d028d03fe20f829576392]
+class Square--><rect fill="#E8F4F8" height="103.6339" id="Square" style="stroke: #2C5F7C; stroke-width: 1.5;" width="172" x="760.5" y="215.5158"/><ellipse cx="788.1" cy="236.86" fill="#ADD1B2" rx="11" ry="11" style="stroke: #2C5F7C; stroke-width: 1.0;"/><path d="M791.0688,242.5006 Q790.4906,242.7975 789.85,242.9381 Q789.2094,243.0943 788.5063,243.0943 Q786.0063,243.0943 784.6781,241.4537 Q783.3656,239.7975 783.3656,236.6725 Q783.3656,233.5475 784.6781,231.8912 Q786.0063,230.235 788.5063,230.235 Q789.2094,230.235 789.85,230.3912 Q790.5063,230.5475 791.0688,230.8443 L791.0688,233.5631 Q790.4438,232.985 789.85,232.7193 Q789.2563,232.4381 788.6313,232.4381 Q787.2875,232.4381 786.6,233.5162 Q785.9125,234.5787 785.9125,236.6725 Q785.9125,238.7662 786.6,239.8443 Q787.2875,240.9068 788.6313,240.9068 Q789.2563,240.9068 789.85,240.6412 Q790.4438,240.36 791.0688,239.7818 L791.0688,242.5006 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="116" x="802.9" y="233.3439">«Refined Abstraction»</text><text fill="#000000" font-family="Arial" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="40" x="840.9" y="249.6881">Square</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="761.5" x2="931.5" y1="258.2041" y2="258.2041"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="35" x="766.5" y="273.963">-a_: int</text><line style="stroke: #2C5F7C; stroke-width: 1.5;" x1="761.5" x2="931.5" y1="281.186" y2="281.186"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="160" x="766.5" y="296.9449">+Square(c: const Color&amp;, a: int)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="68" x="766.5" y="311.9268">+draw(): void</text><path d="M746.5,44.0158 L746.5,80.5158 L711.13,84.5158 L746.5,88.5158 L746.5,124.8399 A0,0 0 0 0 746.5,124.8399 L1094.5,124.8399 A0,0 0 0 0 1094.5,124.8399 L1094.5,54.0158 L1084.5,44.0158 L746.5,44.0158 A0,0 0 0 0 746.5,44.0158 " fill="#FFF9E6" style="stroke: #CC8800; stroke-width: 1.0;"/><path d="M1084.5,44.0158 L1084.5,54.0158 L1094.5,54.0158 L1084.5,44.0158 " fill="#FFF9E6" style="stroke: #CC8800; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="158" x="752.5" y="62.9129">Soyutlama (Abstraction)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="195" x="752.5" y="80.6189">• İstemcinin kullandığı arayüzdür</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="327" x="752.5" y="98.3249">• Gerçekleştirmeye (Color) kompozisyon ile delege eder</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="271" x="752.5" y="116.0309">• Şekil türleri bağımsız genişler (Circle, Square)</text><path d="M276,227.0158 L276,263.5158 L241.29,267.5158 L276,271.5158 L276,307.8399 A0,0 0 0 0 276,307.8399 L527,307.8399 A0,0 0 0 0 527,307.8399 L527,237.0158 L517,227.0158 L276,227.0158 A0,0 0 0 0 276,227.0158 " fill="#FFF9E6" style="stroke: #CC8800; stroke-width: 1.0;"/><path d="M517,227.0158 L517,237.0158 L527,237.0158 L517,227.0158 " fill="#FFF9E6" style="stroke: #CC8800; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="200" x="282" y="245.9129">Gerçekleştirme (Implementor)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="150" x="282" y="263.6189">• Renk ailesini temsil eder</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="230" x="282" y="281.3249">• Red, Blue gibi türler bağımsız genişler</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="175" x="282" y="299.0309">• Şekillerden tamamen ayrıdır</text><!--MD5=[fab54b5999e935266d298ad54749f91a]
+reverse link Color to Red--><path d="M149.39,321.5358 C136.46,341.0658 122.11,362.7358 110.4,380.4258 " fill="none" id="Color&lt;-Red" style="stroke: #2C5F7C; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="143.65,317.5358,160.53,304.7158,155.32,325.2658,143.65,317.5358" style="stroke: #2C5F7C; stroke-width: 1.0;"/><!--MD5=[43364a787a1aa71eb994c83faab9e0a3]
+reverse link Color to Blue--><path d="M219.61,321.5358 C232.54,341.0658 246.89,362.7358 258.6,380.4258 " fill="none" id="Color&lt;-Blue" style="stroke: #2C5F7C; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="213.68,325.2658,208.47,304.7158,225.35,317.5358,213.68,325.2658" style="stroke: #2C5F7C; stroke-width: 1.0;"/><!--MD5=[d637a7d0c5b779627461b5a6979d5756]
+reverse link Shape to Circle--><path d="M643.5,156.9858 C643.5,176.4758 643.5,197.2058 643.5,215.3158 " fill="none" id="Shape&lt;-Circle" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="none" points="636.5,156.8958,643.5,136.8958,650.5,156.8958,636.5,156.8958" style="stroke: #2C5F7C; stroke-width: 1.0;"/><!--MD5=[d4ca5a4026589bf67f913f07d54add2c]
+reverse link Shape to Square--><path d="M715.89,150.0658 C740,171.5558 766.49,195.1758 789.28,215.4958 " fill="none" id="Shape&lt;-Square" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="none" points="711.13,155.1958,700.86,136.6558,720.44,144.7458,711.13,155.1958" style="stroke: #2C5F7C; stroke-width: 1.0;"/><!--MD5=[bde6043779e280ce1f5099abd907daaf]
+reverse link Shape to Color--><path d="M562.97,105.6658 C483.23,127.2158 358.87,165.2158 258.5,215.5158 C249.85,219.8458 241.05,225.0758 232.68,230.5058 " fill="none" id="Shape&lt;-Color" style="stroke: #2C5F7C; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="575.86,102.2158,569.0305,99.9012,564.2672,105.3152,571.0967,107.6298,575.86,102.2158" style="stroke: #2C5F7C; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="27" x="372.5" y="181.4129">uses</text><rect fill="#DDDDDD" height="109.3396" rx="5" ry="5" style="stroke: #000000; stroke-width: 1.0;" width="442" x="662" y="472.5158"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="64" x="672" y="494.4818">Stereotip</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="49" x="864" y="494.4818">Anlamı</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="109" x="672" y="513.5497">&lt;&lt;Abstraction&gt;&gt;</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="212" x="864" y="513.5497">İstemciye sunulan soyut arayüz</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="120" x="672" y="532.6176">&lt;&lt;Implementor&gt;&gt;</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="230" x="864" y="532.6176">Soyutlamanın delege ettiği arayüz</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="165" x="672" y="551.6855">&lt;&lt;Refined Abstraction&gt;&gt;</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="138" x="864" y="551.6855">Abstraction türevleri</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="184" x="672" y="570.7534">&lt;&lt;Concrete Implementor&gt;&gt;</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="149" x="864" y="570.7534">Implementor türevleri</text><line style="stroke: #000000; stroke-width: 1.0;" x1="668" x2="1098" y1="479.5158" y2="479.5158"/><line style="stroke: #000000; stroke-width: 1.0;" x1="668" x2="1098" y1="498.5838" y2="498.5838"/><line style="stroke: #000000; stroke-width: 1.0;" x1="668" x2="1098" y1="517.6517" y2="517.6517"/><line style="stroke: #000000; stroke-width: 1.0;" x1="668" x2="1098" y1="536.7196" y2="536.7196"/><line style="stroke: #000000; stroke-width: 1.0;" x1="668" x2="1098" y1="555.7875" y2="555.7875"/><line style="stroke: #000000; stroke-width: 1.0;" x1="668" x2="1098" y1="574.8554" y2="574.8554"/><line style="stroke: #000000; stroke-width: 1.0;" x1="668" x2="668" y1="479.5158" y2="574.8554"/><line style="stroke: #000000; stroke-width: 1.0;" x1="860" x2="860" y1="479.5158" y2="574.8554"/><line style="stroke: #000000; stroke-width: 1.0;" x1="1098" x2="1098" y1="479.5158" y2="574.8554"/><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="439" x="337" y="601.5454">Oluşturulma: 22.10.2025 | Sürüm: 1.0.0 | Pattern: Bridge (Structural) | Modül: Shape-Color</text><!--MD5=[a99f4174ce2f18df4091c543a5b6dde9]
+@startuml
+
+title Bridge: Şekil <-> Renk Sınıf Diyagramı
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+
+skinparam class {
+    BackgroundColor #E8F4F8
+    BorderColor #2C5F7C
+    ArrowColor #2C5F7C
+    FontName Arial
+    FontSize 12
+}
+
+skinparam note {
+    BackgroundColor #FFF9E6
+    BorderColor #CC8800
+}
+
+interface Color <<Implementor>> {
+    +{abstract} name(): const char*
+}
+
+class Red <<Concrete Implementor>> {
+    +name(): const char*
+}
+
+class Blue <<Concrete Implementor>> {
+    +name(): const char*
+}
+
+Color <|.. Red
+Color <|.. Blue
+
+abstract class Shape <<Abstraction>> {
+    -color_: const Color&
+    __
+    +Shape(c: const Color&)
+    +{abstract} draw(): void
+}
+
+class Circle <<Refined Abstraction>> {
+    -r_: int
+    __
+    +Circle(c: const Color&, r: int)
+    +draw(): void
+}
+
+class Square <<Refined Abstraction>> {
+    -a_: int
+    __
+    +Square(c: const Color&, a: int)
+    +draw(): void
+}
+
+Shape <|- - Circle
+Shape <|- - Square
+Shape o- - Color : uses
+
+note right of Shape
+  <b>Soyutlama (Abstraction)</b>
+  • İstemcinin kullandığı arayüzdür
+  • Gerçekleştirmeye (Color) kompozisyon ile delege eder
+  • Şekil türleri bağımsız genişler (Circle, Square)
+end note
+
+note right of Color
+  <b>Gerçekleştirme (Implementor)</b>
+  • Renk ailesini temsil eder
+  • Red, Blue gibi türler bağımsız genişler
+  • Şekillerden tamamen ayrıdır
+end note
+
+legend right
+  |= Stereotip |= Anlamı |
+  | <<Abstraction>> | İstemciye sunulan soyut arayüz |
+  | <<Implementor>> | Soyutlamanın delege ettiği arayüz |
+  | <<Refined Abstraction>> | Abstraction türevleri |
+  | <<Concrete Implementor>> | Implementor türevleri |
+endlegend
+
+footer Oluşturulma: 22.10.2025 | Sürüm: 1.0.0 | Pattern: Bridge (Structural) | Modül: Shape-Color
+
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 13:22:07 TRT 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 21.0.8+9-Ubuntu-0ubuntu124.04.1
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

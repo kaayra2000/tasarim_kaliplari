@@ -1,0 +1,101 @@
+@startuml bridge-remote-shape-comparison
+allowmixing
+/'
+ * @file bridge-remote-shape-comparison.puml
+ * @brief Bridge Pattern vaka karşılaştırması: Şekil-Renk vs Kumanda-Cihaz
+ * @author Muhammed Kayra Bulut
+ * @date 22.10.2025
+ * @version 1.0.0
+ *
+ * @description İki Bridge vakasını yan yana gösterir. Her ikisinde de
+ *              Soyutlama (Abstraction) ile Gerçekleştirme (Implementor)
+ *              hiyerarşileri ayrıdır ve bağımsız genişler.
+ * @pattern Bridge (Structural)
+ * @related ../shape_color/diagram.puml, ../remote_device/diagram.puml
+'/
+
+title Bridge Pattern: Şekil-Renk vs Kumanda-Cihaz Karşılaştırması
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+skinparam package {
+    BackgroundColor #E8F4F8
+    BorderColor #2C5F7C
+    FontStyle bold
+}
+
+skinparam class {
+    BackgroundColor #FFFFFF
+    BorderColor #2C5F7C
+    ArrowColor #2C5F7C
+}
+
+skinparam interface {
+    BackgroundColor #FFE8CC
+    BorderColor #CC8800
+}
+
+skinparam note {
+    BackgroundColor #FFF9E6
+    BorderColor #CC8800
+}
+
+package "Vaka A: Şekil <-> Renk" #F0F7FA {
+    interface Color <<Implementor>>
+    class Red <<Concrete Implementor>>
+    class Blue <<Concrete Implementor>>
+    Color <|.. Red
+    Color <|.. Blue
+
+    abstract class Shape <<Abstraction>>
+    class Circle <<Refined Abstraction>>
+    class Square <<Refined Abstraction>>
+    Shape <|-- Circle
+    Shape <|-- Square
+    Shape o-- Color : uses
+}
+
+package "Vaka B: Kumanda <-> Cihaz" #F7F1FF {
+    interface Device <<Implementor>>
+    class TV <<Concrete Implementor>>
+    class Radio <<Concrete Implementor>>
+    Device <|.. TV
+    Device <|.. Radio
+
+    abstract class Remote <<Abstraction>>
+    class AdvancedRemote <<Refined Abstraction>>
+    Remote <|-- AdvancedRemote
+    Remote o-- Device : uses
+}
+
+note as Similarities
+  <b>Ortak Noktalar</b>
+  ✓ Abstraction – Implementor ayrımı
+  ✓ Kompozisyonla köprü (o--)
+  ✓ Her iki hiyerarşi bağımsız genişler
+  ✓ OCP ve SRP ilkeleri
+end note
+
+note as Differences
+  <b>Farklar</b>
+  • Alan modeli: şekil/renk vs cihaz/kumanda
+  • İşlemler: draw() çağrıları vs kontrol/cihaz API'si
+  • Kullanım bağlamı: UI çizimi vs donanım kontrolü
+end note
+
+Similarities -[hidden]- Differences
+
+legend right
+  |= Stereotip |= Anlamı |
+  | <<Abstraction>> | İstemcinin kullandığı soyut katman |
+  | <<Implementor>> | Abstraction'ın delege ettiği katman |
+  | <<Refined Abstraction>> | Abstraction türevi |
+  | <<Concrete Implementor>> | Implementor türevi |
+endlegend
+
+footer Oluşturulma: 22.10.2025 | Sürüm: 1.0.0 | Pattern: Bridge (Structural) | Modül: Karşılaştırma
+
+@enduml

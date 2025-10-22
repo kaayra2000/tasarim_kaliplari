@@ -1,0 +1,101 @@
+@startuml bridge-shape-color
+/'
+ * @file bridge-shape-color.puml
+ * @brief Bridge Pattern: Şekil (Abstraction) <-> Renk (Implementor)
+ * @author Muhammed Kayra Bulut
+ * @date 22.10.2025
+ * @version 1.0.0
+ *
+ * @description Bu diyagram, Köprü (Bridge) deseninde Soyutlama (Shape)
+ *              ile Gerçekleştirme (Color) hiyerarşilerinin birbirinden
+ *              nasıl ayrıldığını ve bağımsızca genişletilebildiğini gösterir.
+ * @pattern Bridge (Structural)
+ * @related code.cpp
+'/
+
+title Bridge: Şekil <-> Renk Sınıf Diyagramı
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+
+skinparam class {
+    BackgroundColor #E8F4F8
+    BorderColor #2C5F7C
+    ArrowColor #2C5F7C
+    FontName Arial
+    FontSize 12
+}
+
+skinparam note {
+    BackgroundColor #FFF9E6
+    BorderColor #CC8800
+}
+
+' ========== Gerçekleştirme (Implementor) ==========
+interface Color <<Implementor>> {
+    +{abstract} name(): const char*
+}
+
+class Red <<Concrete Implementor>> {
+    +name(): const char*
+}
+
+class Blue <<Concrete Implementor>> {
+    +name(): const char*
+}
+
+Color <|.. Red
+Color <|.. Blue
+
+' ========== Soyutlama (Abstraction) ==========
+abstract class Shape <<Abstraction>> {
+    -color_: const Color&
+    __
+    +Shape(c: const Color&)
+    +{abstract} draw(): void
+}
+
+class Circle <<Refined Abstraction>> {
+    -r_: int
+    __
+    +Circle(c: const Color&, r: int)
+    +draw(): void
+}
+
+class Square <<Refined Abstraction>> {
+    -a_: int
+    __
+    +Square(c: const Color&, a: int)
+    +draw(): void
+}
+
+Shape <|-- Circle
+Shape <|-- Square
+Shape o-- Color : uses
+
+note right of Shape
+  <b>Soyutlama (Abstraction)</b>
+  • İstemcinin kullandığı arayüzdür
+  • Gerçekleştirmeye (Color) kompozisyon ile delege eder
+  • Şekil türleri bağımsız genişler (Circle, Square)
+end note
+
+note right of Color
+  <b>Gerçekleştirme (Implementor)</b>
+  • Renk ailesini temsil eder
+  • Red, Blue gibi türler bağımsız genişler
+  • Şekillerden tamamen ayrıdır
+end note
+
+legend right
+  |= Stereotip |= Anlamı |
+  | <<Abstraction>> | İstemciye sunulan soyut arayüz |
+  | <<Implementor>> | Soyutlamanın delege ettiği arayüz |
+  | <<Refined Abstraction>> | Abstraction türevleri |
+  | <<Concrete Implementor>> | Implementor türevleri |
+endlegend
+
+footer Oluşturulma: 22.10.2025 | Sürüm: 1.0.0 | Pattern: Bridge (Structural) | Modül: Shape-Color
+
+@enduml

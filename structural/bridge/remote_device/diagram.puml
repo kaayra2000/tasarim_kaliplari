@@ -1,0 +1,121 @@
+@startuml bridge-remote-device
+/'
+ * @file bridge-remote-device.puml
+ * @brief Bridge Pattern: Kumanda (Abstraction) <-> Cihaz (Implementor)
+ * @author Muhammed Kayra Bulut
+ * @date 22.10.2025
+ * @version 1.0.0
+ *
+ * @description Bu diyagram Köprü (Bridge) deseninde, Soyutlama (Remote)
+ *              ve Gerçekleştirme (Device) hiyerarşilerinin ayrışmasını
+ *              gösterir. Aynı kumanda soyutlaması farklı cihazlar ile
+ *              çalışabilir (TV, Radio).
+ * @pattern Bridge (Structural)
+ * @related code.cpp
+'/
+
+title Bridge: Kumanda <-> Cihaz Sınıf Diyagramı
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+
+skinparam class {
+    BackgroundColor #E8F4F8
+    BorderColor #2C5F7C
+    ArrowColor #2C5F7C
+    FontName Arial
+    FontSize 12
+}
+
+skinparam note {
+    BackgroundColor #FFF9E6
+    BorderColor #CC8800
+}
+
+' ========== Gerçekleştirme (Implementor) ==========
+interface Device <<Implementor>> {
+    +{abstract} isEnabled(): bool
+    +{abstract} enable(): void
+    +{abstract} disable(): void
+    +{abstract} getVolume(): int
+    +{abstract} setVolume(v: int): void
+    +{abstract} getChannel(): int
+    +{abstract} setChannel(c: int): void
+}
+
+class TV <<Concrete Implementor>> {
+    -on_: bool
+    -volume_: int
+    -channel_: int
+    __
+    +isEnabled(): bool
+    +enable(): void
+    +disable(): void
+    +getVolume(): int
+    +setVolume(v: int): void
+    +getChannel(): int
+    +setChannel(c: int): void
+}
+
+class Radio <<Concrete Implementor>> {
+    -on_: bool
+    -volume_: int
+    -channel_: int
+    __
+    +isEnabled(): bool
+    +enable(): void
+    +disable(): void
+    +getVolume(): int
+    +setVolume(v: int): void
+    +getChannel(): int
+    +setChannel(c: int): void
+}
+
+Device <|.. TV
+Device <|.. Radio
+
+' ========== Soyutlama (Abstraction) ==========
+abstract class Remote <<Abstraction>> {
+    -device_: Device&
+    __
+    +Remote(d: Device&)
+    +togglePower(): void
+    +volumeDown(): void
+    +volumeUp(): void
+    +channelDown(): void
+    +channelUp(): void
+}
+
+class AdvancedRemote <<Refined Abstraction>> {
+    +mute(): void
+}
+
+Remote <|-- AdvancedRemote
+Remote o-- Device : uses
+
+note right of Remote
+  <b>Soyutlama (Remote)</b>
+  • İstemcinin etkileşime geçtiği katman
+  • Tüm işlemleri Device arabirimine delege eder
+  • Aynı arayüz ile farklı cihazlarla çalışır
+end note
+
+note right of Device
+  <b>Gerçekleştirme (Device)</b>
+  • TV, Radio gibi cihaz aileleri
+  • Kumanda soyutlamasından bağımsız evrilir
+  • Yeni cihaz eklemek Remote kodunu değiştirmez
+end note
+
+legend right
+  |= Stereotip |= Anlamı |
+  | <<Abstraction>> | İstemcinin kullandığı katman |
+  | <<Implementor>> | Soyutlamanın delege ettiği katman |
+  | <<Refined Abstraction>> | Soyutlamanın özelleşmiş türü |
+  | <<Concrete Implementor>> | Cihazın somut türü |
+endlegend
+
+footer Oluşturulma: 22.10.2025 | Sürüm: 1.0.0 | Pattern: Bridge (Structural) | Modül: Remote-Device
+
+@enduml
