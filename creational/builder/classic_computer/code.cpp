@@ -70,3 +70,81 @@ public:
         return builder->getComputer();
     }
 };
+
+// Concrete Builders
+class GamingComputerBuilder : public ComputerBuilder {
+public:
+    void buildCPU() override {
+        computer->CPU = "Intel i9-13900K";
+    }
+
+    void buildRAM() override {
+        computer->RAM = "32GB DDR5";
+    }
+
+    void buildStorage() override {
+        if (computer->storage.empty()) {
+            computer->storage = "2TB NVMe SSD";
+        } else {
+            computer->storage += " + 2TB NVMe SSD"; // ikinci çağrıda ek depolama
+        }
+    }
+
+    void buildGPU() override {
+        computer->GPU = "NVIDIA RTX 4090";
+    }
+};
+
+class OfficeComputerBuilder : public ComputerBuilder {
+public:
+    void buildCPU() override {
+        computer->CPU = "Intel i5-12400";
+    }
+
+    void buildRAM() override {
+        computer->RAM = "16GB DDR4";
+    }
+
+    void buildStorage() override {
+        if (computer->storage.empty()) {
+            computer->storage = "512GB SSD";
+        } else {
+            computer->storage += " + 512GB SSD"; // ikinci çağrıda ek depolama
+        }
+    }
+
+    void buildGPU() override {
+        computer->GPU = "Integrated Graphics";
+    }
+};
+
+int main() {
+    ComputerDirector director;
+
+    // 1) Gaming - Full yapılandırma
+    GamingComputerBuilder gamingBuilder1;
+    director.setBuilder(&gamingBuilder1);
+    auto gamingFull = director.buildFullComputer();
+    std::cout << "=== Gaming (Full) ===\n";
+    gamingFull->show();
+
+    std::cout << "\n";
+
+    // 2) Office - Minimal yapılandırma (Storage ve GPU yok)
+    OfficeComputerBuilder officeBuilder1;
+    director.setBuilder(&officeBuilder1);
+    auto officeMinimal = director.buildMinimalComputer();
+    std::cout << "=== Office (Minimal) ===\n";
+    officeMinimal->show();
+
+    std::cout << "\n";
+
+    // 3) Office - Depolama odaklı (storage iki kez)
+    OfficeComputerBuilder officeBuilder2;
+    director.setBuilder(&officeBuilder2);
+    auto officeStorage = director.buildStorageOptimized();
+    std::cout << "=== Office (Storage-Optimized) ===\n";
+    officeStorage->show();
+
+    return 0;
+}
