@@ -1,8 +1,8 @@
-# adapter/cloud_streaming
+# cloud_streaming
 
 Yerel ses oynatıcıyı bulut akış servisine uyarlayan Adapter örneği.
 
-## Derleme ve çalıştırma (Ubuntu)
+# Derleyip Çalıştırma
 
 Bu klasördeyken:
 
@@ -11,7 +11,7 @@ g++ -std=c++17 code.cpp -o app
 ./app
 ```
 
-Beklenen çıktı:
+# Beklenen Çıktı
 
 ```text
 === Yerel Şarkı ===

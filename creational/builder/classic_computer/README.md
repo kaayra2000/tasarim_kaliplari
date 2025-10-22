@@ -1,8 +1,8 @@
-# builder/classic_computer
+# classic_computer
 
 Klasik Builder (Director + Concrete Builder ayrımı) örneği. Director farklı inşa stratejileri uygular: full, minimal ve storage-optimized.
 
-## Derleme ve çalıştırma (Ubuntu)
+# Derleyip Çalıştırma
 
 Bu klasördeyken:
 
@@ -11,7 +11,7 @@ g++ -std=c++17 code.cpp -o app
 ./app
 ```
 
-## Beklenen çıktı
+# Beklenen Çıktı
 
 ```text
 === Gaming (Full) ===

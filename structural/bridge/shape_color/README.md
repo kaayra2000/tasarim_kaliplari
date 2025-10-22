@@ -1,8 +1,8 @@
-# bridge/shape_color
+# shape_color
 
 Şekil (daire/kare) soyutlamasını renk (kırmızı/mavi) uygulamalarıyla köprüleyen Bridge örneği.
 
-## Derleme ve çalıştırma (Ubuntu)
+# Derleyip Çalıştırma
 
 Bu klasördeyken:
 
@@ -11,7 +11,7 @@ g++ -std=c++17 code.cpp -o app
 ./app
 ```
 
-Beklenen çıktı:
+# Beklenen Çıktı
 
 ```text
 === Köprü (Bridge): Şekil <-> Renk ===

@@ -1,8 +1,8 @@
-# builder/basic_computer
+# basic_computer
 
 Director + farklı builder'larla iki bilgisayar konfigürasyonu oluşturan çalışır örnek.
 
-## Derleme ve çalıştırma (Ubuntu)
+# Derleyip Çalıştırma
 
 Bu klasördeyken:
 
@@ -11,7 +11,7 @@ g++ -std=c++17 code.cpp -o app
 ./app
 ```
 
-Beklenen çıktı:
+# Beklenen Çıktı
 
 ```text
 === Gaming PC ===

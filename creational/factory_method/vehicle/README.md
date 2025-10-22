@@ -1,8 +1,8 @@
-# factory_method/vehicle
+# vehicle
 
 Factory Method ile farklı araç türlerinin (araba, motosiklet, kamyon) oluşturulması.
 
-## Derleme ve çalıştırma (Ubuntu)
+# Derleyip Çalıştırma
 
 Bu klasördeyken:
 
@@ -11,7 +11,7 @@ g++ -std=c++17 code.cpp -o app
 ./app
 ```
 
-Beklenen çıktı:
+# Beklenen Çıktı
 
 ```text
 

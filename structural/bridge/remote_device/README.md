@@ -1,8 +1,8 @@
-# bridge/remote_device
+# remote_device
 
 Kumanda soyutlamasını TV ve Radyo cihazları üzerinde köprüleyen Bridge örneği.
 
-## Derleme ve çalıştırma (Ubuntu)
+# Derleyip Çalıştırma
 
 Bu klasördeyken:
 
@@ -11,7 +11,7 @@ g++ -std=c++17 code.cpp -o app
 ./app
 ```
 
-Beklenen çıktı:
+# Beklenen Çıktı
 
 ```text
 === Köprü (Bridge): Kumanda <-> Cihaz ===

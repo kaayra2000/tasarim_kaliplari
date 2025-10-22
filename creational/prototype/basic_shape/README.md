@@ -1,8 +1,8 @@
-# prototype/basic_shape
+# basic_shape
 
 Prototype ile kopyalanabilen basit şekil (Circle) örneği.
 
-## Derleme ve çalıştırma (Ubuntu)
+# Derleyip Çalıştırma
 
 Bu klasördeyken:
 
@@ -11,7 +11,7 @@ g++ -std=c++17 code.cpp -o app
 ./app
 ```
 
-Beklenen çıktı:
+# Beklenen Çıktı
 
 ```text
 Çiziliyor: Circle - Pozisyon: (5,5) - Yarıçap: 10

@@ -1,8 +1,8 @@
-# decorator/coffee_shop
+# coffee_shop
 
 İçeceklere (espresso/house blend) dinamik olarak süsleyiciler (mocha/whip/süt) ekleyen Decorator örneği.
 
-## Derleme ve çalıştırma (Ubuntu)
+# Derleyip Çalıştırma
 
 Bu klasördeyken:
 
@@ -11,7 +11,7 @@ g++ -std=c++17 code.cpp -o app
 ./app
 ```
 
-Beklenen çıktı:
+# Beklenen Çıktı
 
 ```text
 === Decorator: Coffee Shop ===

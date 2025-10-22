@@ -1,8 +1,8 @@
-# adapter/legacy_audio
+# legacy_audio
 
 Modern cihazın (USB Type-C) eski analog kulaklık girişine (3.5mm) uyarlanması örneği.
 
-## Derleme ve çalıştırma (Ubuntu)
+# Derleyip Çalıştırma
 
 Bu klasördeyken:
 
@@ -11,7 +11,7 @@ g++ -std=c++17 code.cpp -o app
 ./app
 ```
 
-Beklenen çıktı:
+# Beklenen Çıktı
 
 ```text
 === Eski Sistem ===

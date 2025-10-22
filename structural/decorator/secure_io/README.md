@@ -1,8 +1,8 @@
-# decorator/secure_io
+# secure_io
 
 Bellekteki veri kaynağına sıkıştırma ve/veya şifreleme katmanları ekleyen Decorator örneği.
 
-## Derleme ve çalıştırma (Ubuntu)
+# Derleyip Çalıştırma
 
 Bu klasördeyken:
 
@@ -11,7 +11,7 @@ g++ -std=c++17 code.cpp -o app
 ./app
 ```
 
-Beklenen çıktı:
+# Beklenen Çıktı
 
 ```text
 === Decorator: Secure I/O ===

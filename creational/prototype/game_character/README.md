@@ -1,8 +1,8 @@
-# prototype/game_character
+# game_character
 
 Prototype ile oyun karakterlerinin kopyalanması (Savaşçı/Büyücü) örneği.
 
-## Derleme ve çalıştırma (Ubuntu)
+# Derleyip Çalıştırma
 
 Bu klasördeyken:
 
@@ -11,7 +11,7 @@ g++ -std=c++17 code.cpp -o app
 ./app
 ```
 
-Beklenen çıktı:
+# Beklenen Çıktı
 
 ```text
 Karakter: Ahmet Savaşçı | Can: 100 | Saldırı: 50 | Zırh: 30

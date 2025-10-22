@@ -1,8 +1,8 @@
-# abstract_factory/gui
+# gui
 
 Platforma göre (windows/mac/linux) buton/checkbox ailesi oluşturan Abstract Factory örneği.
 
-## Derleme ve çalıştırma (Ubuntu)
+# Derleyip Çalıştırma
 
 Bu klasördeyken:
 
@@ -12,7 +12,7 @@ g++ -std=c++17 code.cpp -o app
 printf "linux\n" | ./app
 ```
 
-Örnek çıktı (linux seçildiğinde):
+# Beklenen Çıktı
 
 ```text
 Platform seçin (windows/mac/linux): 

@@ -1,8 +1,8 @@
-# factory_method/basic_shape
+# basic_shape
 
 Factory Method ile farklı şekillerin oluşturulması örneği.
 
-## Derleme ve çalıştırma (Ubuntu)
+# Derleyip Çalıştırma
 
 Bu klasördeyken:
 
@@ -11,7 +11,7 @@ g++ -std=c++17 code.cpp -o app
 ./app
 ```
 
-Beklenen çıktı:
+# Beklenen Çıktı
 
 ```text
 Daire çiziliyor

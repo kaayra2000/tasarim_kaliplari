@@ -1,8 +1,8 @@
-# abstract_factory/furniture
+# furniture
 
 Kısa, çalıştırılabilir Abstract Factory örneği (mobilya ailesi).
 
-## Derleme ve çalıştırma (Ubuntu)
+# Derleyip Çalıştırma
 
 Bu klasördeyken:
 
@@ -12,6 +12,8 @@ g++ -std=c++17 code.cpp -o app
 ```
 
 Program etkileşimlidir. Örnek olarak Modern (1) seçildiğinde beklenen çıktı:
+
+# Beklenen Çıktı
 
 ```text
 Hangi tarz mobilya istersiniz?

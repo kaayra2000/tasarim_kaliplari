@@ -1,8 +1,8 @@
-# singleton/basic_lazy
+# basic_lazy
 
 Lazy (tembel) başlatmalı Singleton örneği.
 
-## Derleme ve çalıştırma (Ubuntu)
+# Derleyip Çalıştırma
 
 Bu klasördeyken:
 
@@ -11,7 +11,7 @@ g++ -std=c++17 code.cpp -o app
 ./app
 ```
 
-Beklenen çıktı:
+# Beklenen Çıktı
 
 ```text
 [LazyLogger] Merhaba dünya
