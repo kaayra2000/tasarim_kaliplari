@@ -2,13 +2,6 @@
 
 **Bridge Pattern**, bir soyutlamayı (abstraction) uygulama/gerçekleme (implementation) hiyerarşisinden ayırarak ikisinin de birbirinden bağımsız evrilmesini sağlar. Böylece iki (veya daha fazla) boyutta büyüyen sınıf kombinasyonlarında aşırı sınıf karmaşıklığı (çok sayıda kombinasyon) yaşamadan tasarım yapılır. Yani ikili bir kombinasyonu (ör. soyutlama × uygulama) kompozisyonla birleştirir, iki ekseni ayrı ayrı geliştirmenize izin verir ve yeni kombinasyonlar için yeni sınıflar üretme ihtiyacını azaltır.
 
-## Hangi durumda Bridge aklımıza gelmeli?
-
-- Aynı kavramın iki ekseni bağımsızca değişiyorsa ve ikisini birden kalıtımla birleştirmek aşırı sınıf karmaşıklığına yol açıyorsa. Örn: **Şekil türleri** (daire, kare) ve **renk** (kırmızı, mavi).
-- Soyut bir denetim katmanının (kumanda) farklı gerçeklemelerle (TV, Radyo) çalışması isteniyorsa ve ikisi de ayrı ayrı genişlemeye devam edecekse.
-- Bir arayüzün değişmesi muhtemel, fakat istemcinin kullandığı soyutlama sabit kalmalıysa.
-- Derin kalıtım hiyerarşileri yerine, **kompozisyon ile delege** ederek esnek kalmak istiyorsanız.
-
 ## Ne İşe Yarar?
 
 - **Soyutlama ile gerçekleştirmeyi ayırır** – Her iki hiyerarşi bağımsız genişler.
@@ -46,6 +39,11 @@ Karşılaştırma diyagramı, iki vakanın ortak noktalarını (Abstraction ↔ 
 4. **Concrete Implementor:** Implementor’un somut türleridir (örn. `Red`, `Blue`, `TV`, `Radio`).
 
 Kompozisyon ile köprü kurulur: Abstraction, bir Implementor referansı tutar ve operasyonlarını ona delege eder. İki hiyerarşi birbirinden bağımsız değişebilir.
+
+## Ne Zaman Kullanılır?
+- İki bağımsız değişen eksen varsa ve bunların kombinasyonları için sınıf patlaması yaşanıyorsa.
+- Soyutlama ve gerçekleştirme arasında net bir ayrım gerekiyorsa.
+- Uygulama detaylarının istemciden gizlenmesi isteniyorsa.
 
 ## Ne Zaman Kullanılmaz?
 

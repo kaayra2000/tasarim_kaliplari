@@ -43,7 +43,7 @@ Genel olarak üç ana başlık vardır:
 
 - Yapı Kalıpları (Structural Patterns):
 	- Sınıfların ve nesnelerin bileşimini düzenler; daha büyük yapıların oluşturulmasını kolaylaştırır.
-	- Örnekler: [Adapter](./structural/adapter/README.md), [Decorator](./structural/decorator/README.md), [Facade](./structural/facade/README.md), Composite, [Bridge](./structural/bridge/README.md).
+	- Örnekler: [Adapter](./structural/adapter/README.md), [Decorator](./structural/decorator/README.md), [Facade](./structural/facade/README.md), [Composite](./structural/composite/README.md), [Bridge](./structural/bridge/README.md).
 
 - Davranış Kalıpları (Behavioral Patterns):
 	- Nesneler arası iletişim ve sorumlulukların dağılımına odaklanır.
