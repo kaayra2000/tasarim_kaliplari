@@ -1,0 +1,27 @@
+@startuml composite_file_system
+skinparam classAttributeIconSize 0
+
+interface Node {
+  +size(): size_t
+  +ls(indent: int)
+}
+
+class File {
+  -name: string
+  -bytes: size_t
+  +size(): size_t
+  +ls(indent: int)
+}
+
+class Directory {
+  -name: string
+  -children: vector<Node>
+  +add(n: Node)
+  +size(): size_t
+  +ls(indent: int)
+}
+
+Node <|.. File
+Node <|.. Directory
+Directory *-- "*" Node : children
+@enduml

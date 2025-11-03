@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="268px" preserveAspectRatio="none" style="width:448px;height:268px;" version="1.1" viewBox="0 0 448 268" width="448px" zoomAndPan="magnify"><defs><filter height="300%" id="f1ufltxh8lry35" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[7340ddc93ee3d3f5fef34806a115f504]
+class Graphic--><rect fill="#FEFECE" filter="url(#f1ufltxh8lry35)" height="62.9819" id="Graphic" style="stroke: #A80036; stroke-width: 1.5;" width="105" x="174" y="8"/><ellipse cx="202.95" cy="24" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M198.8719,19.7656 L198.8719,17.6094 L206.2625,17.6094 L206.2625,19.7656 L203.7938,19.7656 L203.7938,27.8438 L206.2625,27.8438 L206.2625,30 L198.8719,30 L198.8719,27.8438 L201.3406,27.8438 L201.3406,19.7656 L198.8719,19.7656 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="42" x="220.05" y="28.656">Graphic</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="175" x2="278" y1="40" y2="40"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="175" x2="278" y1="48" y2="48"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="93" x="180" y="63.7589">+draw(indent: int)</text><!--MD5=[a7f9118cae7621dd25d25149752faef0]
+class Circle--><rect fill="#FEFECE" filter="url(#f1ufltxh8lry35)" height="92.9457" id="Circle" style="stroke: #A80036; stroke-width: 1.5;" width="105" x="6" y="157.5"/><ellipse cx="39.45" cy="173.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M42.4188,179.1406 Q41.8406,179.4375 41.2,179.5781 Q40.5594,179.7344 39.8563,179.7344 Q37.3563,179.7344 36.0281,178.0938 Q34.7156,176.4375 34.7156,173.3125 Q34.7156,170.1875 36.0281,168.5313 Q37.3563,166.875 39.8563,166.875 Q40.5594,166.875 41.2,167.0313 Q41.8563,167.1875 42.4188,167.4844 L42.4188,170.2031 Q41.7938,169.625 41.2,169.3594 Q40.6063,169.0781 39.9813,169.0781 Q38.6375,169.0781 37.95,170.1563 Q37.2625,171.2188 37.2625,173.3125 Q37.2625,175.4063 37.95,176.4844 Q38.6375,177.5469 39.9813,177.5469 Q40.6063,177.5469 41.2,177.2813 Q41.7938,177 42.4188,176.4219 L42.4188,179.1406 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="32" x="57.55" y="178.156">Circle</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="110" y1="189.5" y2="189.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="70" x="12" y="205.2589">-name: string</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="57" x="12" y="220.2408">-radius: int</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="110" y1="227.4638" y2="227.4638"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="93" x="12" y="243.2227">+draw(indent: int)</text><!--MD5=[b5313cd49da22b0744b541f414f8445e]
+class Rectangle--><rect fill="#FEFECE" filter="url(#f1ufltxh8lry35)" height="107.9276" id="Rectangle" style="stroke: #A80036; stroke-width: 1.5;" width="105" x="146" y="150"/><ellipse cx="169.1" cy="166" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M172.0688,171.6406 Q171.4906,171.9375 170.85,172.0781 Q170.2094,172.2344 169.5063,172.2344 Q167.0063,172.2344 165.6781,170.5938 Q164.3656,168.9375 164.3656,165.8125 Q164.3656,162.6875 165.6781,161.0313 Q167.0063,159.375 169.5063,159.375 Q170.2094,159.375 170.85,159.5313 Q171.5063,159.6875 172.0688,159.9844 L172.0688,162.7031 Q171.4438,162.125 170.85,161.8594 Q170.2563,161.5781 169.6313,161.5781 Q168.2875,161.5781 167.6,162.6563 Q166.9125,163.7188 166.9125,165.8125 Q166.9125,167.9063 167.6,168.9844 Q168.2875,170.0469 169.6313,170.0469 Q170.2563,170.0469 170.85,169.7813 Q171.4438,169.5 172.0688,168.9219 L172.0688,171.6406 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="55" x="184.9" y="170.656">Rectangle</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="147" x2="250" y1="182" y2="182"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="70" x="152" y="197.7589">-name: string</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="33" x="152" y="212.7408">-w: int</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="31" x="152" y="227.7227">-h: int</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="147" x2="250" y1="234.9457" y2="234.9457"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="93" x="152" y="250.7046">+draw(indent: int)</text><!--MD5=[41314a0efc36828092cff9ebad2fcafd]
+class Group--><rect fill="#FEFECE" filter="url(#f1ufltxh8lry35)" height="107.9276" id="Group" style="stroke: #A80036; stroke-width: 1.5;" width="151" x="286" y="150"/><ellipse cx="339.75" cy="166" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M342.7188,171.6406 Q342.1406,171.9375 341.5,172.0781 Q340.8594,172.2344 340.1563,172.2344 Q337.6563,172.2344 336.3281,170.5938 Q335.0156,168.9375 335.0156,165.8125 Q335.0156,162.6875 336.3281,161.0313 Q337.6563,159.375 340.1563,159.375 Q340.8594,159.375 341.5,159.5313 Q342.1563,159.6875 342.7188,159.9844 L342.7188,162.7031 Q342.0938,162.125 341.5,161.8594 Q340.9063,161.5781 340.2813,161.5781 Q338.9375,161.5781 338.25,162.6563 Q337.5625,163.7188 337.5625,165.8125 Q337.5625,167.9063 338.25,168.9844 Q338.9375,170.0469 340.2813,170.0469 Q340.9063,170.0469 341.5,169.7813 Q342.0938,169.5 342.7188,168.9219 L342.7188,171.6406 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="35" x="360.25" y="170.656">Group</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="287" x2="436" y1="182" y2="182"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="70" x="292" y="197.7589">-name: string</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="139" x="292" y="212.7408">-children: vector&lt;Graphic&gt;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="287" x2="436" y1="219.9638" y2="219.9638"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="86" x="292" y="235.7227">+add(g: Graphic)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="93" x="292" y="250.7046">+draw(indent: int)</text><!--MD5=[2584ea380d9b25beb738f60bc468a397]
+reverse link Graphic to Circle--><path d="M180.47,85.02 C157.28,107.45 129.21,134.61 105.84,157.21 " fill="none" id="Graphic&lt;-Circle" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="175.66,79.94,194.9,71.07,185.39,90,175.66,79.94" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[2b893bbd84c958200b997e4aea9eef60]
+reverse link Graphic to Rectangle--><path d="M217.82,90.86 C214.6,109.59 210.92,130.89 207.66,149.86 " fill="none" id="Graphic&lt;-Rectangle" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="210.94,89.59,221.23,71.07,224.74,91.96,210.94,89.59" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[1ffd4bcbf37d1eb13275f7886447bada]
+reverse link Graphic to Group--><path d="M264.86,86.67 C281.22,106.37 300.41,129.46 317.36,149.86 " fill="none" id="Graphic&lt;-Group" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="259.29,90.92,251.89,71.07,270.06,81.98,259.29,90.92" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[7d9291fa57165462dcc4f8f225c27882]
+reverse link Group to Graphic--><path d="M332.17,138.5 C324.75,125.4 316.12,112.22 306.5,101 C297.09,90.03 285.37,79.81 273.83,71.01 " fill="none" id="Group&lt;-Graphic" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="338.36,149.93,339.0148,142.7487,332.6378,139.3822,331.983,146.5635,338.36,149.93" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="48" x="320.5" y="115.897">children</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="275.459" y="92.8553">*</text><!--MD5=[e17e52f2d0d36722897487249089c500]
+@startuml
+skinparam classAttributeIconSize 0
+
+interface Graphic {
+  +draw(indent: int)
+}
+
+class Circle {
+  -name: string
+  -radius: int
+  +draw(indent: int)
+}
+
+class Rectangle {
+  -name: string
+  -w: int
+  -h: int
+  +draw(indent: int)
+}
+
+class Group {
+  -name: string
+  -children: vector<Graphic>
+  +add(g: Graphic)
+  +draw(indent: int)
+}
+
+Graphic <|.. Circle
+Graphic <|.. Rectangle
+Graphic <|.. Group
+
+Group *- - "*" Graphic : children
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 13:22:07 TRT 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 21.0.8+9-Ubuntu-0ubuntu124.04.1
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

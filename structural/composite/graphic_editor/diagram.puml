@@ -1,0 +1,33 @@
+@startuml composite_graphic_editor
+skinparam classAttributeIconSize 0
+
+interface Graphic {
+  +draw(indent: int)
+}
+
+class Circle {
+  -name: string
+  -radius: int
+  +draw(indent: int)
+}
+
+class Rectangle {
+  -name: string
+  -w: int
+  -h: int
+  +draw(indent: int)
+}
+
+class Group {
+  -name: string
+  -children: vector<Graphic>
+  +add(g: Graphic)
+  +draw(indent: int)
+}
+
+Graphic <|.. Circle
+Graphic <|.. Rectangle
+Graphic <|.. Group
+
+Group *-- "*" Graphic : children
+@enduml
