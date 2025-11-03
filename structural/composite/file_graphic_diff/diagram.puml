@@ -1,0 +1,91 @@
+@startuml composite-file-graphics-comparison
+allowmixing
+/'
+ * @file composite-file-graphics-comparison.puml
+ * @brief Composite Pattern karşılaştırması: Dosya Sistemi vs Grafik Editör
+ * @author Muhammed Kayra Bulut
+ * @date 03.11.2025
+ * @version 1.0.0
+ *
+ * @description İki Composite vakasını yan yana gösterir. Her ikisinde de
+ *              Bileşen (Component), Yaprak (Leaf) ve Bileşik (Composite)
+ *              rolleri bulunur ve istemci bunları tek biçimli kullanır.
+ * @pattern Composite (Structural)
+ * @related ../file_system/diagram.puml, ../graphic_editor/diagram.puml
+'/
+
+title Composite Pattern: Dosya Sistemi vs Grafik Editör Karşılaştırması
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+skinparam package {
+    BackgroundColor #E8F4F8
+    BorderColor #2C5F7C
+    FontStyle bold
+}
+
+skinparam class {
+    BackgroundColor #FFFFFF
+    BorderColor #2C5F7C
+    ArrowColor #2C5F7C
+}
+
+skinparam note {
+    BackgroundColor #FFF9E6
+    BorderColor #CC8800
+}
+
+package "Vaka A: Dosya Sistemi" #F0F7FA {
+    abstract class Node <<Component>>
+    class File <<Leaf>>
+    class Directory <<Composite>>
+
+    Node <|-- File
+    Node <|-- Directory
+    Directory o-- Node : children
+}
+
+package "Vaka B: Grafik Editör" #F7F1FF {
+    abstract class Graphic <<Component>>
+    class Circle <<Leaf>>
+    class Rectangle <<Leaf>>
+    class Group <<Composite>>
+
+    Graphic <|-- Circle
+    Graphic <|-- Rectangle
+    Graphic <|-- Group
+    Group o-- Graphic : children
+}
+
+note as Similarities
+  <b>Ortak Noktalar</b>
+  ✓ Tek tip arayüz (Component)
+  ✓ Yaprak ve Bileşik nesneler aynı muamele görür
+  ✓ Bileşik, bileşenleri kompozisyonla tutar (o--)
+  ✓ İstemci tarafında tekdüze kullanım (uniformity)
+  ✓ OCP ve SRP'ye uyum, ağaç yapısı
+end note
+
+note as Differences
+  <b>Farklar</b>
+  • Alan modeli: dosya/dizin boyutu vs grafik çizimi
+  • Operasyonlar: size()/ls() vs draw()
+  • Ek metrik: Dosya Sistemi toplam boyut hesaplar
+  • Kullanım bağlamı: FS gezinti vs sahne çizimi
+end note
+
+Similarities -[hidden]- Differences
+
+legend right
+  |= Stereotip |= Anlamı |
+  | <<Component>> | Ortak arayüz/temel soyutlama |
+  | <<Leaf>> | Son düğüm; alt eleman içermez |
+  | <<Composite>> | Alt elemanları tutan düğüm |
+endlegend
+
+footer Oluşturulma: 03.11.2025 | Sürüm: 1.0.0 | Pattern: Composite (Structural) | Modül: Karşılaştırma
+
+@enduml
